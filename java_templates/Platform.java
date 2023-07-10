@@ -1,3 +1,4 @@
+package java_templates;
 public class Platform {
     
     String name;
