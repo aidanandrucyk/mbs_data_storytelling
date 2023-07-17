@@ -13,12 +13,16 @@ NOTES:
     <meta name="description" content="No Code Quiz">
     <meta name="author" content="Summer 2023 MBS Externship - Data Storytelling Team">
     <title>Quiz for Selecting No-Code App Development Tools</title>
+
+
+    <!-- STYLE -->
     <link href="style\style.css" rel="stylesheet">
     <!-- Uncomment later & remove line above: 
-    <link href="https://github.com/aidanandrucyk/mbs_data_storytelling/blob/main/style/style.css" rel="stylesheet">
+    <link href="https://raw.githubusercontent.com/aidanandrucyk/mbs_data_storytelling/main/style/style.css" rel="stylesheet">
     -->
     <!-- Vendor CSS Files -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -35,45 +39,50 @@ NOTES:
             <div class="questions">
 
                 <h2>QUESTIONS</h2>
-                <h3>Yes or No Questions</h2>
-                    <ol class="yes_no_questions">
-                        <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
-                            (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley, small
-                            niche
-                            hobbies/interests)
-                            <a href=""><button>yes</button></a>
-                            <a href=""><button>no</button></a>
-                        </li>
-                        <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
-                            publication?
-                            (Ex. Instagram stories, snapchat updates)
-                            (low ex: order notifs, entry updates, updating a menu, change/update notifs)
-                            <a href=""><button>yes</button></a>
-                            <a href=""><button>no</button></a>
-                        </li>
-                        <li class="yes_no_questions">
-                            3. Must your app contain large-scale features?
-                            (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
-                            customizations/
-                            features)
-                            <a href=""><button>yes</button></a>
-                            <a href=""><button>no</button></a>
 
-                        </li>
-                        <li class="yes_no_questions">
-                            4. Do you need your app to be in any language other than english?
-                            <a href=""><button>yes</button></a>
-                            <a href=""><button>no</button></a>
-                        </li>
-                        <li class="yes_no_questions">
-                            5.Does your audience include non-English speaking users?
-                            <a href=""><button>yes</button></a>
-                            <a href=""><button>no</button></a>
-                        </li>
-                    </ol>
+                <div class="yes_no">
+                    <h3>Yes or No Questions</h2>
+                        <ol class="yes_no_list">
+                            <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
+                                (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley, small
+                                niche
+                                hobbies/interests)
+                                <a href=""><button>yes</button></a>
+                                <a href=""><button>no</button></a>
+                            </li>
+                            <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
+                                publication?
+                                (Ex. Instagram stories, snapchat updates)
+                                (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                                <a href=""><button>yes</button></a>
+                                <a href=""><button>no</button></a>
+                            </li>
+                            <li class="yes_no_questions">
+                                3. Must your app contain large-scale features?
+                                (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
+                                customizations/
+                                features)
+                                <a href=""><button>yes</button></a>
+                                <a href=""><button>no</button></a>
 
+                            </li>
+                            <li class="yes_no_questions">
+                                4. Do you need your app to be in any language other than english?
+                                <a href=""><button>yes</button></a>
+                                <a href=""><button>no</button></a>
+                            </li>
+                            <li class="yes_no_questions">
+                                5.Does your audience include non-English speaking users?
+                                <a href=""><button>yes</button></a>
+                                <a href=""><button>no</button></a>
+                            </li>
+                        </ol>
+                </div>
+
+
+                <div class="select_qs">
                     <h3>Select One Questions</h2>
-                        <ol class="select_one_questions">
+                        <ol class="select_one_list">
                             <li class="select_one_question"> 6. How would you like to manage data for your app?
                                 <br>
                                 <a href=""><button>SELECT</button></a> With the platform to build the app (i.e. AWS,
@@ -105,7 +114,7 @@ NOTES:
                                 <p>(Including technical support)</p>
                                 <a href=""><button>SELECT</button></a> $0
                                 <br>
-                                <a href=""><button>SELECT</button></a> $0 - $50  ($0-$600 per year)
+                                <a href=""><button>SELECT</button></a> $0 - $50 ($0-$600 per year)
                                 <br>
                                 <a href=""><button>SELECT</button></a> $50 - $100 ($600-$1200 per year)
                                 <br>
@@ -115,6 +124,54 @@ NOTES:
                                 <br>
                             </li>
                         </ol>
+                </div>
+
+
+                <div class="ranking">
+                    <h3>Ranking Preferences</h2>
+                        <p>CUSTOMIZATION - how precisely the programmer can depict their vision of the final product
+                            on the platform itself.
+                        </p>
+                        <p>
+                            BUILD TIME - The amount of time it takes for the programmer to complete the product from
+                            start to finish using this platform. Build Time does not reflect how long a new programmer
+                            takes to learn how to use the platform.
+                        </p>
+                        <p>
+                            COST - how much does the platform cost to use in United States Dollars (USD).
+                        </p>
+                        <p>
+                            USER FRIENDLINESS - how easy the platform is for the programmer to use or how likely it
+                            is that the programmer runs into a problem
+                        </p>
+
+                        <ol class="select_one_list">
+                            <li class="select_one_question"> 6. How would you like to manage data for your app?
+                                Each category has a number corresponding to it (ex. '1' corresponds to Customization).
+                                For the questions below, select the number associated with the category you want to
+                                answer with. Please select each category only once.
+
+                                12) Select the the category that is your HIGHEST priority for your platform:
+                                Customization
+                                Build time
+                                Cost
+                                User friendliness
+
+                                13) Select the the category that is your SECOND HIGHEST priority for your platform:
+                                Customization
+                                Build time
+                                Cost
+                                User friendliness
+
+                                14) Select the the category that is your THIRD HIGHEST priority for your platform:
+                                Customization
+                                Build time
+                                Cost
+                                User friendliness
+
+                            </li>
+                        </ol>
+                </div>
 
 
 
@@ -129,7 +186,10 @@ NOTES:
 
     </div>
 
-    <script src="scripts/faq.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="scripts/quiz_logic.js"></script>
+    <script src="scripts/email_results.js"></script>
 
 </body>
 
