@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--
+NOTES:
+    remove <br> 
+-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +13,123 @@
     <meta name="description" content="No Code Quiz">
     <meta name="author" content="Summer 2023 MBS Externship - Data Storytelling Team">
     <title>Quiz for Selecting No-Code App Development Tools</title>
-   <link href="style\style.css" rel="stylesheet">
-   <link href="" rel="stylesheet">
-
+    <link href="style\style.css" rel="stylesheet">
+    <!-- Uncomment later & remove line above: 
+    <link href="https://github.com/aidanandrucyk/mbs_data_storytelling/blob/main/style/style.css" rel="stylesheet">
+    -->
+    <!-- Vendor CSS Files -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <body>
-    <--
-    <div class="quiz" style="text-align: center;">
+    <!-- CODE HERE -->
+    <div class="quiz_container">
 
-        <h1>Quiz</h1>
+        <h1> Quiz for Selecting No-Code App Development Tools</h1>
 
-        <p>Test Test Test</p>
+        <p>By Data Storytelling</p>
+        <br>
 
-        <script > </script>
+        <div class="quiz_dynamic">
+
+            <div class="questions">
+
+                <h2>QUESTIONS</h2>
+                <h3>Yes or No Questions</h2>
+                    <ol class="yes_no_questions">
+                        <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
+                            (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley, small
+                            niche
+                            hobbies/interests)
+                            <a href=""><button>yes</button></a>
+                            <a href=""><button>no</button></a>
+                        </li>
+                        <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
+                            publication?
+                            (Ex. Instagram stories, snapchat updates)
+                            (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                            <a href=""><button>yes</button></a>
+                            <a href=""><button>no</button></a>
+                        </li>
+                        <li class="yes_no_questions">
+                            3. Must your app contain large-scale features?
+                            (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
+                            customizations/
+                            features)
+                            <a href=""><button>yes</button></a>
+                            <a href=""><button>no</button></a>
+
+                        </li>
+                        <li class="yes_no_questions">
+                            4. Do you need your app to be in any language other than english?
+                            <a href=""><button>yes</button></a>
+                            <a href=""><button>no</button></a>
+                        </li>
+                        <li class="yes_no_questions">
+                            5.Does your audience include non-English speaking users?
+                            <a href=""><button>yes</button></a>
+                            <a href=""><button>no</button></a>
+                        </li>
+                    </ol>
+
+                    <h3>Select One Questions</h2>
+                        <ol class="select_one_questions">
+                            <li class="select_one_question"> 6. How would you like to manage data for your app?
+                                <br>
+                                <a href=""><button>SELECT</button></a> With the platform to build the app (i.e. AWS,
+                                Azure, etc.)
+                                <br>
+                                <a href=""><button>SELECT</button></a> Using Google Workspace (i.e. Google Sheets)
+                                <br>
+                                <a href=""><button>SELECT</button></a> Using Office 365 (i.e. Microsoft Excel)
+                                <br>
+                                <a href=""><button>SELECT</button></a> My app does not have any data requirements
+                                <br>
+                            </li>
+
+                            <br>
+
+                            <li class="select_one_question"> 7. What type of application would you like to build?
+                                <br>
+                                <a href=""><button>SELECT</button></a>
+                                Website
+                                <br>
+                                <a href=""><button>SELECT</button></a>
+                                Mobile App (e.g. iOS and/or Android mobile device)
+                                <br>
+                            </li>
+
+                            <br>
+
+                            <li class="select_one_question"> 8. What amount are you willing to spend per month?
+                                <p>(Including technical support)</p>
+                                <a href=""><button>SELECT</button></a> $0
+                                <br>
+                                <a href=""><button>SELECT</button></a> $0 - $50  ($0-$600 per year)
+                                <br>
+                                <a href=""><button>SELECT</button></a> $50 - $100 ($600-$1200 per year)
+                                <br>
+                                <a href=""><button>SELECT</button></a> $101 - $200 ($1200-$2400 per year)
+                                <br>
+                                <a href=""><button>SELECT</button></a> $200+ ($2,400+ per year)
+                                <br>
+                            </li>
+                        </ol>
 
 
+
+            </div>
+
+
+            <div class="results">
+                <h2>RESULTS</h2>
+                <p>results</p>
+            </div>
+        </div>
 
     </div>
+
+    <script src="scripts/faq.js"></script>
 
 </body>
 

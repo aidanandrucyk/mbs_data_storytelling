@@ -3,6 +3,8 @@ html {
     font-size: 14px;
   }
   
+
+  /* VARIABLE COLORS */
   :root {
     --nwhite: hsl(60, 31%, 94%);
     --nwhiteaccent: hsl(40, 18%, 97%);
@@ -21,23 +23,12 @@ html {
   
   body {
     background-color: var(--nwhite);
+    padding: 5% 10%;
   }
-  
-  .body_header {
-    padding: 4% 0% 2% 0%;
-    text-transform: uppercase;
-    font-size: 1.78rem;
+
+  .quiz_container{
+    align-items: center;
     text-align: center;
-    font-weight: 900;
-    font-stretch: expanded;
-    color: var(--nblack);
-  }
-  
-  .body h3 {
-    text-align: center;
-    font-weight: 500;
-    color: var(--textcolor);
-    padding-bottom: 3%;
   }
   
   p {
@@ -71,3 +62,10 @@ html {
     color: var(--nblack);
     background: var(--accentcolor);
   }
+
+.quiz_container{
+    border-radius: 20px;
+    border: #1a202c 2px solid;
+    background-color: var(--accentcolor);
+    padding: 1rem;
+}
