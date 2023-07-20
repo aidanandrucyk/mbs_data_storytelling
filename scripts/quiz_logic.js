@@ -1,3 +1,4 @@
+// DATA
 function createPlatforms() {
     var platforms = {
         "Shoutem": {
@@ -47,12 +48,13 @@ function createPlatforms() {
         }
     };
 
-    console.log(platforms);
-    console.log(platforms["Shoutem"]);
-    console.log(platforms["Shoutem"]["cost"]);
+    // console.log(platforms);
+    // console.log(platforms["Shoutem"]);
+    // console.log(platforms["Shoutem"]["cost"]);
     return platforms;
 }
 
+// QUIZ RATING MANIPULATION
 function rankPlatforms(platforms) {
     // @Uthera implement quiz logic
     // change the "rating" of each as users press buttons
@@ -63,6 +65,7 @@ function rankPlatforms(platforms) {
     return platforms;
 }
 
+// SORTING RATINGS
 function sortJsObject(dict) {
     var keys = [];
     for(var key in dict) { 
@@ -91,6 +94,7 @@ function orderRankedPlatforms(platforms) {
     return(rankedPlatforms)
 }
 
+// SUBMITTING QUIZ & DISPLAYING RESULTS
 function submitQuiz() {
     // Aidan & Uthara
 

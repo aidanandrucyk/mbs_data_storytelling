@@ -6,12 +6,18 @@ html {
 
 /* VARIABLE COLORS */
 :root {
+  /* Greyscale */
   --nwhite: hsl(60, 31%, 94%);
   --nwhiteaccent: hsl(40, 18%, 97%);
   --textcolor: hsl(48, 14%, 43%);
   --accentcolor: hsl(41, 68%, 83%);
   --nblack: hsl(50, 7%, 17%);
-  --adoblue: #1a202c;
+
+  /* PRIMARY */
+  --teal: #00857D;
+
+  /* SECONDARY */
+  --babyblue: #92cdea;
 }
 
 * {
@@ -22,13 +28,17 @@ html {
 }
 
 body {
-  background-color: var(--nwhite);
+  background-color: var(--babyblue);
   padding: 5% 10%;
 }
 
 .quiz_container {
   align-items: center;
   text-align: center;
+}
+
+.quiz_container div {
+  padding: 2.5% 1% 5% 1%;
 }
 
 p {
@@ -63,10 +73,24 @@ a:visited {
   background: var(--accentcolor);
 }
 
+button {
+  padding: .5%;
+}
+
+button:hover {
+  background-color: var(--babyblue);
+  -webkit-filter: brightness(105%);
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
 .quiz_container {
   border-radius: 20px;
   border: #1a202c 2px solid;
-  background-color: var(--accentcolor);
+  background-color: var(--nwhiteaccent);
   padding: 1rem;
 }
 
