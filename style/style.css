@@ -1,71 +1,80 @@
 html {
-    scroll-behavior: smooth;
-    font-size: 14px;
-  }
-  
+  scroll-behavior: smooth;
+  font-size: 14px;
+}
 
-  /* VARIABLE COLORS */
-  :root {
-    --nwhite: hsl(60, 31%, 94%);
-    --nwhiteaccent: hsl(40, 18%, 97%);
-    --textcolor: hsl(48, 14%, 43%);
-    --accentcolor: hsl(41, 68%, 83%);
-    --nblack: hsl(50, 7%, 17%);
-    --adoblue: #1a202c;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  body {
-    background-color: var(--nwhite);
-    padding: 5% 10%;
-  }
 
-  .quiz_container{
-    align-items: center;
-    text-align: center;
-  }
-  
-  p {
-    color: var(--textcolor);
-  }
-  
-  li {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: var(--textcolor);
-  }
-  
-  a:hover {
-    color: var(--textcolor);
-    -webkit-filter: brightness(105%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-  
-  a:visited {
-    color: var(--textcolor);
-  }
-  
-  ::selection {
-    color: var(--nblack);
-    background: var(--accentcolor);
-  }
+/* VARIABLE COLORS */
+:root {
+  --nwhite: hsl(60, 31%, 94%);
+  --nwhiteaccent: hsl(40, 18%, 97%);
+  --textcolor: hsl(48, 14%, 43%);
+  --accentcolor: hsl(41, 68%, 83%);
+  --nblack: hsl(50, 7%, 17%);
+  --adoblue: #1a202c;
+}
 
-.quiz_container{
-    border-radius: 20px;
-    border: #1a202c 2px solid;
-    background-color: var(--accentcolor);
-    padding: 1rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--nwhite);
+  padding: 5% 10%;
+}
+
+.quiz_container {
+  align-items: center;
+  text-align: center;
+}
+
+p {
+  color: var(--textcolor);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--textcolor);
+}
+
+a:hover {
+  color: var(--textcolor);
+  -webkit-filter: brightness(105%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+a:visited {
+  color: var(--textcolor);
+}
+
+::selection {
+  color: var(--nblack);
+  background: var(--accentcolor);
+}
+
+.quiz_container {
+  border-radius: 20px;
+  border: #1a202c 2px solid;
+  background-color: var(--accentcolor);
+  padding: 1rem;
+}
+
+#questions{
+  display: block;
+
+}
+
+#resultsPage{
+  display: none;
 }

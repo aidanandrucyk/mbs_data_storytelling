@@ -28,14 +28,14 @@ NOTES:
     <!-- CODE HERE -->
     <div class="quiz_container">
 
-        <h1> Quiz for Selecting No-Code App Development Tools</h1>
+        <h1>Finding a No-Code App Builder Quiz</h1>
 
         <p>By Data Storytelling</p>
         <br>
 
         <div class="quiz_dynamic">
 
-            <div class="questions">
+            <div id="questions">
 
                 <h2>QUESTIONS</h2>
 
@@ -171,42 +171,58 @@ NOTES:
                         </ol>
                 </div>
 
+                <button id="submit" onclick="submitQuiz()">Submit Quiz</button>
 
 
             </div>
-
-
-            <div class="results">
-                <h2>RESULTS</h2>
-                <p>results</p>
-
-                <img src="" alt="">
-                
+            <div id="resultsPage">
 
 
 
 
+                <div class="results">
+                    <h2>RESULTS</h2>
+                    <p>results</p>
 
-            </div>
+                    <img src="" alt="">
 
-            <div class="email_results">
-                <h2>EMAIL RESULTS</h2>
-                <p>results</p>
+                    <h3>You are a WIZARD</h3>
+
+                    <p>Because...</p>
 
 
 
-                
+
+
+
+                </div>
+
+                <div class="email_results">
+                    <h2>WANT US TO EMAIL YOU YOUR RESULTS?</h2>
+                    <p>Enter your email here:</p>
+                    <!-- @Ji -->
+
+
+
+
+                </div>
+
             </div>
         </div>
 
     </div>
 
 
-    <!-- JAVASCRIPT -->
-    <script type="module" src="scripts/quiz_logic.js">
+    <script>
     </script>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+    <script src="scripts/quiz_logic.js" defer></script>
     <script src="scripts/email_results.js"></script>
 
+
 </body>
+
 
 </html>
