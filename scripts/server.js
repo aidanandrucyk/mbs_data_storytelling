@@ -24,7 +24,7 @@ app.post('/sendEmail', (req, res) => {
     from: 'your_email@gmail.com', // Replace with your email address
     to: formData.email,
     subject: 'No-Code Results',
-    text: `Dear ${formData.name},\n\nThank you for completing the form! Your results are...\n\nYour message: ${formData.message}\n\nBest regards,\nYour Name`
+    text: `Dear ${formData.name},\n\nThank you for completing the quiz! Your results are...\n\nYour message: ${formData.message}\n\nBest regards,\nYour Name`
   };
 
   // Send the email using Nodemailer
