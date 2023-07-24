@@ -89,6 +89,16 @@ function rankPlatforms(platforms) {
     // selection questions
 
     // preference questions
+    var cusRankingOne = document.getElementsById("customization");
+    cusRankingOne.addEventListener("click", function cOneFunction(){
+        for(let key in platforms){
+                if(platforms[key]["customization"] >= 3){
+                    platforms[key][ranking] += 3;
+                }
+        }
+    })
+    // probably a shorter way to write this out
+
 
     console.log(platforms);
     return platforms;
