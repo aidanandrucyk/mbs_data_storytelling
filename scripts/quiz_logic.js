@@ -135,6 +135,7 @@ function quizLogic() {
 
 function retakeQuiz() {
     location.reload();
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 window.onload = function () {   
