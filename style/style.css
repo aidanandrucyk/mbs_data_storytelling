@@ -10,7 +10,7 @@ html {
   --nwhite: hsl(60, 31%, 94%);
   --nwhiteaccent: hsl(40, 18%, 97%);
   --textcolor: hsl(48, 14%, 43%);
-  --accentcolor: hsl(41, 68%, 83%);
+  --accentcolor: #d61e5c;
   --nblack: hsl(50, 7%, 17%);
 
   /* PRIMARY */
@@ -28,8 +28,12 @@ html {
 }
 
 body {
-  background-color: var(--babyblue);
-  padding: 5% 10%;
+  background-color: none;
+  padding: 2.5% 5%;
+}
+
+div{
+  border-radius: 20px;
 }
 
 .quiz_container {
@@ -39,6 +43,10 @@ body {
 
 .quiz_container div {
   padding: 1% 1% 2% 1%;
+}
+
+h1, h3{
+  color: var(--accentcolor);
 }
 
 p {
@@ -55,7 +63,7 @@ a {
 }
 
 a:hover {
-  color: var(--textcolor);
+  color: var(--accentcolor);
   -webkit-filter: brightness(105%);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -75,11 +83,17 @@ a:visited {
 
 button {
   padding: .5%;
+  border: var(--accentcolor) 2px solid;
+  background-color: white;
+  border-radius: 1rem;
+  padding: .5rem;
+  margin: .5% 0.1%;
 }
 
 button:hover {
-  background-color: var(--babyblue);
-  -webkit-filter: brightness(105%);
+  background-color: var(--accentcolor);
+  filter: invert(1);
+  -webkit-filter: brightness(125%);
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
@@ -87,10 +101,21 @@ button:hover {
   transition: all .5s ease;
 }
 
+button:active{
+  background-color: var(--accentcolor);
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.green-text{
+  color: var(--teal);
+  display: inline;
+}
+
 .quiz_container {
-  border-radius: 20px;
-  border: #1a202c 2px solid;
-  background-color: var(--nwhiteaccent);
   padding: 1rem;
 }
 
@@ -99,6 +124,32 @@ button:hover {
 
 }
 
+/* RESULTS */
 #resultsPage{
   display: none;
+}
+
+.results-match{
+  background-color: var(--accentcolor);
+  color: white;
+}
+
+.results-bars {
+  background-color: white;
+  color: var(--nblack);
+  display: block;
+}
+
+.results-bar-score{
+  display: inline;
+}
+
+.sm-icon{
+  width: 5rem;
+  height: auto;
+}
+
+.results-details{
+  border: var(--nblack) 2px solid;
+  border-radius: 20px;
 }
