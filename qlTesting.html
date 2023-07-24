@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+NOTES:
+    remove <br> 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="No Code Quiz">
+    <meta name="author" content="Summer 2023 MBS Externship - Data Storytelling Team">
+    <title>Quiz for Selecting No-Code App Development Tools</title>
+
+    <!-- STYLE -->
+    <link href="style\style.css" rel="stylesheet">
+    <!-- Uncomment later & remove line above: 
+    <link href="https://raw.githubusercontent.com/aidanandrucyk/mbs_data_storytelling/main/style/style.css" rel="stylesheet">
+    -->
+    <!-- Vendor CSS Files -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+</head>
+
+<body>
+    <!-- CODE HERE -->
+    <div class="quiz_container">
+
+        <h1>Find a No-Code App Builder!</h1>
+
+        <p>By Data Storytelling</p>
+        <br>
+
+        <!-- @Uthara -->
+        <div class="quiz_dynamic">
+
+            <div id="questions">
+
+                <h2>QUESTIONS</h2>
+
+                <div class="yes_no">
+                    <h3>Yes or No Questions</h2>
+                        <ol class="yes_no_list">
+                            <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
+                                (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley, small
+                                niche
+                                hobbies/interests)
+                                <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <button id="questionOneNo" onclick="rankPlatforms()" value="2">NO</button>
+                            </li>
+                            <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
+                                publication?
+                                (Ex. Instagram stories, snapchat updates)
+                                (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                                <button id="questionTwoYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <button id="questionTwoNo" onclick="rankPlatforms()" value="2">NO</button>
+                            </li>
+                            <li class="yes_no_questions">
+                                3. Must your app contain large-scale features?
+                                (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
+                                customizations/
+                                features)
+                                <button id="questionThreeYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <button id="questionThreeNo" onclick="rankPlatforms()" value="2">NO</button>
+                            </li>
+                            <li class="yes_no_questions">
+                                4. Do you need your app to be in any language other than english?
+                                <button id="questionFourYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <button id="questionFourNo" onclick="rankPlatforms()" value="2">NO</button>
+                            </li>
+                            <li class="yes_no_questions">
+                                5.Does your audience include non-English speaking users?
+                                <button id="questionFiveYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <button id="questionFiveNo" onclick="rankPlatforms()" value="2">NO</button>
+                            </li>
+                        </ol>
+                </div>
+
+
+                
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+    </script>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+    <script src="scripts/quiz_logic.js" defer></script>
+    <script src="scripts/email_results.js"></script>
+
+
+</body>
+
+
+</html>
