@@ -56,14 +56,44 @@ function createPlatforms() {
 
 // QUIZ RATING MANIPULATION
 function rankPlatforms(platforms) {
-    // @Uthera implement quiz logic
+    // @Uthara implement quiz logic
     // change the "rating" of each as users press buttons
     // return the platforms dict with updated ratings
 
+    // yes or no questions
+    var questionOne = document.getElementById("questionOneYes");
+    questionOne.addEventListener("click", function qOneFunction(){
+        platforms["Appypie"]["ranking"] += 3;
+        alert("3 has been added to appypie");
+    });
+    var questionTwo = document.getElementById("questionTwoYes");
+    questionTwo.addEventListener("click", function qTwoFunction(){
+        platforms["Appypie"]["ranking"] += 3;
+        alert("3 has been added to appypie");
+    });
+    var questionThree = document.getElementById("questionThreeYes");
+    questionThree.addEventListener("click", function qThreeFunction(){
+        platforms["Appypie"]["ranking"] += 3;
+        platforms["Goodbarber"]["ranking"] += 3;
+        platforms["Shoutem"]["ranking"] += 3;
+        alert("3 has been added to appypie, goodbarber, and shoutem");
+    });
+    var questionFour = document.getElementById("questionFourYes");
+    questionFour.addEventListener("click", function qFourFunction(){
+        platforms["Goodbarber"]["ranking"] += 5;
+        platforms["Shoutem"]["ranking"] += 5;
+        alert("5 has been added to goodbarber, and shoutem");
+    });
 
+ 
+    // selection questions
 
+    // preference questions
+
+    console.log(platforms);
     return platforms;
 }
+    rankPlatforms(createPlatforms());
 
 // SORTING RATINGS
 function sortJsObject(dict) {
