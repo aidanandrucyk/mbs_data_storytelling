@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form with Email</title>
+  <title>Simple Email Form</title>
 </head>
 <body>
-  <form id="myForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br>
+  <form id="emailForm">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
     <input type="submit" value="Submit">
   </form>
 
   <script>
-    const form = document.getElementById('myForm');
+    const emailForm = document.getElementById('emailForm');
 
-    form.addEventListener('submit', (event) => {
+    emailForm.addEventListener('submit', (event) => {
       event.preventDefault(); // Prevent form submission
 
-      const formData = new FormData(form);
-      const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-      };
+      const email = emailForm.email.value;
 
       fetch('/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({ email })
       })
       .then(response => {
         if (response.ok) {
-          alert('Form submitted successfully. Thank you!');
-          form.reset();
+          alert('Email submitted successfully. Thank you!');
+          emailForm.reset();
         } else {
-          alert('Failed to submit form. Please try again later.');
+          alert('Failed to submit email. Please try again later.');
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('An error occurred while submitting the form. Please try again later.');
+        alert('An error occurred while submitting the email. Please try again later.');
       });
     });
   </script>
