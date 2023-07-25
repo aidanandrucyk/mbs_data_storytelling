@@ -152,16 +152,16 @@ function orderRankedPlatforms(platforms) {
 
 function displayResults(rankedPlatforms) {
     // Aidan
-    console.log(Object.keys(rankedPlatforms[0])[0]);
+    // console.log(Object.keys(rankedPlatforms[0])[0]);
     topPlatform = Object.keys(rankedPlatforms[0])[0];
-    console.log(rankedPlatforms[1][topPlatform]['dndCharacter']);
+    // console.log(rankedPlatforms[1][topPlatform]['dndCharacter']);
     document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'].toLowerCase() + '.png'
+    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
     document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
+    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
-    
 }
 
 function retakeQuiz() {
