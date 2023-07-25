@@ -103,7 +103,6 @@ function rankPlatforms(platforms) {
     console.log(platforms);
     return platforms;
 }
-    rankPlatforms(createPlatforms());
 
 // SORTING RATINGS
 function sortJsObject(dict) {
@@ -135,17 +134,6 @@ function orderRankedPlatforms(platforms) {
 }
 
 // SUBMITTING QUIZ & DISPLAYING RESULTS
-function submitQuiz() {
-    // Aidan & Uthara
-
-    document.getElementById("questions").style.display = 'none';
-    var x = document.getElementById("questions");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 
 function displayInfo(rankedPlatforms) {
     // Aidan
@@ -155,12 +143,20 @@ function quizLogic() {
     return orderRankedPlatforms(rankPlatforms(createPlatforms()));
 }
 
+function retakeQuiz() {
+    location.reload();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
 window.onload = function () {   
     // submit quiz
-    const targetDiv = document.getElementById("questions");
+    const targetDiv = document.getElementById("questionsPage");
     const newDiv = document.getElementById("resultsPage");
     const btn = document.getElementById("submit");
+
     btn.onclick = function () {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+
         if (targetDiv.style.display !== "none") {
             targetDiv.style.display = "none";
             newDiv.style.display = "block";
@@ -168,6 +164,6 @@ window.onload = function () {
             targetDiv.style.display = "block";
             newDiv.style.display = "none";
         }
-        displayInfo(quizLogic())
+        displayInfo(quizLogic());
     };
 };
