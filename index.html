@@ -181,30 +181,36 @@ NOTES:
                     <h2>RESULTS</h2>
                     <h4 class="platform-name"></h4>
                     <img class="large-image" src="" alt="image">
-                    
-                    <h4>You are a</h3><h3 class="dnd-name"></h3>
-                    <p class="dnd-description"></p>
 
-                    <h3>What's <p class="green-text">your</p> story?</h3>
-                    <div class="results-match">
-                        <h4>Your Character Match:</h4>
-                        <h2 class="results-rating"> </h2> 
-                        <h3 class="dnd-name"></h2>
-                        <div class="results-bars">
-                            <div class="results-bar-score">
-                            <img class="sm-icon" src="assets/Avatars/druid.png" alt=""> <h4>Bubble</h4> <h5>80%</h5>
-                            </div> 
-                            <div class="results-bar-score">
-                                <img class="sm-icon" src="assets/Avatars/druid.png" alt=""> <h4>Bubble</h4> <h5>80%</h5>
-                            </div> 
+                    <h4>You are a</h3>
+                        <h3 class="dnd-name"></h3>
+                        <p class="dnd-description"></p>
+
+                        <h3>What's <p class="green-text">your</p> story?</h3>
+                        <div class="results-match">
+                            <h4>Your Character Match:</h4>
+                            <h2 class="results-rating"> </h2>
+                            <h3 class="dnd-name">
+                                </h2>
+                                <div class="results-bars">
+                                    <div class="results-bar-score">
+                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
+                                        <h4>Bubble</h4>
+                                        <h5>80%</h5>
+                                    </div>
+                                    <div class="results-bar-score">
+                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
+                                        <h4>Bubble</h4>
+                                        <h5>80%</h5>
+                                    </div>
+                                </div>
                         </div>
-                    </div>
 
-                    <div class="results-details">
-                        <h4>Detailed Analysis:</h4>
-                        <img class="platform-icon" src="" alt="">
-                        <p class="platform-description"></p>
-                    </div>
+                        <div class="results-details">
+                            <h4>Detailed Analysis:</h4>
+                            <img class="platform-icon" src="" alt="">
+                            <p class="platform-description"></p>
+                        </div>
 
 
                 </div>
@@ -213,10 +219,33 @@ NOTES:
 
                 <div class="email-results">
                     <!-- @Ji -->
-                    <h2>WANT US TO EMAIL YOU YOUR RESULTS?</h2>
-                     <label for="recipient">Recipient:</label>
+                    <h2>SHARE YOUR RESULTS!</h2>
+                    <label for="recipient">Recipient:</label>
                     <input type="email" id="recipient" required>
                     <button id="sendEmailButton">Send Quiz Results</button>
+                </div>
+
+                <div class="twitter-results">
+                    <p>&nbsp;</p>
+                    <p><br>
+                    </p>
+                    <p><br>
+                    </p>
+
+                    <div class="icon-container"> <img src="assets/nav icons/twitterXicon (1).png" alt="(twitter) icon" onclick="tweet()"
+                            class="twitter-icon" height="48" width="48">
+                        <div class="icon-overlay" onclick="tweet()">
+                            <div class="tooltip">Tweet your results</div>
+                        </div>
+                    </div>
+
+                    <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png" alt="Facebook icon"
+                            onclick="shareOnFacebook()" height="48" width="48">
+                        <div class="icon-overlay" onclick="shareOnFacebook()">
+                            <div class="tooltip">Share on Facebook</div>
+                        </div>
+                    </div>
+
                 </div>
 
 

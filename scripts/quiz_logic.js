@@ -79,6 +79,9 @@ function createPlatforms() {
     return platforms;
 }
 
+// Platforms
+var results = [];
+
 // QUIZ RATING MANIPULATION
 function rankPlatforms(platforms) {
     // @Uthara implement quiz logic
@@ -87,30 +90,30 @@ function rankPlatforms(platforms) {
 
     // yes or no questions
     var questionOne = document.getElementById("questionOneYes");
-    questionOne.addEventListener("click", function qOneFunction(){
+    questionOne.addEventListener("click", function qOneFunction() {
         platforms["Appypie"]["ranking"] += 3;
         alert("3 has been added to appypie");
     });
     var questionTwo = document.getElementById("questionTwoYes");
-    questionTwo.addEventListener("click", function qTwoFunction(){
+    questionTwo.addEventListener("click", function qTwoFunction() {
         platforms["Appypie"]["ranking"] += 3;
         alert("3 has been added to appypie");
     });
     var questionThree = document.getElementById("questionThreeYes");
-    questionThree.addEventListener("click", function qThreeFunction(){
+    questionThree.addEventListener("click", function qThreeFunction() {
         platforms["Appypie"]["ranking"] += 3;
         platforms["Goodbarber"]["ranking"] += 3;
         platforms["Shoutem"]["ranking"] += 3;
         alert("3 has been added to appypie, goodbarber, and shoutem");
     });
     var questionFour = document.getElementById("questionFourYes");
-    questionFour.addEventListener("click", function qFourFunction(){
+    questionFour.addEventListener("click", function qFourFunction() {
         platforms["Goodbarber"]["ranking"] += 5;
         platforms["Shoutem"]["ranking"] += 5;
         alert("5 has been added to goodbarber, and shoutem");
     });
 
- 
+
     // selection questions
 
     // preference questions
@@ -121,20 +124,20 @@ function rankPlatforms(platforms) {
 
 // SORTING RATINGS
 function sort_object(obj) {
-    items = Object.keys(obj).map(function(key) {
+    items = Object.keys(obj).map(function (key) {
         return [key, obj[key]];
     });
-    items.sort(function(first, second) {
+    items.sort(function (first, second) {
         return second[1] - first[1];
     });
-    sorted_obj={}
-    items.forEach( function(v) {
+    sorted_obj = {}
+    items.forEach(function (v) {
         use_key = v[0]
         use_value = v[1]
         sorted_obj[use_key] = use_value
     })
-    return(sorted_obj)
-} 
+    return (sorted_obj)
+}
 
 function orderRankedPlatforms(platforms) {
     var rankedPlatforms = [];
@@ -142,11 +145,46 @@ function orderRankedPlatforms(platforms) {
     dict = {}
     for (const [key, value] of Object.entries(platforms)) {
         dict[key] = value["rating"]
-      }
+    }
     rankedPlatforms = sort_object(dict)
     console.log(rankedPlatforms)
     return [rankedPlatforms, platforms]
 }
+
+// SHARING TO SOCIAL MEDIA
+
+// Replace the following text with the tweet content you want to share
+
+
+// Function to open Twitter share popup
+
+function tweet() {
+    // text to share on Twitter
+    var textForSharing = "I am a " + results[1][Object.keys(results[0])[0]]['dndCharacter'] +", recommended app builders like "+ Object.keys(results[0])[0] + "! Find out which app development platform fits your personality & skillset! #DataStorytelling\n\nTake the quiz: https://devonmcguinness.com/";
+    const tweetUrl = "https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)};";
+    window.open(tweetUrl, "_blank");
+};
+
+// Function to share on Facebook
+function shareOnFacebook() {
+    // Check if the code is running on a secure environment (HTTPS)
+    if (location.protocol !== 'https:') {
+        alert("Facebook sharing requires a secure (HTTPS) environment.");
+        return;
+    }
+
+    // text to share on FB
+    var textForSharing = "I am a " + results[1][Object.keys(results[0])[0]]['dndCharacter'] +", recommended app builders like "+ Object.keys(results[0])[0] + "! Find out which app development platform fits your personality & skillset! #DataStorytelling\n\nTake the quiz: https://devonmcguinness.com/";
+
+    // Use the Facebook Share Dialog
+    FB.ui({
+        method: 'share',
+        href: 'https://devonmcguinness.com/',
+        quote: textForSharing
+    }, function (response) {
+        // Optional callback function after sharing is complete
+    });
+};
 
 // SUBMITTING QUIZ & DISPLAYING RESULTS
 
@@ -165,22 +203,23 @@ function displayResults(rankedPlatforms) {
 }
 
 function retakeQuiz() {
+    results = [];
     location.reload();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function quizLogic() {
     return orderRankedPlatforms(rankPlatforms(createPlatforms()));
 }
 
-window.onload = function () {   
+window.onload = function () {
     // submit quiz
     const targetDiv = document.getElementById("questionsPage");
     const newDiv = document.getElementById("resultsPage");
     const btn = document.getElementById("submit");
 
     btn.onclick = function () {
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
         if (targetDiv.style.display !== "none") {
             targetDiv.style.display = "none";
@@ -191,7 +230,9 @@ window.onload = function () {
         }
 
         //temp
-        displayResults(orderRankedPlatforms(createPlatforms()));
+        results = orderRankedPlatforms(createPlatforms());
+        displayResults(results);
+        // displayResults(orderRankedPlatforms(createPlatforms()));
         //displayResults(quizLogic());
     };
 };
