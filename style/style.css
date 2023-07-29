@@ -153,3 +153,56 @@ button:active{
   border: var(--nblack) 2px solid;
   border-radius: 20px;
 }
+
+
+/* TWITTER ICON */
+.icon-container {
+  display: inline-block;
+  position: relative;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.icon-container:hover .icon-overlay {
+  display: flex;
+}
+
+/* CSS for the tooltip text */
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.icon-container:hover .tooltip {
+  opacity: 1;
+}
+
+.icon-container:hover img {
+  filter: brightness(110%);
+}
+
+/* CSS for the rounded Twitter icon */
+.twitter-icon {
+  border-radius: 10px; /* Adjust the value to control the amount of rounding */
+}
