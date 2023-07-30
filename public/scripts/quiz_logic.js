@@ -91,168 +91,168 @@ function rankPlatforms(platforms) {
     // yes or no questions
     var questionOne = document.getElementById("questionOneYes");
     questionOne.addEventListener("click", function qOneFunction() {
-        platforms["Appypie"]["ranking"] += 3;
+        platforms["Appypie"]["rating"] += 3;
         alert("3 has been added to appypie");
     });
     var questionTwo = document.getElementById("questionTwoYes");
     questionTwo.addEventListener("click", function qTwoFunction() {
-        platforms["Appypie"]["ranking"] += 3;
+        platforms["Appypie"]["rating"] += 3;
         alert("3 has been added to appypie");
     });
     var questionThree = document.getElementById("questionThreeYes");
     questionThree.addEventListener("click", function qThreeFunction() {
-        platforms["Appypie"]["ranking"] += 3;
-        platforms["Goodbarber"]["ranking"] += 3;
-        platforms["Shoutem"]["ranking"] += 3;
+        platforms["Appypie"]["rating"] += 3;
+        platforms["Goodbarber"]["rating"] += 3;
+        platforms["Shoutem"]["rating"] += 3;
         alert("3 has been added to appypie, goodbarber, and shoutem");
     });
     var questionFour = document.getElementById("questionFourYes");
     questionFour.addEventListener("click", function qFourFunction() {
-        platforms["Goodbarber"]["ranking"] += 5;
-        platforms["Shoutem"]["ranking"] += 5;
+        platforms["Goodbarber"]["rating"] += 5;
+        platforms["Shoutem"]["rating"] += 5;
         alert("5 has been added to goodbarber, and shoutem");
     });
 
 
     // selection questions
-    var sevenWebsite = document.getElementsById("website");
+    var sevenWebsite = document.getElementById("website");
     sevenWebsite.addEventListener("click", function sevenWebsiteFunction(){
-        platforms["Bubble"]["ranking"] += 5;
-        platforms["Appypie"]["ranking"] += 5;
-        platforms["Goodbarber"]["ranking"] += 1;
+        platforms["Bubble"]["rating"] += 5;
+        platforms["Appypie"]["rating"] += 5;
+        platforms["Goodbarber"]["rating"] += 1;
     })
-    var sevenApp = document.getElementsById("mobile app");
+    var sevenApp = document.getElementById("mobile app");
     sevenApp.addEventListener("click", function sevenAppFunction(){
-        platforms["Shoutem"]["ranking"] += 5;
-        platforms["Appypie"]["ranking"] += 5;
-        platforms["Goodbarber"]["ranking"] += 5;
+        platforms["Shoutem"]["rating"] += 5;
+        platforms["Appypie"]["rating"] += 5;
+        platforms["Goodbarber"]["rating"] += 5;
     })
     var eightOne = document.getElementById("money one");
     eightOne.addEventListener("click", function eightOneFunction(){
-        platforms["VSCode"]["ranking"] += 3;
-        platforms["Bubble"]["ranking"] += 1;
-        platforms["Goodbarber"]["ranking"] -= 3;
-        platforms["Appypie"]["ranking"] -= 3;
-        platforms["Shoutem"]["ranking"] -= 3;
+        platforms["VSCode"]["rating"] += 3;
+        platforms["Bubble"]["rating"] += 1;
+        platforms["Goodbarber"]["rating"] -= 3;
+        platforms["Appypie"]["rating"] -= 3;
+        platforms["Shoutem"]["rating"] -= 3;
 
     })
     var eightTwo = document.getElementById("money two");
     eightOne.addEventListener("click", function eightTwoFunction(){
-        platforms["Bubble"]["ranking"] += 3;
-        platforms["Goodbarber"]["ranking"] += 3;
-        platforms["Appypie"]["ranking"] += 3;
-        platforms["Shoutem"]["ranking"] += 3;
+        platforms["Bubble"]["rating"] += 3;
+        platforms["Goodbarber"]["rating"] += 3;
+        platforms["Appypie"]["rating"] += 3;
+        platforms["Shoutem"]["rating"] += 3;
     })
     var eightThree = document.getElementById("money three")
     eightThree.addEventListener("click", function eightThreeFunction(){
-        platforms["Appypie"]["ranking"] += 3;
-        platforms["Shoutem"]["ranking"] += 3;
-        platforms["Bubble"]["ranking"] += 3;
+        platforms["Appypie"]["rating"] += 3;
+        platforms["Shoutem"]["rating"] += 3;
+        platforms["Bubble"]["rating"] += 3;
     })
     var eightFour = document.getElementById("money four");
     eightFour.addEventListener("click", function eightFourFunction(){
-        platforms["Shoutem"]["ranking"] += 3;
-        platforms["Bubble"]["ranking"] += 3;
+        platforms["Shoutem"]["rating"] += 3;
+        platforms["Bubble"]["rating"] += 3;
     })
     var eightFive = document.getElementById("money five");
     eightFive.addEventListener("click", function eightFiveFunction(){
-        platforms["Bubble"]["ranking"] += 3;
+        platforms["Bubble"]["rating"] += 3;
     })
 
     // preference questions
-    var cusRankingOne = document.getElementsById("one customization");
-    cusRankingOne.addEventListener("click", function cusOneFunction(){
+    var cusratingOne = document.getElementById("one customization");
+    cusratingOne.addEventListener("click", function cusOneFunction(){
         for(let key in platforms){
                 if(platforms[key]["customization"] >= 3){
-                    platforms[key]["ranking"] += 3;
+                    platforms[key]["rating"] += 3;
                 }
         }
     })
-    var buildRankingOne = document.getElementsById("one build time");
-    buildRankingOne.addEventListener("click", function buildOneFunction(){
+    var buildratingOne = document.getElementById("one build time");
+    buildratingOne.addEventListener("click", function buildOneFunction(){
         for(let key in platforms){
                 if(platforms[key]["time"] <= 3){
-                    platforms[key]["ranking"] += 3;
+                    platforms[key]["rating"] += 3;
                 }
         }
     })
-    var costRankingOne = document.getElementsById("one cost");
-    costRankingOne.addEventListener("click", function costOneFunction(){
+    var costratingOne = document.getElementById("one cost");
+    costratingOne.addEventListener("click", function costOneFunction(){
         for(let key in platforms){
                 if(platforms[key]["cost"] <= 3){
-                    platforms[key]["ranking"] += 3;
+                    platforms[key]["rating"] += 3;
                 }
         }
     })
-    var userRankingOne = document.getElementsById("one user friendliness");
-    userRankingOne.addEventListener("click", function userOneFunction(){
+    var userratingOne = document.getElementById("one user friendliness");
+    userratingOne.addEventListener("click", function userOneFunction(){
         for(let key in platforms){
                 if(platforms[key]["user_friendliness"] >= 3){
-                    platforms[key]["ranking"] += 3;
+                    platforms[key]["rating"] += 3;
                 }
         }
     })
-    var cusRankingTwo = document.getElementsById("two customization");
-    cusRankingTwo.addEventListener("click", function cusTwoFunction(){
+    var cusratingTwo = document.getElementById("two customization");
+    cusratingTwo.addEventListener("click", function cusTwoFunction(){
         for(let key in platforms){
                 if(platforms[key]["customization"] >= 3){
-                    platforms[key]["ranking"] += 2;
+                    platforms[key]["rating"] += 2;
                 }
         }
     })
-    var buildRankingTwo = document.getElementsById("two build time");
-    buildRankingTwo.addEventListener("click", function buildTwoFunction(){
+    var buildratingTwo = document.getElementById("two build time");
+    buildratingTwo.addEventListener("click", function buildTwoFunction(){
         for(let key in platforms){
                 if(platforms[key]["time"] <= 3){
-                    platforms[key]["ranking"] += 2;
+                    platforms[key]["rating"] += 2;
                 }
         }
     })
-    var costRankingTwo = document.getElementsById("two cost");
-    costRankingTwo.addEventListener("click", function costTwoFunction(){
+    var costratingTwo = document.getElementById("two cost");
+    costratingTwo.addEventListener("click", function costTwoFunction(){
         for(let key in platforms){
                 if(platforms[key]["cost"] <= 3){
-                    platforms[key]["ranking"] += 2;
+                    platforms[key]["rating"] += 2;
                 }
         }
     })
-    var userRankingTwo = document.getElementsById("two user friendliness");
-    userRankingTwo.addEventListener("click", function userTwoFunction(){
+    var userratingTwo = document.getElementById("two user friendliness");
+    userratingTwo.addEventListener("click", function userTwoFunction(){
         for(let key in platforms){
                 if(platforms[key]["user_friendliness"] >= 3){
-                    platforms[key]["ranking"] += 2;
+                    platforms[key]["rating"] += 2;
                 }
         }
     })
-    var cusRankingThree = document.getElementsById("three customization");
-    cusRankingThree.addEventListener("click", function cusThreeFunction(){
+    var cusratingThree = document.getElementById("three customization");
+    cusratingThree.addEventListener("click", function cusThreeFunction(){
         for(let key in platforms){
                 if(platforms[key]["customization"] >= 3){
-                    platforms[key]["ranking"] += 1;
+                    platforms[key]["rating"] += 1;
                 }
         }
     })
-    var buildRankingThree = document.getElementsById("three build time");
-    buildRankingThree.addEventListener("click", function buildThreeFunction(){
+    var buildratingThree = document.getElementById("three build time");
+    buildratingThree.addEventListener("click", function buildThreeFunction(){
         for(let key in platforms){
                 if(platforms[key]["time"] <= 3){
-                    platforms[key]["ranking"] += 1;
+                    platforms[key]["rating"] += 1;
                 }
         }
     })
-    var costRankingThree = document.getElementsById("three cost");
-    costRankingThree.addEventListener("click", function costThreeFunction(){
+    var costratingThree = document.getElementById("three cost");
+    costratingThree.addEventListener("click", function costThreeFunction(){
         for(let key in platforms){
                 if(platforms[key]["cost"] <= 3){
-                    platforms[key]["ranking"] += 1;
+                    platforms[key]["rating"] += 1;
                 }
         }
     })
-    var userRankingThree = document.getElementsById("three user friendliness");
-    userRankingThree.addEventListener("click", function userThreeFunction(){
+    var userratingThree = document.getElementById("three user friendliness");
+    userratingThree.addEventListener("click", function userThreeFunction(){
         for(let key in platforms){
                 if(platforms[key]["user_friendliness"] >= 3){
-                    platforms[key]["ranking"] += 1;
+                    platforms[key]["rating"] += 1;
                 }
         }
     })
