@@ -257,9 +257,6 @@ function rankPlatforms(platforms) {
         }
     })
 
-
-
-
     console.log(platforms);
     return platforms;
 }
@@ -330,6 +327,12 @@ function shareOnFacebook() {
 
 // SUBMITTING QUIZ & DISPLAYING RESULTS
 
+function retakeQuiz() {
+    results = [];
+    location.reload();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function displayResults(rankedPlatforms) {
     // Aidan
     // console.log(Object.keys(rankedPlatforms[0])[0]);
@@ -342,12 +345,6 @@ function displayResults(rankedPlatforms) {
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
-}
-
-function retakeQuiz() {
-    results = [];
-    location.reload();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function quizLogic() {
@@ -373,6 +370,8 @@ window.onload = function () {
 
         //temp
         results = orderRankedPlatforms(createPlatforms());
+        // results = quizLogic()
+        // console.log(results)
         displayResults(results);
         // displayResults(orderRankedPlatforms(createPlatforms()));
         //displayResults(quizLogic());
