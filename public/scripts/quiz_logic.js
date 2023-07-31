@@ -411,6 +411,46 @@ function displayResults(rankedPlatforms) {
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
+    var barPlatforms = [];
+    dict = {}
+    for (const [key, value] of Object.entries(platforms)) {
+        dict[key] = value["rating"]
+    }
+    barPlatforms = sort_object(dict);
+    let first = barPlatforms[Object.keys(barPlatforms)[0]];
+    let second = barPlatforms[Object.keys(barPlatforms)[1]];
+    let third = barPlatforms[Object.keys(barPlatforms)[2]];
+    let fourth = barPlatforms[Object.keys(barPlatforms)[3]];
+    let fifth = barPlatforms[Object.keys(barPlatforms)[4]];
+    let firstName = Object.keys(barPlatforms)[0]; 
+    let secondName = Object.keys(barPlatforms)[1];
+    let thirdName = Object.keys(barPlatforms)[2];
+    let fourthName= Object.keys(barPlatforms)[3];
+    let fifthName = Object.keys(barPlatforms)[4];
+    var xValues = [firstName, secondName, thirdName, fourthName, fifthName];
+    var yValues = [first,second,third,fourth,fifth];
+    var barColors = ["rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)"];
+    new Chart("myChart", {
+    type: "bar",
+    data: {
+    labels: xValues,
+    datasets: [{
+    backgroundColor: barColors,
+    borderWidth: 2,
+    borderRadius: Number.MAX_VALUE,
+    borderSkipped: false,
+    data: yValues
+    }]
+  },
+    options: {
+        indexAxis: 'y',
+        legend: {display: false},
+        title: {
+        display: true,
+        text: ""
+    }
+  }
+});
 }
 
 function retakeQuiz() {
