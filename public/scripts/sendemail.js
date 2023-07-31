@@ -6,7 +6,7 @@ document.getElementById('sendEmailButton').addEventListener('click', () => {
   }
 
   const subject = "Quiz Results";
-  const body = "You scored 8 out of 10 on the quiz. Well done!"; // just a dummy result
+  const body = "Here are your quiz results!"; 
 
   sendQuizResults(recipient, subject, body);
 });

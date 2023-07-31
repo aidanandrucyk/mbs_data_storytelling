@@ -13,7 +13,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 const port = 2525; //
 
-// Create a Nodemailer transporter using Elastic Email SMTP settings
 const transporter = nodemailer.createTransport({
   service: "gmail",
   port: 2525,
@@ -36,7 +35,7 @@ app.post('/sendEmail', async (req, res) => {
     const page = await browser.newPage();
 
     // Navigate to a dummy HTML page (can be replaced with the actual quiz results page URL)
-    await page.setContent(`<html><body>${body}</body></html>`);
+    await page.goto('https://www.google.com');
 
     // Take a screenshot of the page
     const screenshotBuffer = await page.screenshot();
@@ -44,7 +43,7 @@ app.post('/sendEmail', async (req, res) => {
 
     // Create the email message with the screenshot as an attachment
     const mailOptions = {
-      from: 'jibooks126@gmail.com', // Replace with your email address
+      from: 'jibooks126@gmail.com', 
       to: recipient,
       subject: subject,
       html: body,
