@@ -436,7 +436,7 @@ function displayResults(rankedPlatforms) {
     labels: xValues,
     datasets: [{
     backgroundColor: barColors,
-    borderWidth: 2,
+    borderWidth: 0.5,
     borderRadius: Number.MAX_VALUE,
     borderSkipped: false,
     data: yValues
