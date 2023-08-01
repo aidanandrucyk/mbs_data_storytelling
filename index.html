@@ -21,12 +21,15 @@
 
 <body>
     <!-- CODE HERE -->
+    <div class="background">
+        <img class="container" src="assets/Backgroud/sebastian-svenson-LpbyDENbQQg-unsplash.jpg" />
+      </div>
+    
     <div class="quiz_container">
 
         <h1>Find a No-Code App Builder!</h1>
 
         <p>By Data Storytelling</p>
-        <br>
 
         <!-- @Uthara -->
         <div class="quiz_dynamic">
@@ -42,14 +45,18 @@
                                 (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley, small
                                 niche
                                 hobbies/interests)
+                                <br>
                                 <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionOneNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
                                 publication?
                                 (Ex. Instagram stories, snapchat updates)
                                 (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                                <br>
                                 <button id="questionTwoYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionTwoNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions">
@@ -57,17 +64,23 @@
                                 (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
                                 customizations/
                                 features)
+                                <br>
                                 <button id="questionThreeYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionThreeNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions">
                                 4. Do you need your app to be in any language other than english?
+                                <br>
                                 <button id="questionFourYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionFourNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions">
                                 5.Does your audience include non-English speaking users?
+                                <br>
                                 <button id="questionFiveYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionFiveNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                         </ol>
@@ -88,8 +101,6 @@
                                 <br>
                             </li>
 
-                            <br>
-
                             <li class="select_one_question"> 7. What type of application would you like to build?
                                 <br>
                                 <button id="website" onclick="rankPlatforms()">SELECT!</button>
@@ -99,8 +110,6 @@
                                 Mobile App (e.g. iOS and/or Android mobile device)
                                 <br>
                             </li>
-
-                            <br>
 
                             <li class="select_one_question"> 8. What amount are you willing to spend per month?
                                 <p>(Including technical support)</p>
@@ -126,7 +135,7 @@
                 <div class="Ranking Questions ">
                     <h3>Ranking Questions</h2>
                         <ol class="select_one_list">
-                            <li class="select_one_question"> Select the the category that is your HIGHEST priority for
+                            <li class="select_one_question"> 9. Select the the category that is your HIGHEST priority for
                                 your platform:
                                 <br>
                                 <button id="one customization" onClick="rankPlatforms()">1. CUSTOMIZATION</button></a>
@@ -137,9 +146,9 @@
                                 <br>
                                 <button id="one user friendliness" onClick="rankPlatforms()">4. USER
                                     FRIENDLINESS</button></a>
-                                <br>
                             </li>
-                            <li class="select_one_question"> Select the the category that is your SECOND HIGHEST
+
+                            <li class="select_one_question"> 10. Select the the category that is your SECOND HIGHEST
                                 priority for your platform:
                                 <br>
                                 <button id="two customization" onClick="rankPlatforms()">1. CUSTOMIZATION</button></a>
@@ -150,9 +159,8 @@
                                 <br>
                                 <button id="two user friendliness" onClick="rankPlatforms()">4. USER
                                     FRIENDLINESS</button></a>
-                                <br>
                             </li>
-                            <li class="select_one_question"> Select the the category that is your THIRD HIGHEST priority
+                            <li class="select_one_question"> 11. Select the the category that is your THIRD HIGHEST priority
                                 for your platform:
                                 <br>
                                 <button id="three customization" onClick="rankPlatforms()">1. CUSTOMIZATION</button></a>
@@ -163,9 +171,7 @@
                                 <br>
                                 <button id="three user friendliness" onClick="rankPlatforms()">4. USER
                                     FRIENDLINESS</button></a>
-                                <br>
                             </li>
-                            <br>
                 </div>
 
                 <button id="submit" onclick="submitQuiz()">Submit Quiz</button>
