@@ -34,7 +34,6 @@ app.post('/sendEmail', async (req, res) => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    // Navigate to a dummy HTML page (can be replaced with the actual quiz results page URL)
     await page.goto('https://www.google.com');
 
     // Take a screenshot of the page
@@ -43,7 +42,7 @@ app.post('/sendEmail', async (req, res) => {
 
     // Create the email message with the screenshot as an attachment
     const mailOptions = {
-      from: 'jibooks126@gmail.com', 
+      from: 'jibooks126@gmail.com',
       to: recipient,
       subject: subject,
       html: body,
