@@ -398,11 +398,11 @@ function displayResults(rankedPlatforms) {
     // Aidan
     topPlatform = Object.keys(rankedPlatforms[0])[0];
     document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
+    document.querySelector('.large-image').src = 'public/assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
     document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
-    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
+    document.querySelector('.platform-icon').src = 'public/assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
     var barPlatforms = [];
     dict = {}
