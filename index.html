@@ -16,7 +16,8 @@
     -->
     <!-- Vendor CSS Files -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-
+    <!-- bar chart ref-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><body>
 </head>
 
 <body>
@@ -28,7 +29,6 @@
     <div class="quiz_container">
 
         <h1>Find a No-Code App Builder!</h1>
-
         <p>By Data Storytelling</p>
 
         <!-- @Uthara -->
@@ -90,14 +90,14 @@
                         <ol class="select_one_list">
                             <li class="select_one_question"> 6. How would you like to manage data for your app?
                                 <br>
-                                <a href=""><button>SELECT</button></a> With the platform to build the app (i.e. AWS,
+                                <button id="data one" onclick="rankPlatforms(platforms)" >SELECT</button>With the platform to build the app (i.e. AWS,
                                 Azure, etc.)
                                 <br>
-                                <a href=""><button>SELECT</button></a> Using Google Workspace (i.e. Google Sheets)
+                                <button id="data two" onclick="rankPlatforms(platforms)" >SELECT</button>Using Google Workspace (i.e. Google Sheets)
                                 <br>
-                                <a href=""><button>SELECT</button></a> Using Office 365 (i.e. Microsoft Excel)
+                                <button id="data three" onclick="rankPlatforms(platforms)" >SELECT</button> Using Office 365 (i.e. Microsoft Excel)
                                 <br>
-                                <a href=""><button>SELECT</button></a> My app does not have any data requirements
+                                <button id="data four" onclick="rankPlatforms(platforms)" >SELECT</button> My app does not have any data requirements
                                 <br>
                             </li>
 
@@ -194,7 +194,7 @@
                             <h3 class="dnd-name">
                                 </h2>
                                 <div class="results-bars">
-                                    <div class="results-bar-score">
+                                    <!-- <div class="results-bar-score">
                                         <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
                                         <h4>Bubble</h4>
                                         <h5>80%</h5>
@@ -203,7 +203,8 @@
                                         <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
                                         <h4>Bubble</h4>
                                         <h5>80%</h5>
-                                    </div>
+                                    </div> -->
+                                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
                                 </div>
                         </div>
 

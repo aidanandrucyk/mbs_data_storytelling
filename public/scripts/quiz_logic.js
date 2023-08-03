@@ -72,7 +72,6 @@ var platforms = {
     }
 };
 
-
 // RECREATE DATA
 function createPlatforms() {
     platforms = {
@@ -187,6 +186,7 @@ function rankPlatforms() {
         platforms["Appypie"]["rating"] += 5;
         platforms["Goodbarber"]["rating"] += 1;
     })
+
     var sevenApp = document.getElementsById("mobile app");
     sevenApp.addEventListener("click", function sevenAppFunction() {
         platforms["Shoutem"]["rating"] += 5;
@@ -225,7 +225,7 @@ function rankPlatforms() {
         platforms["Bubble"]["rating"] += 3;
     })
 
-    // preference questions
+// preference questions
     var cusRankingOne = document.getElementsById("one customization");
     cusRankingOne.addEventListener("click", function cusOneFunction() {
         for (let key in platforms) {
@@ -398,15 +398,64 @@ function displayResults(rankedPlatforms) {
     // Aidan
     topPlatform = Object.keys(rankedPlatforms[0])[0];
     document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
+    document.querySelector('.large-image').src = 'public/assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
     document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
-    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
+    document.querySelector('.platform-icon').src = 'public/assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
+    var barPlatforms = [];
+    dict = {}
+    for (const [key, value] of Object.entries(platforms)) {
+        dict[key] = value["rating"]
+    }
+    barPlatforms = sort_object(dict);
+    let first = barPlatforms[Object.keys(barPlatforms)[0]];
+    let second = barPlatforms[Object.keys(barPlatforms)[1]];
+    let third = barPlatforms[Object.keys(barPlatforms)[2]];
+    let fourth = barPlatforms[Object.keys(barPlatforms)[3]];
+    let fifth = barPlatforms[Object.keys(barPlatforms)[4]];
+    let firstName = Object.keys(barPlatforms)[0]; 
+    let secondName = Object.keys(barPlatforms)[1];
+    let thirdName = Object.keys(barPlatforms)[2];
+    let fourthName= Object.keys(barPlatforms)[3];
+    let fifthName = Object.keys(barPlatforms)[4];
+    var xValues = [firstName, secondName, thirdName, fourthName, fifthName];
+    var yValues = [first,second,third,fourth,fifth];
+    var barColors = ["rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)"];
+    new Chart("myChart", {
+    type: "bar",
+    data: {
+    labels: xValues,
+    datasets: [{
+    backgroundColor: barColors,
+    borderWidth: 0.5,
+    borderRadius: Number.MAX_VALUE,
+    borderSkipped: false,
+    data: yValues
+    }]
+  },
+    options: {
+        indexAxis: 'y',
+        legend: {display: false},
+        title: {
+        display: true,
+        text: ""
+    }
+  }
+});
 }
 
-// SUBMIT QUIZ
+function retakeQuiz() {
+    results = [];
+    location.reload();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function quizLogic() {
+    // changed
+    return orderRankedPlatforms(rankPlatforms(platforms));
+}
 
 function submitQuiz() {
     const targetDiv = document.getElementById("questionsPage");

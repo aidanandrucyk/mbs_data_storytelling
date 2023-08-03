@@ -15,7 +15,7 @@ NOTES:
     <title>Quiz for Selecting No-Code App Development Tools</title>
 
     <!-- STYLE -->
-    <link href="public/style/style.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
     <!-- Uncomment later & remove line above: 
     <link href="https://raw.githubusercontent.com/aidanandrucyk/mbs_data_storytelling/main/style/style.css" rel="stylesheet">
     -->
@@ -26,10 +26,10 @@ NOTES:
 
 <body>
     <!-- CODE HERE -->
+    <!-- CODE HERE -->
     <div class="quiz_container">
 
         <h1>Find a No-Code App Builder!</h1>
-
         <p>By Data Storytelling</p>
         <br>
 
@@ -82,14 +82,14 @@ NOTES:
                         <ol class="select_one_list">
                             <li class="select_one_question"> 6. How would you like to manage data for your app?
                                 <br>
-                                <a href=""><button>SELECT</button></a> With the platform to build the app (i.e. AWS,
+                                <button id="data one" onclick="rankPlatforms(platforms)" >SELECT</button>With the platform to build the app (i.e. AWS,
                                 Azure, etc.)
                                 <br>
-                                <a href=""><button>SELECT</button></a> Using Google Workspace (i.e. Google Sheets)
+                                <button id="data two" onclick="rankPlatforms(platforms)" >SELECT</button>Using Google Workspace (i.e. Google Sheets)
                                 <br>
-                                <a href=""><button>SELECT</button></a> Using Office 365 (i.e. Microsoft Excel)
+                                <button id="data three" onclick="rankPlatforms(platforms)" >SELECT</button> Using Office 365 (i.e. Microsoft Excel)
                                 <br>
-                                <a href=""><button>SELECT</button></a> My app does not have any data requirements
+                                <button id="data four" onclick="rankPlatforms(platforms)" >SELECT</button> My app does not have any data requirements
                                 <br>
                             </li>
 
@@ -193,16 +193,7 @@ NOTES:
                             <h3 class="dnd-name">
                                 </h2>
                                 <div class="results-bars">
-                                    <div class="results-bar-score">
-                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
-                                        <h4>Bubble</h4>
-                                        <h5>80%</h5>
-                                    </div>
-                                    <div class="results-bar-score">
-                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
-                                        <h4>Bubble</h4>
-                                        <h5>80%</h5>
-                                    </div>
+                                    <canvas id="myChart" style="width:100%;"></canvas>
                                 </div>
                         </div>
 
@@ -259,9 +250,9 @@ NOTES:
 
     <!-- JAVASCRIPT -->
     <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
-    <script src="public/scripts/quiz_logic.js"></script>
-    <script src="public/scripts/email_results.js"></script>
-    <script src="public/scripts/sendemail.js"></script>
+    <script src="scripts/quiz_logic.js"></script>
+    <script src="scripts/email_results.js"></script>
+    <script src="scripts/sendemail.js"></script>
 
 </body>
 
