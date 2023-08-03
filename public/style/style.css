@@ -36,9 +36,33 @@ div{
   border-radius: 20px;
 }
 
+.background,
+.background * {
+  box-sizing: border-box;
+}
+.background {
+  padding: 0px 0px 0px 0px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position:fixed;
+}
+.img_container {
+  flex-shrink: 0;
+  width:fit-content;
+  height:auto;
+  position:fixed;
+  filter: blur(30px);
+}
+
 .quiz_container {
+  display:flex;
+  flex-direction: column;
+  gap: 64px;
   align-items: center;
-  text-align: center;
+  justify-content: flex-start;
+  position:relative;
 }
 
 .quiz_container div {
@@ -54,7 +78,18 @@ p {
 }
 
 li {
-  list-style: none;
+  background: rgba(248, 237, 242, 0.7);
+  border-radius: 10px;
+  padding: 48px 32px 48px 32px;
+  margin:32px;
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 a {
