@@ -46,9 +46,9 @@
                                 niche
                                 hobbies/interests)
                                 <br>
-                                <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <button id="questionOneYes" onclick="selectQuestionOne()" value="1">YES</button>
                                 <br>
-                                <button id="questionOneNo" onclick="rankPlatforms()" value="2">NO</button>
+                                <button id="questionOneNo" onclick="selectQuestionOne()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
                                 publication?
@@ -75,13 +75,6 @@
                                 <button id="questionFourYes" onclick="rankPlatforms()" value="1">YES</button>
                                 <br>
                                 <button id="questionFourNo" onclick="rankPlatforms()" value="2">NO</button>
-                            </li>
-                            <li class="yes_no_questions">
-                                5.Does your audience include non-English speaking users?
-                                <br>
-                                <button id="questionFiveYes" onclick="rankPlatforms()" value="1">YES</button>
-                                <br>
-                                <button id="questionFiveNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                         </ol>
                 </div>
@@ -194,17 +187,7 @@
                             <h3 class="dnd-name">
                                 </h2>
                                 <div class="results-bars">
-                                    <!-- <div class="results-bar-score">
-                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
-                                        <h4>Bubble</h4>
-                                        <h5>80%</h5>
-                                    </div>
-                                    <div class="results-bar-score">
-                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
-                                        <h4>Bubble</h4>
-                                        <h5>80%</h5>
-                                    </div> -->
-                                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                                    <canvas id="myChart" style="width:100%;"></canvas>
                                 </div>
                         </div>
 
@@ -252,6 +235,9 @@
                     <!-- @Ji -->
                     <h2>Survey</h2>
                     <p>Enter your email here:</p>
+                    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdx-BbI6OlRJg6yS_I24R_U9P8RoK5N0rM6H7c0KM5UHYLomw/viewform?usp=sf_link">
+                        <button>Survey</button>
+                    </a>
                 </div>
 
             </div>

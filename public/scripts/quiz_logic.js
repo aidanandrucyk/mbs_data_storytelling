@@ -148,35 +148,294 @@ function createPlatforms() {
     };
 }
 
+let plain = 'white';
+let active = '#d61e5c';
+let nblack = '#2e2d28';
+
+function selectQuestionOne(){
+    // Q1
+    document.getElementById("questionThreeYes").style.backgroundColor = plain;
+    document.getElementById("questionThreeNo").style.backgroundColor = plain;
+    // Q1 yes
+    document.getElementById("questionOneYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        if (document.getElementById("questionOneYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionOneYes").style.backgroundColor = active;
+            document.getElementById("questionOneYes").style.color = plain;
+
+            document.getElementById("questionOneNo").style.backgroundColor = plain;
+            document.getElementById("questionOneNo").style.color = nblack;
+        }
+    });
+    // Q1 no
+    document.getElementById("questionOneNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionOneNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionOneYes").style.backgroundColor = active) {
+
+                platforms['Appypie']['rating'] -= 3;
+
+                document.getElementById("questionOneYes").style.backgroundColor = plain;
+                document.getElementById("questionOneYes").style.color = nblack;
+            }
+
+            document.getElementById("questionOneNo").style.backgroundColor = active;
+            document.getElementById("questionOneNo").style.color = plain;
+        }
+    });
+}
+
+
+function selectQuestionTwo(){
+    document.getElementById("questionTwoYes").style.backgroundColor = plain;
+    document.getElementById("questionTwoYes").style.color = nblack;
+    document.getElementById("questionTwoNo").style.backgroundColor = plain;
+    document.getElementById("questionTwoNo").style.color = nblack;
+
+    // Q2 yes
+    document.getElementById("questionTwoYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionTwoYes").style.backgroundColor)
+        if (document.getElementById("questionTwoYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionTwoYes").style.backgroundColor = active;
+            document.getElementById("questionTwoYes").style.color = plain;
+
+            document.getElementById("questionTwoNo").style.backgroundColor = plain;
+            document.getElementById("questionTwoNo").style.color = nblack;
+        }
+    });
+    // Q2 no
+    document.getElementById("questionTwoNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionTwoNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionTwoYes").style.backgroundColor = active) {
+
+                platforms['Appypie']['rating'] -= 3;
+
+                document.getElementById("questionTwoYes").style.backgroundColor = plain;
+                document.getElementById("questionTwoYes").style.color = nblack;
+            }
+
+            document.getElementById("questionTwoNo").style.backgroundColor = active;
+            document.getElementById("questionTwoNo").style.color = plain;
+        }
+    });
+}
+
+function selectQuestionThree(){
+    document.getElementById("questionThreeYes").style.backgroundColor = plain;
+    document.getElementById("questionThreeYes").style.color = nblack;
+    document.getElementById("questionThreeNo").style.backgroundColor = plain;
+    document.getElementById("questionThreeNo").style.color = nblack;
+
+    // Q2 yes
+    document.getElementById("questionThreeYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionThreeYes").style.backgroundColor)
+        if (document.getElementById("questionThreeYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionThreeYes").style.backgroundColor = active;
+            document.getElementById("questionThreeYes").style.color = plain;
+
+            document.getElementById("questionThreeNo").style.backgroundColor = plain;
+            document.getElementById("questionThreeNo").style.color = nblack;
+        }
+    });
+    // Q2 no
+    document.getElementById("questionThreeNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionThreeNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionThreeYes").style.backgroundColor = active) {
+
+                platforms['Appypie']['rating'] -= 3;
+
+                document.getElementById("questionThreeYes").style.backgroundColor = plain;
+                document.getElementById("questionThreeYes").style.color = nblack;
+            }
+
+            document.getElementById("questionThreeNo").style.backgroundColor = active;
+            document.getElementById("questionThreeNo").style.color = plain;
+        }
+    });
+}
+
+// preparing backgrounds for rankPlatforms()
+function setBackgrounds(){
+
+    document.getElementById("questionOneYes").style.backgroundColor = plain;
+    document.getElementById("questionOneNo").style.backgroundColor = plain;
+
+    document.getElementById("questionTwoYes").style.backgroundColor = plain;
+    document.getElementById("questionTwoNo").style.backgroundColor = plain;
+
+    document.getElementById("questionThreeYes").style.backgroundColor = plain;
+    document.getElementById("questionThreeNo").style.backgroundColor = plain;
+
+
+    document.getElementById("questionFourYes").style.backgroundColor = plain;
+    document.getElementById("questionFourNo").style.backgroundColor = plain;
+}
+
+setBackgrounds();
+
 // QUIZ RATING MANIPULATION
 function rankPlatforms() {
-    // @Uthara implement quiz logic
-    // change the "rating" of each as users press buttons
-    // return the platforms dict with updated ratings
-
     // yes or no questions
-    var questionOne = document.getElementById("questionOneYes");
-    questionOne.addEventListener("click", function qOneFunction() {
-        platforms['Appypie']['rating'] += 3;
-        // alert("3 has been added to appypie");
+    
+    // Q1
+    // Q1 yes
+    document.getElementById("questionOneYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionOneYes").style.backgroundColor)
+        if (document.getElementById("questionOneYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionOneYes").style.backgroundColor = active;
+            document.getElementById("questionOneYes").style.color = plain;
+
+            document.getElementById("questionOneNo").style.backgroundColor = plain;
+            document.getElementById("questionOneNo").style.color = nblack;
+        }
     });
-    var questionTwo = document.getElementById("questionTwoYes");
-    questionTwo.addEventListener("click", function qTwoFunction() {
-        platforms["Appypie"]["rating"] += 3;
-        // alert("3 has been added to appypie");
+    // Q1 no
+    document.getElementById("questionOneNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionOneNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionOneYes").style.backgroundColor === active) {
+
+                platforms['Appypie']['rating'] -= 3;
+
+                document.getElementById("questionOneYes").style.backgroundColor = plain;
+                document.getElementById("questionOneYes").style.color = nblack;
+            }
+
+            document.getElementById("questionOneNo").style.backgroundColor = active;
+            document.getElementById("questionOneNo").style.color = plain;
+        }
     });
-    var questionThree = document.getElementById("questionThreeYes");
-    questionThree.addEventListener("click", function qThreeFunction() {
-        platforms["Appypie"]["rating"] += 3;
-        platforms["Goodbarber"]["rating"] += 3;
-        platforms["Shoutem"]["rating"] += 3;
-        // alert("3 has been added to appypie, goodbarber, and shoutem");
+
+
+    // Q2
+    // Q2 yes
+    document.getElementById("questionTwoYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionTwoYes").style.backgroundColor)
+        if (document.getElementById("questionTwoYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionTwoYes").style.backgroundColor = active;
+            document.getElementById("questionTwoYes").style.color = plain;
+
+            document.getElementById("questionTwoNo").style.backgroundColor = plain;
+            document.getElementById("questionTwoNo").style.color = nblack;
+        }
     });
-    var questionFour = document.getElementById("questionFourYes");
-    questionFour.addEventListener("click", function qFourFunction() {
-        platforms["Goodbarber"]["rating"] += 5;
-        platforms["Shoutem"]["rating"] += 5;
-        // alert("5 has been added to goodbarber, and shoutem");
+    // Q2 no
+    document.getElementById("questionTwoNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionTwoNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionTwoYes").style.backgroundColor === active) {
+
+                platforms['Appypie']['rating'] -= 3;
+
+                document.getElementById("questionTwoYes").style.backgroundColor = plain;
+                document.getElementById("questionTwoYes").style.color = nblack;
+            }
+
+            document.getElementById("questionTwoNo").style.backgroundColor = active;
+            document.getElementById("questionTwoNo").style.color = plain;
+        }
+    });
+
+    // Q3
+    // Q3 yes
+    document.getElementById("questionThreeYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionThreeYes").style.backgroundColor)
+        if (document.getElementById("questionThreeYes").style.backgroundColor === plain) {
+
+            platforms["Appypie"]["rating"] += 3;
+            platforms["Goodbarber"]["rating"] += 3;
+            platforms["Shoutem"]["rating"] += 3;
+
+            document.getElementById("questionThreeYes").style.backgroundColor = active;
+            document.getElementById("questionThreeYes").style.color = plain;
+
+            document.getElementById("questionThreeNo").style.backgroundColor = plain;
+            document.getElementById("questionThreeNo").style.color = nblack;
+        }
+    });
+    // Q3 no
+    document.getElementById("questionThreeNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionThreeNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionThreeYes").style.backgroundColor === active) {
+
+                platforms["Appypie"]["rating"] -= 3;
+                platforms["Goodbarber"]["rating"] -= 3;
+                platforms["Shoutem"]["rating"] -= 3;
+
+                document.getElementById("questionThreeYes").style.backgroundColor = plain;
+                document.getElementById("questionThreeYes").style.color = nblack;
+            }
+
+            document.getElementById("questionThreeNo").style.backgroundColor = active;
+            document.getElementById("questionThreeNo").style.color = plain;
+        }
+    });
+
+    // Q4
+    document.getElementById("questionFourYes").style.backgroundColor = plain;
+    document.getElementById("questionFourNo").style.backgroundColor = plain;
+    // Q4 yes
+    document.getElementById("questionFourYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionFourYes").style.backgroundColor)
+        if (document.getElementById("questionFourYes").style.backgroundColor === plain) {
+
+            platforms["Goodbarber"]["rating"] += 5;
+            platforms["Shoutem"]["rating"] += 5;
+
+            document.getElementById("questionFourYes").style.backgroundColor = active;
+            document.getElementById("questionFourYes").style.color = plain;
+
+            document.getElementById("questionFourNo").style.backgroundColor = plain;
+            document.getElementById("questionFourNo").style.color = nblack;
+        }
+    });
+    // Q4 no
+    document.getElementById("questionFourNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionFourNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionFourYes").style.backgroundColor === active) {
+
+                platforms["Goodbarber"]["rating"] -= 5;
+                platforms["Shoutem"]["rating"] -= 5;
+
+                document.getElementById("questionFourYes").style.backgroundColor = plain;
+                document.getElementById("questionFourYes").style.color = nblack;
+            }
+
+            document.getElementById("questionFourNo").style.backgroundColor = active;
+            document.getElementById("questionFourNo").style.color = plain;
+        }
     });
 
     // selection questions
@@ -225,7 +484,7 @@ function rankPlatforms() {
         platforms["Bubble"]["rating"] += 3;
     })
 
-// preference questions
+    // preference questions
     var cusRankingOne = document.getElementsById("one customization");
     cusRankingOne.addEventListener("click", function cusOneFunction() {
         for (let key in platforms) {
@@ -398,11 +657,11 @@ function displayResults(rankedPlatforms) {
     // Aidan
     topPlatform = Object.keys(rankedPlatforms[0])[0];
     document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'public/assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
+    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
     document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
-    document.querySelector('.platform-icon').src = 'public/assets/platform_logo/' + topPlatform + '.png'
+    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
     var barPlatforms = [];
     dict = {}
@@ -415,35 +674,35 @@ function displayResults(rankedPlatforms) {
     let third = barPlatforms[Object.keys(barPlatforms)[2]];
     let fourth = barPlatforms[Object.keys(barPlatforms)[3]];
     let fifth = barPlatforms[Object.keys(barPlatforms)[4]];
-    let firstName = Object.keys(barPlatforms)[0]; 
+    let firstName = Object.keys(barPlatforms)[0];
     let secondName = Object.keys(barPlatforms)[1];
     let thirdName = Object.keys(barPlatforms)[2];
-    let fourthName= Object.keys(barPlatforms)[3];
+    let fourthName = Object.keys(barPlatforms)[3];
     let fifthName = Object.keys(barPlatforms)[4];
     var xValues = [firstName, secondName, thirdName, fourthName, fifthName];
-    var yValues = [first,second,third,fourth,fifth];
-    var barColors = ["rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)"];
+    var yValues = [first, second, third, fourth, fifth];
+    var barColors = ["rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"];
     new Chart("myChart", {
-    type: "bar",
-    data: {
-    labels: xValues,
-    datasets: [{
-    backgroundColor: barColors,
-    borderWidth: 0.5,
-    borderRadius: Number.MAX_VALUE,
-    borderSkipped: false,
-    data: yValues
-    }]
-  },
-    options: {
-        indexAxis: 'y',
-        legend: {display: false},
-        title: {
-        display: true,
-        text: ""
-    }
-  }
-});
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                borderWidth: 0.5,
+                borderRadius: Number.MAX_VALUE,
+                borderSkipped: false,
+                data: yValues
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            legend: { display: false },
+            title: {
+                display: true,
+                text: ""
+            }
+        }
+    });
 }
 
 function retakeQuiz() {
