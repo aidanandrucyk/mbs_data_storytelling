@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 
@@ -9,7 +9,7 @@ html {
   /* Greyscale */
   --nwhite: hsl(60, 31%, 94%);
   --nwhiteaccent: hsl(40, 18%, 97%);
-  --textcolor: hsl(48, 14%, 43%);
+  --textcolor: hsl(40, 2%, 35%);
   --accentcolor: #d61e5c;
   --nblack: #2e2d28;
 
@@ -31,8 +31,12 @@ body {
   background-color: none;
 }
 
+h2{
+
+}
+
 div{
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 
 .background,
@@ -61,34 +65,44 @@ div{
 .quiz_container {
   display:flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 2%;
   align-items: center;
   justify-content: flex-start;
   position:relative;
 }
 
+.quiz_dynamic{
+  margin: 0% 5%;
+  padding-top: 0%;
+}
+
 .quiz_container div {
-  padding: 1% 1% 2% 1%;
+  padding: 1% 0% 0% 0%;
 }
 
 h1{
   color: var(--accentcolor);
-  margin-top: 40px;
+  margin-top: 2rem;
+  font-weight: 900;
 }
 
 h3{
-  color: var(--accentcolor);
+  color: var(--nblack);
+  text-align: center;
 }
 
 p {
   color: var(--textcolor);
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 li {
   background: rgba(248, 237, 242, 0.7);
+  font-weight: 600;
   border-radius: 10px;
-  padding: 24px 32px 24px 32px;
-  margin:32px;
+  padding: 2rem 3rem;
+  margin:2rem;
   display:inline-flexbox;
   flex-direction: column;
   align-items: flex-start;
@@ -96,6 +110,10 @@ li {
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
+}
+
+li button{
+  margin: 7.5px 2.5px;
 }
 
 a {
@@ -129,7 +147,7 @@ button {
   filter: grayscale(100%);
   border-radius: 1rem;
   padding: .5rem;
-  margin: 8px;
+  margin: 1rem 0.5rem;
 }
 
 button:hover {
@@ -153,12 +171,22 @@ button:hover {
 
 #questions{
   display: block;
+}
 
+.center{
+  text-align: center;
+}
+
+#submit{
+  padding: 2%;
 }
 
 /* RESULTS */
+
+
 #resultsPage{
   display: none;
+  text-align: center;
 }
 
 .results-match{
@@ -166,10 +194,20 @@ button:hover {
   color: white;
 }
 
+.large-image{
+  border-radius: 50%;
+
+}
+
 .results-bars {
   background-color: white;
   color: var(--nblack);
   display: block;
+  margin: 50px;
+  align-items: center;
+
+
+
 }
 
 .results-bar-score{
@@ -181,12 +219,13 @@ button:hover {
   height: auto;
 }
 
+
+
 .results-details{
   border: var(--nblack) 2px solid;
   background-color: white;
   border-radius: 20px;
 }
-
 
 /* TWITTER ICON */
 .icon-container {

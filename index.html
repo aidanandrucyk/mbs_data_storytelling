@@ -28,26 +28,18 @@
         </div>
 
         <div class="quiz_container">
-
-
             <h1>Find a No-Code App Builder!</h1>
-            <p>By Data Storytelling</p>
-
-            <!-- @Uthara -->
             <div class="quiz_dynamic">
-
                 <div id="questionsPage">
-
-                    <h2>QUESTIONS</h2>
-
                     <div class="yes_no">
                         <h3>Yes or No Questions</h2>
                             <ol class="yes_no_list">
                                 <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
-                                    (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley,
-                                    small
-                                    niche
-                                    hobbies/interests)
+                                    (high ex: Uber, Instagram, Airbnb)
+                                    <p> (low ex: Local Restaurant, Local Bowling Alley,
+                                        small
+                                        niche
+                                        hobbies/interests)</p>
                                     <br>
                                     <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
                                     <br>
@@ -55,8 +47,8 @@
                                 </li>
                                 <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
                                     publication?
-                                    (Ex. Instagram stories, snapchat updates)
-                                    (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                                    <p>(Ex. Instagram stories, snapchat updates)
+                                        (low ex: order notifs, entry updates, updating a menu, change/update notifs)</p>
                                     <br>
                                     <button id="questionTwoYes" onclick="rankPlatforms()" value="1">YES</button>
                                     <br>
@@ -64,9 +56,9 @@
                                 </li>
                                 <li class="yes_no_questions">
                                     3. Must your app contain large-scale features?
-                                    (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
-                                    customizations/
-                                    features)
+                                    <p>(Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
+                                        customizations/
+                                        features)</p>
                                     <br>
                                     <button id="questionThreeYes" onclick="rankPlatforms()" value="1">YES</button>
                                     <br>
@@ -84,7 +76,7 @@
                     <div class="select_qs">
                         <h3>Select One Questions</h2>
                             <ol class="select_one_list">
-                                <li class="select_one_question"> 6. How would you like to manage data for your app?
+                                <li class="select_one_question"> 5. How would you like to manage data for your app?
                                     <br>
                                     <button id="data-one" onclick="rankPlatforms()">SELECT</button>With the platform to
                                     build the app (i.e. AWS,
@@ -101,7 +93,7 @@
                                     <br>
                                 </li>
 
-                                <li class="select_one_question"> 7. What type of application would you like to build?
+                                <li class="select_one_question"> 6. What type of application would you like to build?
                                     <br>
                                     <button id="website" onclick="rankPlatforms()">SELECT!</button>
                                     Website
@@ -111,7 +103,7 @@
                                     <br>
                                 </li>
 
-                                <li class="select_one_question"> 8. What amount are you willing to spend per month?
+                                <li class="select_one_question"> 7. What amount are you willing to spend per month?
                                     <p>(Including technical support)</p>
                                     <button id="money-one" onclick="rankPlatforms()">SELECT!</button>
                                     $0
@@ -135,7 +127,7 @@
                     <div class="Ranking Questions ">
                         <h3>Ranking Questions</h2>
                             <ol class="select_one_list">
-                                <li class="select_one_question"> 9. Select the the category that is your HIGHEST
+                                <li class="select_one_question"> 8. Select the the category that is your HIGHEST
                                     priority for
                                     your platform:
                                     <br>
@@ -150,7 +142,7 @@
                                         FRIENDLINESS</button></a>
                                 </li>
 
-                                <li class="select_one_question"> 10. Select the the category that is your SECOND HIGHEST
+                                <li class="select_one_question"> 9. Select the the category that is your SECOND HIGHEST
                                     priority for your platform:
                                     <br>
                                     <button id="two-customization" onClick="rankPlatforms()">1.
@@ -163,7 +155,7 @@
                                     <button id="two-ux" onClick="rankPlatforms()">4. USER
                                         FRIENDLINESS</button></a>
                                 </li>
-                                <li class="select_one_question"> 11. Select the the category that is your THIRD HIGHEST
+                                <li class="select_one_question"> 10. Select the the category that is your THIRD HIGHEST
                                     priority
                                     for your platform:
                                     <br>
@@ -178,9 +170,10 @@
                                         FRIENDLINESS</button></a>
                                 </li>
                     </div>
-
-                    <button id="submit" onclick="submitQuiz()">Submit Quiz</button>
-
+                    <div class="center">
+                    <button id="submit" onclick="submitQuiz()">
+                        <h2>Submit Quiz</h2></button>
+                    </div>
                 </div>
                 <div id="resultsPage">
                     <div class="results">
