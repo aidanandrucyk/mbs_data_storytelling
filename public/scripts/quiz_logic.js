@@ -148,180 +148,754 @@ function createPlatforms() {
     };
 }
 
+// Rank variables
+let plain = 'white';
+let active = 'rgb(214, 30, 92)';
+let nblack = '#2e2d28';
+
+var recAppsheets = false;
+var recPowerApps = false;
+
+// preparing backgrounds for rankPlatforms()
+function setBackgrounds() {
+
+    document.getElementById("questionOneYes").style.backgroundColor = plain;
+    document.getElementById("questionOneNo").style.backgroundColor = plain;
+
+    document.getElementById("questionTwoYes").style.backgroundColor = plain;
+    document.getElementById("questionTwoNo").style.backgroundColor = plain;
+
+    document.getElementById("questionThreeYes").style.backgroundColor = plain;
+    document.getElementById("questionThreeNo").style.backgroundColor = plain;
+
+    document.getElementById("questionFourYes").style.backgroundColor = plain;
+    document.getElementById("questionFourNo").style.backgroundColor = plain;
+
+    document.getElementById("data-one").style.backgroundColor = plain;
+    document.getElementById("data-two").style.backgroundColor = plain;
+    document.getElementById("data-three").style.backgroundColor = plain;
+    document.getElementById("data-four").style.backgroundColor = plain;
+
+    document.getElementById("website").style.backgroundColor = plain;
+    document.getElementById("mobile-app").style.backgroundColor = plain;
+
+    document.getElementById("money-one").style.backgroundColor = plain;
+    document.getElementById("money-two").style.backgroundColor = plain;
+    document.getElementById("money-three").style.backgroundColor = plain;
+    document.getElementById("money-four").style.backgroundColor = plain;
+    document.getElementById("money-five").style.backgroundColor = plain;
+
+    document.getElementById("one-customization").style.backgroundColor = plain;
+    document.getElementById("one-time").style.backgroundColor = plain;
+    document.getElementById("one-cost").style.backgroundColor = plain;
+    document.getElementById("one-ux").style.backgroundColor = plain;
+
+    document.getElementById("two-customization").style.backgroundColor = plain;
+    document.getElementById("two-time").style.backgroundColor = plain;
+    document.getElementById("two-cost").style.backgroundColor = plain;
+    document.getElementById("two-ux").style.backgroundColor = plain;
+
+    document.getElementById("three-customization").style.backgroundColor = plain;
+    document.getElementById("three-time").style.backgroundColor = plain;
+    document.getElementById("three-cost").style.backgroundColor = plain;
+    document.getElementById("three-ux").style.backgroundColor = plain;
+}
+
+setBackgrounds();
+
 // QUIZ RATING MANIPULATION
 function rankPlatforms() {
-    // @Uthara implement quiz logic
-    // change the "rating" of each as users press buttons
-    // return the platforms dict with updated ratings
-
     // yes or no questions
-    var questionOne = document.getElementById("questionOneYes");
-    questionOne.addEventListener("click", function qOneFunction() {
-        platforms['Appypie']['rating'] += 3;
-        // alert("3 has been added to appypie");
+
+    // Q1
+    // Q1 yes
+    document.getElementById("questionOneYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionOneYes").style.backgroundColor)
+        if (document.getElementById("questionOneYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionOneYes").style.backgroundColor = active;
+            document.getElementById("questionOneYes").style.color = plain;
+
+            document.getElementById("questionOneNo").style.backgroundColor = plain;
+            document.getElementById("questionOneNo").style.color = nblack;
+        }
     });
-    var questionTwo = document.getElementById("questionTwoYes");
-    questionTwo.addEventListener("click", function qTwoFunction() {
-        platforms["Appypie"]["rating"] += 3;
-        // alert("3 has been added to appypie");
+    // Q1 no
+    document.getElementById("questionOneNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionOneNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            console.log(document.getElementById("questionOneYes").style.backgroundColor);
+            console.log(active);
+
+            if (document.getElementById("questionOneYes").style.backgroundColor === active) {
+                platforms['Appypie']['rating'] -= 3;
+            }
+
+            document.getElementById("questionOneNo").style.backgroundColor = active;
+            document.getElementById("questionOneNo").style.color = plain;
+
+            document.getElementById("questionOneYes").style.backgroundColor = plain;
+            document.getElementById("questionOneYes").style.color = nblack;
+        }
     });
-    var questionThree = document.getElementById("questionThreeYes");
-    questionThree.addEventListener("click", function qThreeFunction() {
-        platforms["Appypie"]["rating"] += 3;
-        platforms["Goodbarber"]["rating"] += 3;
-        platforms["Shoutem"]["rating"] += 3;
-        // alert("3 has been added to appypie, goodbarber, and shoutem");
+
+
+    // Q2
+    // Q2 yes
+    document.getElementById("questionTwoYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionTwoYes").style.backgroundColor)
+        if (document.getElementById("questionTwoYes").style.backgroundColor === plain) {
+
+            platforms['Appypie']['rating'] += 3;
+
+            document.getElementById("questionTwoYes").style.backgroundColor = active;
+            document.getElementById("questionTwoYes").style.color = plain;
+
+            document.getElementById("questionTwoNo").style.backgroundColor = plain;
+            document.getElementById("questionTwoNo").style.color = nblack;
+        }
     });
-    var questionFour = document.getElementById("questionFourYes");
-    questionFour.addEventListener("click", function qFourFunction() {
-        platforms["Goodbarber"]["rating"] += 5;
-        platforms["Shoutem"]["rating"] += 5;
-        // alert("5 has been added to goodbarber, and shoutem");
+    // Q2 no
+    document.getElementById("questionTwoNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionTwoNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionTwoYes").style.backgroundColor === active) {
+
+                platforms['Appypie']['rating'] -= 3;
+
+                document.getElementById("questionTwoYes").style.backgroundColor = plain;
+                document.getElementById("questionTwoYes").style.color = nblack;
+            }
+
+            document.getElementById("questionTwoNo").style.backgroundColor = active;
+            document.getElementById("questionTwoNo").style.color = plain;
+        }
+    });
+
+    // Q3
+    // Q3 yes
+    document.getElementById("questionThreeYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionThreeYes").style.backgroundColor)
+        if (document.getElementById("questionThreeYes").style.backgroundColor === plain) {
+
+            platforms["Appypie"]["rating"] += 3;
+            platforms["Goodbarber"]["rating"] += 3;
+            platforms["Shoutem"]["rating"] += 3;
+
+            document.getElementById("questionThreeYes").style.backgroundColor = active;
+            document.getElementById("questionThreeYes").style.color = plain;
+
+            document.getElementById("questionThreeNo").style.backgroundColor = plain;
+            document.getElementById("questionThreeNo").style.color = nblack;
+        }
+    });
+    // Q3 no
+    document.getElementById("questionThreeNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionThreeNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionThreeYes").style.backgroundColor === active) {
+
+                platforms["Appypie"]["rating"] -= 3;
+                platforms["Goodbarber"]["rating"] -= 3;
+                platforms["Shoutem"]["rating"] -= 3;
+
+                document.getElementById("questionThreeYes").style.backgroundColor = plain;
+                document.getElementById("questionThreeYes").style.color = nblack;
+            }
+
+            document.getElementById("questionThreeNo").style.backgroundColor = active;
+            document.getElementById("questionThreeNo").style.color = plain;
+        }
+    });
+
+    // Q4
+    // Q4 yes
+    document.getElementById("questionFourYes").addEventListener("click", function () {
+        // first selection AND switching from no to yes
+        console.log(document.getElementById("questionFourYes").style.backgroundColor)
+        if (document.getElementById("questionFourYes").style.backgroundColor === plain) {
+
+            platforms["Goodbarber"]["rating"] += 5;
+            platforms["Shoutem"]["rating"] += 5;
+
+            document.getElementById("questionFourYes").style.backgroundColor = active;
+            document.getElementById("questionFourYes").style.color = plain;
+
+            document.getElementById("questionFourNo").style.backgroundColor = plain;
+            document.getElementById("questionFourNo").style.color = nblack;
+        }
+    });
+    // Q4 no
+    document.getElementById("questionFourNo").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("questionFourNo").style.backgroundColor === plain) {
+            // switching from yes to no
+            if (document.getElementById("questionFourYes").style.backgroundColor === active) {
+
+                platforms["Goodbarber"]["rating"] -= 5;
+                platforms["Shoutem"]["rating"] -= 5;
+
+                document.getElementById("questionFourYes").style.backgroundColor = plain;
+                document.getElementById("questionFourYes").style.color = nblack;
+            }
+
+            document.getElementById("questionFourNo").style.backgroundColor = active;
+            document.getElementById("questionFourNo").style.color = plain;
+        }
     });
 
     // selection questions
-    var sevenWebsite = document.getElementsById("website");
-    sevenWebsite.addEventListener("click", function sevenWebsiteFunction() {
-        platforms["Bubble"]["rating"] += 5;
-        platforms["Appypie"]["rating"] += 5;
-        platforms["Goodbarber"]["rating"] += 1;
-    })
 
-    var sevenApp = document.getElementsById("mobile app");
-    sevenApp.addEventListener("click", function sevenAppFunction() {
-        platforms["Shoutem"]["rating"] += 5;
-        platforms["Appypie"]["rating"] += 5;
-        platforms["Goodbarber"]["rating"] += 5;
-    })
-    var eightOne = document.getElementById("money one");
-    eightOne.addEventListener("click", function eightOneFunction() {
-        platforms["VSCode"]["rating"] += 3;
-        platforms["Bubble"]["rating"] += 1;
-        platforms["Goodbarber"]["rating"] -= 3;
-        platforms["Appypie"]["rating"] -= 3;
-        platforms["Shoutem"]["rating"] -= 3;
+    // Q6
+    document.getElementById("data-one").addEventListener("click", function () {
+        if (document.getElementById("data-one").style.backgroundColor === plain) {
 
-    })
-    var eightTwo = document.getElementById("money two");
-    eightOne.addEventListener("click", function eightTwoFunction() {
-        platforms["Bubble"]["rating"] += 3;
-        platforms["Goodbarber"]["rating"] += 3;
-        platforms["Appypie"]["rating"] += 3;
-        platforms["Shoutem"]["rating"] += 3;
-    })
-    var eightThree = document.getElementById("money three")
-    eightThree.addEventListener("click", function eightThreeFunction() {
-        platforms["Appypie"]["rating"] += 3;
-        platforms["Shoutem"]["rating"] += 3;
-        platforms["Bubble"]["rating"] += 3;
-    })
-    var eightFour = document.getElementById("money four");
-    eightFour.addEventListener("click", function eightFourFunction() {
-        platforms["Shoutem"]["rating"] += 3;
-        platforms["Bubble"]["rating"] += 3;
-    })
-    var eightFive = document.getElementById("money five");
-    eightFive.addEventListener("click", function eightFiveFunction() {
-        platforms["Bubble"]["rating"] += 3;
-    })
+            document.getElementById("data-one").style.backgroundColor = active;
+            document.getElementById("data-one").style.color = plain;
 
-// preference questions
-    var cusRankingOne = document.getElementsById("one customization");
-    cusRankingOne.addEventListener("click", function cusOneFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["customization"] >= 3) {
-                platforms[key]["rating"] += 3;
-            }
+            recAppsheets = false;
+            recPowerApps = false;
+
+            document.getElementById("data-two").style.backgroundColor = plain;
+            document.getElementById("data-two").style.color = nblack;
+
+            document.getElementById("data-three").style.backgroundColor = plain;
+            document.getElementById("data-three").style.color = nblack;
+
+            document.getElementById("data-four").style.backgroundColor = plain;
+            document.getElementById("data-four").style.color = nblack;
+
         }
-    })
-    var buildRankingOne = document.getElementsById("one build time");
-    buildRankingOne.addEventListener("click", function buildOneFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["time"] <= 3) {
-                platforms[key]["rating"] += 3;
-            }
+    });
+
+    document.getElementById("data-two").addEventListener("click", function () {
+        if (document.getElementById("data-two").style.backgroundColor === plain) {
+
+            document.getElementById("data-two").style.backgroundColor = active;
+            document.getElementById("data-two").style.color = plain;
+
+            recAppsheets = true;
+            recPowerApps = false;
+
+            document.getElementById("data-one").style.backgroundColor = plain;
+            document.getElementById("data-one").style.color = nblack;
+
+            document.getElementById("data-three").style.backgroundColor = plain;
+            document.getElementById("data-three").style.color = nblack;
+
+            document.getElementById("data-four").style.backgroundColor = plain;
+            document.getElementById("data-four").style.color = nblack;
+
         }
-    })
-    var costRankingOne = document.getElementsById("one cost");
-    costRankingOne.addEventListener("click", function costOneFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["cost"] <= 3) {
-                platforms[key]["rating"] += 3;
-            }
+    });
+
+    document.getElementById("data-three").addEventListener("click", function () {
+        if (document.getElementById("data-three").style.backgroundColor === plain) {
+
+            document.getElementById("data-three").style.backgroundColor = active;
+            document.getElementById("data-three").style.color = plain;
+
+            recAppsheets = false;
+            recPowerApps = true;
+
+            document.getElementById("data-two").style.backgroundColor = plain;
+            document.getElementById("data-two").style.color = nblack;
+
+            document.getElementById("data-one").style.backgroundColor = plain;
+            document.getElementById("data-one").style.color = nblack;
+
+            document.getElementById("data-four").style.backgroundColor = plain;
+            document.getElementById("data-four").style.color = nblack;
+
         }
-    })
-    var userRankingOne = document.getElementsById("one user friendliness");
-    userRankingOne.addEventListener("click", function userOneFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["user_friendliness"] >= 3) {
-                platforms[key]["rating"] += 3;
-            }
+    });
+
+    document.getElementById("data-four").addEventListener("click", function () {
+        // first selection
+        if (document.getElementById("data-four").style.backgroundColor === plain) {
+
+            document.getElementById("data-four").style.backgroundColor = active;
+            document.getElementById("data-four").style.color = plain;
+
+            recAppsheets = false;
+            recPowerApps = false;
+
+            document.getElementById("data-two").style.backgroundColor = plain;
+            document.getElementById("data-two").style.color = nblack;
+
+            document.getElementById("data-three").style.backgroundColor = plain;
+            document.getElementById("data-three").style.color = nblack;
+
+            document.getElementById("data-one").style.backgroundColor = plain;
+            document.getElementById("data-one").style.color = nblack;
+
         }
-    })
-    var cusRankingTwo = document.getElementsById("two customization");
-    cusRankingTwo.addEventListener("click", function cusTwoFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["customization"] >= 3) {
-                platforms[key]["rating"] += 2;
+    });
+
+    // Q7
+    document.getElementById("website").addEventListener("click", function () {
+        if (document.getElementById("website").style.backgroundColor === plain) {
+            platforms["Bubble"]["rating"] += 5;
+            platforms["Appypie"]["rating"] += 5;
+            platforms["Goodbarber"]["rating"] += 1;
+
+            // switching
+            if (document.getElementById("mobile-app").style.backgroundColor === active) {
+                document.getElementById("mobile-app").style.backgroundColor = plain;
+                document.getElementById("mobile-app").style.color = nblack;
+
+                platforms["Shoutem"]["rating"] -= 5;
+                platforms["Appypie"]["rating"] -= 5;
+                platforms["Goodbarber"]["rating"] -= 5;
             }
+
+            document.getElementById("website").style.backgroundColor = active;
+            document.getElementById("website").style.color = plain;
         }
-    })
-    var buildRankingTwo = document.getElementsById("two build time");
-    buildRankingTwo.addEventListener("click", function buildTwoFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["time"] <= 3) {
-                platforms[key]["rating"] += 2;
+    });
+    document.getElementById("mobile-app").addEventListener("click", function () {
+        if (document.getElementById("mobile-app").style.backgroundColor === plain) {
+            platforms["Shoutem"]["rating"] += 5;
+            platforms["Appypie"]["rating"] += 5;
+            platforms["Goodbarber"]["rating"] += 5;
+
+            // switching
+            if (document.getElementById("website").style.backgroundColor === active) {
+                document.getElementById("website").style.backgroundColor = plain;
+                document.getElementById("website").style.color = nblack;
+
+                platforms["Bubble"]["rating"] -= 5;
+                platforms["Appypie"]["rating"] -= 5;
+                platforms["Goodbarber"]["rating"] -= 1;
             }
+
+            document.getElementById("mobile-app").style.backgroundColor = active;
+            document.getElementById("mobile-app").style.color = plain;
         }
-    })
-    var costRankingTwo = document.getElementsById("two cost");
-    costRankingTwo.addEventListener("click", function costTwoFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["cost"] <= 3) {
-                platforms[key]["rating"] += 2;
+    });
+
+
+    // Q8
+    document.getElementById("money-one").addEventListener("click", function () {
+        if (document.getElementById("money-one").style.backgroundColor === plain) {
+
+            document.getElementById("money-one").style.backgroundColor = active;
+            document.getElementById("money-one").style.color = plain;
+
+            platforms["VSCode"]["rating"] += 3;
+            platforms["Bubble"]["rating"] += 1;
+            platforms["Goodbarber"]["rating"] -= 3;
+            platforms["Appypie"]["rating"] -= 3;
+            platforms["Shoutem"]["rating"] -= 3;
+
+            document.getElementById("money-two").style.backgroundColor = plain;
+            document.getElementById("money-two").style.color = nblack;
+
+            document.getElementById("money-three").style.backgroundColor = plain;
+            document.getElementById("money-three").style.color = nblack;
+
+            document.getElementById("money-four").style.backgroundColor = plain;
+            document.getElementById("money-four").style.color = nblack;
+
+            document.getElementById("money-five").style.backgroundColor = plain;
+            document.getElementById("money-five").style.color = nblack;
+        }
+    });
+
+    document.getElementById("money-two").addEventListener("click", function () {
+        if (document.getElementById("money-two").style.backgroundColor === plain) {
+
+            document.getElementById("money-two").style.backgroundColor = active;
+            document.getElementById("money-two").style.color = plain;
+
+            platforms["Bubble"]["rating"] += 3;
+            platforms["Goodbarber"]["rating"] += 3;
+            platforms["Appypie"]["rating"] += 3;
+            platforms["Shoutem"]["rating"] += 3;
+
+            document.getElementById("money-one").style.backgroundColor = plain;
+            document.getElementById("money-one").style.color = nblack;
+
+            document.getElementById("money-three").style.backgroundColor = plain;
+            document.getElementById("money-three").style.color = nblack;
+
+            document.getElementById("money-four").style.backgroundColor = plain;
+            document.getElementById("money-four").style.color = nblack;
+
+            document.getElementById("money-five").style.backgroundColor = plain;
+            document.getElementById("money-five").style.color = nblack;
+        }
+    });
+
+    document.getElementById("money-three").addEventListener("click", function () {
+        if (document.getElementById("money-three").style.backgroundColor === plain) {
+
+            document.getElementById("money-three").style.backgroundColor = active;
+            document.getElementById("money-three").style.color = plain;
+
+            platforms["Appypie"]["rating"] += 3;
+            platforms["Shoutem"]["rating"] += 3;
+            platforms["Bubble"]["rating"] += 3;
+
+            document.getElementById("money-two").style.backgroundColor = plain;
+            document.getElementById("money-two").style.color = nblack;
+
+            document.getElementById("money-one").style.backgroundColor = plain;
+            document.getElementById("money-one").style.color = nblack;
+
+            document.getElementById("money-four").style.backgroundColor = plain;
+            document.getElementById("money-four").style.color = nblack;
+
+            document.getElementById("money-five").style.backgroundColor = plain;
+            document.getElementById("money-five").style.color = nblack;
+
+        }
+    });
+
+    document.getElementById("money-four").addEventListener("click", function () {
+        if (document.getElementById("money-four").style.backgroundColor === plain) {
+
+            document.getElementById("money-four").style.backgroundColor = active;
+            document.getElementById("money-four").style.color = plain;
+
+            recAppsheets = false;
+            recPowerApps = false;
+
+            document.getElementById("money-two").style.backgroundColor = plain;
+            document.getElementById("money-two").style.color = nblack;
+
+            document.getElementById("money-three").style.backgroundColor = plain;
+            document.getElementById("money-three").style.color = nblack;
+
+            document.getElementById("money-one").style.backgroundColor = plain;
+            document.getElementById("money-one").style.color = nblack;
+
+            document.getElementById("money-five").style.backgroundColor = plain;
+            document.getElementById("money-five").style.color = nblack;
+
+        }
+    });
+
+    document.getElementById("money-five").addEventListener("click", function () {
+        if (document.getElementById("money-five").style.backgroundColor === plain) {
+
+            document.getElementById("money-five").style.backgroundColor = active;
+            document.getElementById("money-five").style.color = plain;
+
+            platforms["Bubble"]["rating"] += 3;
+
+            document.getElementById("money-two").style.backgroundColor = plain;
+            document.getElementById("money-two").style.color = nblack;
+
+            document.getElementById("money-three").style.backgroundColor = plain;
+            document.getElementById("money-three").style.color = nblack;
+
+            document.getElementById("money-four").style.backgroundColor = plain;
+            document.getElementById("money-four").style.color = nblack;
+
+            document.getElementById("money-one").style.backgroundColor = plain;
+            document.getElementById("money-one").style.color = nblack;
+        }
+    });
+
+
+    // preference questions
+
+    // top priority
+    document.getElementById("one-customization").addEventListener("click", function () {
+        if (document.getElementById("one-customization").style.backgroundColor === plain) {
+
+            document.getElementById("one-customization").style.backgroundColor = active;
+            document.getElementById("one-customization").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["customization"] >= 3) {
+                    platforms[key]["rating"] += 3;
+                }
             }
+
+            document.getElementById("one-time").style.backgroundColor = plain;
+            document.getElementById("one-time").style.color = nblack;
+
+            document.getElementById("one-cost").style.backgroundColor = plain;
+            document.getElementById("one-cost").style.color = nblack;
+
+            document.getElementById("one-ux").style.backgroundColor = plain;
+            document.getElementById("one-ux").style.color = nblack;
+
         }
-    })
-    var userRankingTwo = document.getElementsById("two user friendliness");
-    userRankingTwo.addEventListener("click", function userTwoFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["user_friendliness"] >= 3) {
-                platforms[key]["rating"] += 2;
+    });
+
+    document.getElementById("one-time").addEventListener("click", function () {
+        if (document.getElementById("one-time").style.backgroundColor === plain) {
+
+            document.getElementById("one-time").style.backgroundColor = active;
+            document.getElementById("one-time").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["time"] <= 3) {
+                    platforms[key]["rating"] += 3;
+                }
             }
+
+            document.getElementById("one-customization").style.backgroundColor = plain;
+            document.getElementById("one-customization").style.color = nblack;
+
+            document.getElementById("one-cost").style.backgroundColor = plain;
+            document.getElementById("one-cost").style.color = nblack;
+
+            document.getElementById("one-ux").style.backgroundColor = plain;
+            document.getElementById("one-ux").style.color = nblack;
+
         }
-    })
-    var cusRankingThree = document.getElementsById("three customization");
-    cusRankingThree.addEventListener("click", function cusThreeFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["customization"] >= 3) {
-                platforms[key]["rating"] += 1;
+    });
+
+    document.getElementById("one-cost").addEventListener("click", function () {
+        if (document.getElementById("one-cost").style.backgroundColor === plain) {
+
+            document.getElementById("one-cost").style.backgroundColor = active;
+            document.getElementById("one-cost").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["cost"] <= 3) {
+                    platforms[key]["rating"] += 3;
+                }
             }
+
+            document.getElementById("one-time").style.backgroundColor = plain;
+            document.getElementById("one-time").style.color = nblack;
+
+            document.getElementById("one-customization").style.backgroundColor = plain;
+            document.getElementById("one-customization").style.color = nblack;
+
+            document.getElementById("one-ux").style.backgroundColor = plain;
+            document.getElementById("one-ux").style.color = nblack;
+
         }
-    })
-    var buildRankingThree = document.getElementsById("three build time");
-    buildRankingThree.addEventListener("click", function buildThreeFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["time"] <= 3) {
-                platforms[key]["rating"] += 1;
+    });
+
+    document.getElementById("one-ux").addEventListener("click", function () {
+        if (document.getElementById("one-ux").style.backgroundColor === plain) {
+
+            document.getElementById("one-ux").style.backgroundColor = active;
+            document.getElementById("one-ux").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["user_friendliness"] >= 3) {
+                    platforms[key]["rating"] += 3;
+                }
             }
+
+            document.getElementById("one-time").style.backgroundColor = plain;
+            document.getElementById("one-time").style.color = nblack;
+
+            document.getElementById("one-cost").style.backgroundColor = plain;
+            document.getElementById("one-cost").style.color = nblack;
+
+            document.getElementById("one-customization").style.backgroundColor = plain;
+            document.getElementById("one-customization").style.color = nblack;
         }
-    })
-    var costRankingThree = document.getElementsById("three cost");
-    costRankingThree.addEventListener("click", function costThreeFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["cost"] <= 3) {
-                platforms[key]["rating"] += 1;
+    });
+
+    // 2nd priority
+    document.getElementById("two-customization").addEventListener("click", function () {
+        if (document.getElementById("two-customization").style.backgroundColor === plain) {
+
+            document.getElementById("two-customization").style.backgroundColor = active;
+            document.getElementById("two-customization").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["customization"] >= 3) {
+                    platforms[key]["rating"] += 2;
+                }
             }
+
+            document.getElementById("two-time").style.backgroundColor = plain;
+            document.getElementById("two-time").style.color = nblack;
+
+            document.getElementById("two-cost").style.backgroundColor = plain;
+            document.getElementById("two-cost").style.color = nblack;
+
+            document.getElementById("two-ux").style.backgroundColor = plain;
+            document.getElementById("two-ux").style.color = nblack;
+
         }
-    })
-    var userRankingThree = document.getElementsById("three user friendliness");
-    userRankingThree.addEventListener("click", function userThreeFunction() {
-        for (let key in platforms) {
-            if (platforms[key]["user_friendliness"] >= 3) {
-                platforms[key]["rating"] += 1;
+    });
+
+    document.getElementById("two-time").addEventListener("click", function () {
+        if (document.getElementById("two-time").style.backgroundColor === plain) {
+
+            document.getElementById("two-time").style.backgroundColor = active;
+            document.getElementById("two-time").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["time"] <= 3) {
+                    platforms[key]["rating"] += 2;
+                }
             }
+
+            document.getElementById("two-customization").style.backgroundColor = plain;
+            document.getElementById("two-customization").style.color = nblack;
+
+            document.getElementById("two-cost").style.backgroundColor = plain;
+            document.getElementById("two-cost").style.color = nblack;
+
+            document.getElementById("two-ux").style.backgroundColor = plain;
+            document.getElementById("two-ux").style.color = nblack;
+
         }
-    })
+    });
+
+    document.getElementById("two-cost").addEventListener("click", function () {
+        if (document.getElementById("two-cost").style.backgroundColor === plain) {
+
+            document.getElementById("two-cost").style.backgroundColor = active;
+            document.getElementById("two-cost").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["cost"] <= 3) {
+                    platforms[key]["rating"] += 2;
+                }
+            }
+
+            document.getElementById("two-time").style.backgroundColor = plain;
+            document.getElementById("two-time").style.color = nblack;
+
+            document.getElementById("two-customization").style.backgroundColor = plain;
+            document.getElementById("two-customization").style.color = nblack;
+
+            document.getElementById("two-ux").style.backgroundColor = plain;
+            document.getElementById("two-ux").style.color = nblack;
+
+        }
+    });
+
+    document.getElementById("two-ux").addEventListener("click", function () {
+        if (document.getElementById("two-ux").style.backgroundColor === plain) {
+
+            document.getElementById("two-ux").style.backgroundColor = active;
+            document.getElementById("two-ux").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["user_friendliness"] >= 3) {
+                    platforms[key]["rating"] += 2;
+                }
+            }
+
+            document.getElementById("two-time").style.backgroundColor = plain;
+            document.getElementById("two-time").style.color = nblack;
+
+            document.getElementById("two-cost").style.backgroundColor = plain;
+            document.getElementById("two-cost").style.color = nblack;
+
+            document.getElementById("two-customization").style.backgroundColor = plain;
+            document.getElementById("two-customization").style.color = nblack;
+        }
+    });
+
+    // 3rd priority
+    document.getElementById("three-customization").addEventListener("click", function () {
+        if (document.getElementById("three-customization").style.backgroundColor === plain) {
+
+            document.getElementById("three-customization").style.backgroundColor = active;
+            document.getElementById("three-customization").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["customization"] >= 3) {
+                    platforms[key]["rating"] += 1;
+                }
+            }
+
+            document.getElementById("three-time").style.backgroundColor = plain;
+            document.getElementById("three-time").style.color = nblack;
+
+            document.getElementById("three-cost").style.backgroundColor = plain;
+            document.getElementById("three-cost").style.color = nblack;
+
+            document.getElementById("three-ux").style.backgroundColor = plain;
+            document.getElementById("three-ux").style.color = nblack;
+
+        }
+    });
+
+    document.getElementById("three-time").addEventListener("click", function () {
+        if (document.getElementById("three-time").style.backgroundColor === plain) {
+
+            document.getElementById("three-time").style.backgroundColor = active;
+            document.getElementById("three-time").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["time"] <= 3) {
+                    platforms[key]["rating"] += 1;
+                }
+            }
+
+            document.getElementById("three-customization").style.backgroundColor = plain;
+            document.getElementById("three-customization").style.color = nblack;
+
+            document.getElementById("three-cost").style.backgroundColor = plain;
+            document.getElementById("three-cost").style.color = nblack;
+
+            document.getElementById("three-ux").style.backgroundColor = plain;
+            document.getElementById("three-ux").style.color = nblack;
+
+        }
+    });
+
+    document.getElementById("three-cost").addEventListener("click", function () {
+        if (document.getElementById("three-cost").style.backgroundColor === plain) {
+
+            document.getElementById("three-cost").style.backgroundColor = active;
+            document.getElementById("three-cost").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["cost"] <= 3) {
+                    platforms[key]["rating"] += 1;
+                }
+            }
+
+            document.getElementById("three-time").style.backgroundColor = plain;
+            document.getElementById("three-time").style.color = nblack;
+
+            document.getElementById("three-customization").style.backgroundColor = plain;
+            document.getElementById("three-customization").style.color = nblack;
+
+            document.getElementById("three-ux").style.backgroundColor = plain;
+            document.getElementById("three-ux").style.color = nblack;
+
+        }
+    });
+
+    document.getElementById("three-ux").addEventListener("click", function () {
+        if (document.getElementById("three-ux").style.backgroundColor === plain) {
+
+            document.getElementById("three-ux").style.backgroundColor = active;
+            document.getElementById("three-ux").style.color = plain;
+
+            for (let key in platforms) {
+                if (platforms[key]["user_friendliness"] >= 3) {
+                    platforms[key]["rating"] += 1;
+                }
+            }
+
+            document.getElementById("three-time").style.backgroundColor = plain;
+            document.getElementById("three-time").style.color = nblack;
+
+            document.getElementById("three-cost").style.backgroundColor = plain;
+            document.getElementById("three-cost").style.color = nblack;
+
+            document.getElementById("three-customization").style.backgroundColor = plain;
+            document.getElementById("three-customization").style.color = nblack;
+        }
+    });
 }
 
 rankPlatforms();
@@ -398,11 +972,11 @@ function displayResults(rankedPlatforms) {
     // Aidan
     topPlatform = Object.keys(rankedPlatforms[0])[0];
     document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'public/assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
+    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
     document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
-    document.querySelector('.platform-icon').src = 'public/assets/platform_logo/' + topPlatform + '.png'
+    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
     var barPlatforms = [];
     dict = {}
@@ -415,35 +989,35 @@ function displayResults(rankedPlatforms) {
     let third = barPlatforms[Object.keys(barPlatforms)[2]];
     let fourth = barPlatforms[Object.keys(barPlatforms)[3]];
     let fifth = barPlatforms[Object.keys(barPlatforms)[4]];
-    let firstName = Object.keys(barPlatforms)[0]; 
+    let firstName = Object.keys(barPlatforms)[0];
     let secondName = Object.keys(barPlatforms)[1];
     let thirdName = Object.keys(barPlatforms)[2];
-    let fourthName= Object.keys(barPlatforms)[3];
+    let fourthName = Object.keys(barPlatforms)[3];
     let fifthName = Object.keys(barPlatforms)[4];
     var xValues = [firstName, secondName, thirdName, fourthName, fifthName];
-    var yValues = [first,second,third,fourth,fifth];
-    var barColors = ["rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)","rgba(214,30,92)"];
+    var yValues = [first, second, third, fourth, fifth];
+    var barColors = ["rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"];
     new Chart("myChart", {
-    type: "bar",
-    data: {
-    labels: xValues,
-    datasets: [{
-    backgroundColor: barColors,
-    borderWidth: 0.5,
-    borderRadius: Number.MAX_VALUE,
-    borderSkipped: false,
-    data: yValues
-    }]
-  },
-    options: {
-        indexAxis: 'y',
-        legend: {display: false},
-        title: {
-        display: true,
-        text: ""
-    }
-  }
-});
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                borderWidth: 0.5,
+                borderRadius: Number.MAX_VALUE,
+                borderSkipped: false,
+                data: yValues
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            legend: { display: false },
+            title: {
+                display: true,
+                text: ""
+            }
+        }
+    });
 }
 
 function retakeQuiz() {

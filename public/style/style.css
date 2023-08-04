@@ -11,7 +11,7 @@ html {
   --nwhiteaccent: hsl(40, 18%, 97%);
   --textcolor: hsl(48, 14%, 43%);
   --accentcolor: #d61e5c;
-  --nblack: hsl(50, 7%, 17%);
+  --nblack: #2e2d28;
 
   /* PRIMARY */
   --teal: #00857D;
@@ -126,6 +126,7 @@ button {
   padding: .5%;
   border: var(--accentcolor) 2px solid;
   background-color: white;
+  filter: grayscale(100%);
   border-radius: 1rem;
   padding: .5rem;
   margin: 8px;
@@ -133,22 +134,12 @@ button {
 
 button:hover {
   background-color: var(--accentcolor);
-  filter: invert(1);
-  -webkit-filter: brightness(125%);
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-button:active{
-  background-color: var(--accentcolor);
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  transition: all .5s ease;
+  filter: brightness(110%);
+  -webkit-transition: all .45s ease;
+  -moz-transition: all .45s ease;
+  -o-transition: all .45s ease;
+  -ms-transition: all .45s ease;
+  transition: all .45s ease;
 }
 
 .green-text{
@@ -192,6 +183,7 @@ button:active{
 
 .results-details{
   border: var(--nblack) 2px solid;
+  background-color: white;
   border-radius: 20px;
 }
 
