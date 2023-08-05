@@ -26,102 +26,102 @@ NOTES:
 
 <body>
     <!-- CODE HERE -->
+    <!-- CODE HERE -->
+    <div class="background">
+        <img class="img_container" src="assets/Backgroud/sebastian-svenson-LpbyDENbQQg-unsplash.jpg" />
+    </div>
+
     <div class="quiz_container">
-
         <h1>Find a No-Code App Builder!</h1>
-
-        <p>By Data Storytelling</p>
-        <br>
-
-        <!-- @Uthara -->
         <div class="quiz_dynamic">
-
             <div id="questionsPage">
-
-                <h2>QUESTIONS</h2>
-
                 <div class="yes_no">
                     <h3>Yes or No Questions</h2>
                         <ol class="yes_no_list">
                             <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
-                                (high ex: Uber, Instagram, Airbnb) (low ex: Local Restaurant, Local Bowling Alley, small
-                                niche
-                                hobbies/interests)
+                                (high ex: Uber, Instagram, Airbnb)
+                                <p> (low ex: Local Restaurant, Local Bowling Alley,
+                                    small
+                                    niche
+                                    hobbies/interests)</p>
+                                <br>
                                 <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionOneNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
                                 publication?
-                                (Ex. Instagram stories, snapchat updates)
-                                (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                                <p>(Ex. Instagram stories, snapchat updates)
+                                    (low ex: order notifs, entry updates, updating a menu, change/update notifs)</p>
+                                <br>
                                 <button id="questionTwoYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionTwoNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions">
                                 3. Must your app contain large-scale features?
-                                (Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
-                                customizations/
-                                features)
+                                <p>(Ex. Search algorithms, large number of files, hosts wide variety of data/ distinct
+                                    customizations/
+                                    features)</p>
+                                <br>
                                 <button id="questionThreeYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionThreeNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                             <li class="yes_no_questions">
                                 4. Do you need your app to be in any language other than english?
+                                <br>
                                 <button id="questionFourYes" onclick="rankPlatforms()" value="1">YES</button>
+                                <br>
                                 <button id="questionFourNo" onclick="rankPlatforms()" value="2">NO</button>
-                            </li>
-                            <li class="yes_no_questions">
-                                5.Does your audience include non-English speaking users?
-                                <button id="questionFiveYes" onclick="rankPlatforms()" value="1">YES</button>
-                                <button id="questionFiveNo" onclick="rankPlatforms()" value="2">NO</button>
                             </li>
                         </ol>
                 </div>
                 <div class="select_qs">
                     <h3>Select One Questions</h2>
                         <ol class="select_one_list">
-                            <li class="select_one_question"> 6. How would you like to manage data for your app?
+                            <li class="select_one_question"> 5. How would you like to manage data for your app?
                                 <br>
-                                <a href=""><button>SELECT</button></a> With the platform to build the app (i.e. AWS,
+                                <button id="data-one" onclick="rankPlatforms()">SELECT</button>With the platform to
+                                build the app (i.e. AWS,
                                 Azure, etc.)
                                 <br>
-                                <a href=""><button>SELECT</button></a> Using Google Workspace (i.e. Google Sheets)
+                                <button id="data-two" onclick="rankPlatforms()">SELECT</button>Using Google
+                                Workspace (i.e. Google Sheets)
                                 <br>
-                                <a href=""><button>SELECT</button></a> Using Office 365 (i.e. Microsoft Excel)
+                                <button id="data-three" onclick="rankPlatforms()">SELECT</button> Using Office 365
+                                (i.e. Microsoft Excel)
                                 <br>
-                                <a href=""><button>SELECT</button></a> My app does not have any data requirements
+                                <button id="data-four" onclick="rankPlatforms()">SELECT</button> My app does not
+                                have any data requirements
                                 <br>
                             </li>
 
-                            <br>
-
-                            <li class="select_one_question"> 7. What type of application would you like to build?
+                            <li class="select_one_question"> 6. What type of application would you like to build?
                                 <br>
                                 <button id="website" onclick="rankPlatforms()">SELECT!</button>
                                 Website
                                 <br>
-                                <button id="mobile app" onclick="rankPlatforms()">SELECT!</button>
+                                <button id="mobile-app" onclick="rankPlatforms()">SELECT!</button>
                                 Mobile App (e.g. iOS and/or Android mobile device)
                                 <br>
                             </li>
 
-                            <br>
-
-                            <li class="select_one_question"> 8. What amount are you willing to spend per month?
+                            <li class="select_one_question"> 7. What amount are you willing to spend per month?
                                 <p>(Including technical support)</p>
-                                <button id="money one" onclick="rankPlatforms()">SELECT!</button>
+                                <button id="money-one" onclick="rankPlatforms()">SELECT!</button>
                                 $0
                                 <br>
-                                <button id="money two" onclick="rankPlatforms()">SELECT!</button>
+                                <button id="money-two" onclick="rankPlatforms()">SELECT!</button>
                                 $0 - $50 ($0-$600 per year)
                                 <br>
-                                <button id="money three" onclick="rankPlatforms()">SELECT!</button>
+                                <button id="money-three" onclick="rankPlatforms()">SELECT!</button>
                                 $50 - $100 ($600-$1200 per year)
                                 <br>
-                                <button id="money four" onclick="rankPlatforms()">SELECT!</button>
+                                <button id="money-four" onclick="rankPlatforms()">SELECT!</button>
                                 $101 - $200 ($1200-$2400 per year)
                                 <br>
-                                <button id="money five" onclick="rankPlatforms()">SELECT!</button>
+                                <button id="money-five" onclick="rankPlatforms()">SELECT!</button>
                                 $200+ ($2,400+ per year)
                                 <br>
                             </li>
@@ -131,50 +131,54 @@ NOTES:
                 <div class="Ranking Questions ">
                     <h3>Ranking Questions</h2>
                         <ol class="select_one_list">
-                            <li class="select_one_question"> Select the the category that is your HIGHEST priority for
+                            <li class="select_one_question"> 8. Select the the category that is your HIGHEST
+                                priority for
                                 your platform:
                                 <br>
-                                <button id="one customization" onClick="rankPlatforms()">1. CUSTOMIZATION</button></a>
+                                <button id="one-customization" onClick="rankPlatforms()">1.
+                                    CUSTOMIZATION</button></a>
                                 <br>
-                                <button id="one build time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
+                                <button id="one-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
                                 <br>
-                                <button id="one cost" onClick="rankPlatforms()">3. COST</button></a>
+                                <button id="one-cost" onClick="rankPlatforms()">3. COST</button></a>
                                 <br>
-                                <button id="one user friendliness" onClick="rankPlatforms()">4. USER
+                                <button id="one-ux" onClick="rankPlatforms()">4. USER
                                     FRIENDLINESS</button></a>
-                                <br>
                             </li>
-                            <li class="select_one_question"> Select the the category that is your SECOND HIGHEST
+
+                            <li class="select_one_question"> 9. Select the the category that is your SECOND HIGHEST
                                 priority for your platform:
                                 <br>
-                                <button id="two customization" onClick="rankPlatforms()">1. CUSTOMIZATION</button></a>
+                                <button id="two-customization" onClick="rankPlatforms()">1.
+                                    CUSTOMIZATION</button></a>
                                 <br>
-                                <button id="two build time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
+                                <button id="two-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
                                 <br>
-                                <button id="two cost" onClick="rankPlatforms()">3. COST</button></a>
+                                <button id="two-cost" onClick="rankPlatforms()">3. COST</button></a>
                                 <br>
-                                <button id="two user friendliness" onClick="rankPlatforms()">4. USER
+                                <button id="two-ux" onClick="rankPlatforms()">4. USER
                                     FRIENDLINESS</button></a>
-                                <br>
                             </li>
-                            <li class="select_one_question"> Select the the category that is your THIRD HIGHEST priority
+                            <li class="select_one_question"> 10. Select the the category that is your THIRD HIGHEST
+                                priority
                                 for your platform:
                                 <br>
-                                <button id="three customization" onClick="rankPlatforms()">1. CUSTOMIZATION</button></a>
+                                <button id="three-customization" onClick="rankPlatforms()">1.
+                                    CUSTOMIZATION</button></a>
                                 <br>
-                                <button id="three build time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
+                                <button id="three-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
                                 <br>
-                                <button id="three cost" onClick="rankPlatforms()">3. COST</button></a>
+                                <button id="three-cost" onClick="rankPlatforms()">3. COST</button></a>
                                 <br>
-                                <button id="three user friendliness" onClick="rankPlatforms()">4. USER
+                                <button id="three-ux" onClick="rankPlatforms()">4. USER
                                     FRIENDLINESS</button></a>
-                                <br>
                             </li>
-                            <br>
                 </div>
-
-                <button id="submit" onclick="submitQuiz()">Submit Quiz</button>
-
+                <div class="center">
+                    <button id="submit" onclick="submitQuiz()">
+                        <h2>Submit Quiz</h2>
+                    </button>
+                </div>
             </div>
             <div id="resultsPage">
                 <div class="results">
@@ -193,18 +197,11 @@ NOTES:
                             <h3 class="dnd-name">
                                 </h2>
                                 <div class="results-bars">
-                                    <div class="results-bar-score">
-                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
-                                        <h4>Bubble</h4>
-                                        <h5>80%</h5>
-                                    </div>
-                                    <div class="results-bar-score">
-                                        <img class="sm-icon" src="assets/Avatars/druid.png" alt="">
-                                        <h4>Bubble</h4>
-                                        <h5>80%</h5>
-                                    </div>
+                                    <canvas id="myChart" style="width:100%;"></canvas>
                                 </div>
                         </div>
+
+                        <br>
 
                         <div class="results-details">
                             <h4>Detailed Analysis:</h4>
@@ -250,6 +247,10 @@ NOTES:
                     <!-- @Ji -->
                     <h2>Survey</h2>
                     <p>Enter your email here:</p>
+                    <a target="_blank"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdx-BbI6OlRJg6yS_I24R_U9P8RoK5N0rM6H7c0KM5UHYLomw/viewform?usp=sf_link">
+                        <button>Survey</button>
+                    </a>
                 </div>
 
             </div>
