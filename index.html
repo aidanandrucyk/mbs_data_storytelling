@@ -18,6 +18,10 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!-- bar chart ref-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <body>
+</head>
 
 <body>
     </head>
@@ -236,6 +240,22 @@
                             <div class="icon-overlay" onclick="shareOnFacebook()">
                                 <div class="tooltip">Share on Facebook</div>
                             </div>
+                          
+                        <h3>What's <p class="green-text">your</p> story?</h3>
+                        <div class="results-match">
+                            <center><h4>Your Character Match:</h4></center>
+                            <center><h2 class="results-rating"> </h2></center>
+                            <h3 class="dnd-name">
+                                </h2>
+                                <div class="results-bars">
+                                    <canvas id="myChart" style="width:20%;"></canvas>
+                                </div>
+                        </div>
+
+                        <div class="results-details">
+                            <center><h4>Detailed Analysis:</h4></center>
+                            <center><img class="platform-icon" src="" alt=""></center>
+                            <p class="platform-description"></p>
                         </div>
 
                     </div>
