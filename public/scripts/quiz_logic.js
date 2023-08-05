@@ -439,14 +439,14 @@ function rankPlatforms() {
     });
 
     // selection questions
-    var sevenWebsite = document.getElementsById("website");
+    var sevenWebsite = document.getElementById("website");
     sevenWebsite.addEventListener("click", function sevenWebsiteFunction() {
         platforms["Bubble"]["rating"] += 5;
         platforms["Appypie"]["rating"] += 5;
         platforms["Goodbarber"]["rating"] += 1;
     })
 
-    var sevenApp = document.getElementsById("mobile app");
+    var sevenApp = document.getElementById("mobile app");
     sevenApp.addEventListener("click", function sevenAppFunction() {
         platforms["Shoutem"]["rating"] += 5;
         platforms["Appypie"]["rating"] += 5;
@@ -485,7 +485,7 @@ function rankPlatforms() {
     })
 
     // preference questions
-    var cusRankingOne = document.getElementsById("one customization");
+    var cusRankingOne = document.getElementById("one customization");
     cusRankingOne.addEventListener("click", function cusOneFunction() {
         for (let key in platforms) {
             if (platforms[key]["customization"] >= 3) {
@@ -493,7 +493,7 @@ function rankPlatforms() {
             }
         }
     })
-    var buildRankingOne = document.getElementsById("one build time");
+    var buildRankingOne = document.getElementById("one build time");
     buildRankingOne.addEventListener("click", function buildOneFunction() {
         for (let key in platforms) {
             if (platforms[key]["time"] <= 3) {
@@ -501,7 +501,7 @@ function rankPlatforms() {
             }
         }
     })
-    var costRankingOne = document.getElementsById("one cost");
+    var costRankingOne = document.getElementById("one cost");
     costRankingOne.addEventListener("click", function costOneFunction() {
         for (let key in platforms) {
             if (platforms[key]["cost"] <= 3) {
@@ -509,7 +509,7 @@ function rankPlatforms() {
             }
         }
     })
-    var userRankingOne = document.getElementsById("one user friendliness");
+    var userRankingOne = document.getElementById("one user friendliness");
     userRankingOne.addEventListener("click", function userOneFunction() {
         for (let key in platforms) {
             if (platforms[key]["user_friendliness"] >= 3) {
@@ -517,7 +517,7 @@ function rankPlatforms() {
             }
         }
     })
-    var cusRankingTwo = document.getElementsById("two customization");
+    var cusRankingTwo = document.getElementById("two customization");
     cusRankingTwo.addEventListener("click", function cusTwoFunction() {
         for (let key in platforms) {
             if (platforms[key]["customization"] >= 3) {
@@ -525,7 +525,7 @@ function rankPlatforms() {
             }
         }
     })
-    var buildRankingTwo = document.getElementsById("two build time");
+    var buildRankingTwo = document.getElementById("two build time");
     buildRankingTwo.addEventListener("click", function buildTwoFunction() {
         for (let key in platforms) {
             if (platforms[key]["time"] <= 3) {
@@ -533,7 +533,7 @@ function rankPlatforms() {
             }
         }
     })
-    var costRankingTwo = document.getElementsById("two cost");
+    var costRankingTwo = document.getElementById("two cost");
     costRankingTwo.addEventListener("click", function costTwoFunction() {
         for (let key in platforms) {
             if (platforms[key]["cost"] <= 3) {
@@ -541,7 +541,7 @@ function rankPlatforms() {
             }
         }
     })
-    var userRankingTwo = document.getElementsById("two user friendliness");
+    var userRankingTwo = document.getElementById("two user friendliness");
     userRankingTwo.addEventListener("click", function userTwoFunction() {
         for (let key in platforms) {
             if (platforms[key]["user_friendliness"] >= 3) {
@@ -549,7 +549,7 @@ function rankPlatforms() {
             }
         }
     })
-    var cusRankingThree = document.getElementsById("three customization");
+    var cusRankingThree = document.getElementById("three customization");
     cusRankingThree.addEventListener("click", function cusThreeFunction() {
         for (let key in platforms) {
             if (platforms[key]["customization"] >= 3) {
@@ -557,7 +557,7 @@ function rankPlatforms() {
             }
         }
     })
-    var buildRankingThree = document.getElementsById("three build time");
+    var buildRankingThree = document.getElementById("three build time");
     buildRankingThree.addEventListener("click", function buildThreeFunction() {
         for (let key in platforms) {
             if (platforms[key]["time"] <= 3) {
@@ -565,7 +565,7 @@ function rankPlatforms() {
             }
         }
     })
-    var costRankingThree = document.getElementsById("three cost");
+    var costRankingThree = document.getElementById("three cost");
     costRankingThree.addEventListener("click", function costThreeFunction() {
         for (let key in platforms) {
             if (platforms[key]["cost"] <= 3) {
@@ -573,7 +573,7 @@ function rankPlatforms() {
             }
         }
     })
-    var userRankingThree = document.getElementsById("three user friendliness");
+    var userRankingThree = document.getElementById("three user friendliness");
     userRankingThree.addEventListener("click", function userThreeFunction() {
         for (let key in platforms) {
             if (platforms[key]["user_friendliness"] >= 3) {
@@ -663,6 +663,8 @@ function displayResults(rankedPlatforms) {
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
+
+    // BAR GRAPH
     var barPlatforms = [];
     dict = {}
     for (const [key, value] of Object.entries(platforms)) {
@@ -679,30 +681,90 @@ function displayResults(rankedPlatforms) {
     let thirdName = Object.keys(barPlatforms)[2];
     let fourthName = Object.keys(barPlatforms)[3];
     let fifthName = Object.keys(barPlatforms)[4];
-    var xValues = [firstName, secondName, thirdName, fourthName, fifthName];
-    var yValues = [first, second, third, fourth, fifth];
-    var barColors = ["rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"];
-    new Chart("myChart", {
-        type: "bar",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                borderWidth: 0.5,
-                borderRadius: Number.MAX_VALUE,
-                borderSkipped: false,
-                data: yValues
-            }]
-        },
+    const data = {
+        labels: [firstName, secondName, thirdName, fourthName, fifthName],
+        datasets: [{
+          label: '',
+          data: [(first/first)*100,Math.round((second/first)*100),Math.round((third/first)*100),Math.round((fourth/first)*100),Math.round((fifth/first)*100)],
+          barThickness: 20,
+          borderWidth: 0.5,
+          borderRadius: Number.MAX_VALUE,
+          borderSkipped: false,
+          backgroundColor: [
+            "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"
+          ],
+        }]
+      };  
+      // config 
+      const config = {
+        type: 'bar',
+        data,
         options: {
-            indexAxis: 'y',
-            legend: { display: false },
-            title: {
-                display: true,
-                text: ""
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    beforeTitle: function(context) {
+                        return 'before the title';
+                    },
+                    title: function(context) {
+                        console.log(context[0].Appypie);
+                        return context[0].Appypie;
+                    },
+                    afterTitle: function(context) {
+                        return 'after the title';
+                    }
+                }
+            },
+            legend: {
+                display: false
             }
+        },
+        indexAxis: 'y',
+        scales: {
+            x: {
+                grace: 10,
+                grid: {
+                    drawOnChartArea: false,
+                    drawTicks: false,
+                    display: false
+
+                },
+                ticks: {
+                    display: false
+                }
+            },
+            y: {
+                grid: {
+                drawOnChartArea: false,
+                drawTicks: false,
+                display: false
+                },
+                ticks: {
+                    font: {
+                        family: 'Montserrat',
+                        size: 20,
+                    }
+                }
+            },
+          }
+        },
+      };
+  
+      // render init block
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+
+      maxScale(myChart)
+      function maxScale(chart){
+        console.log(chart.scales.x.end);
+        if(chart.scales.x.end >= first){
+            chart.config.options.scales.x.grace = 0;
+            chart.update();
         }
-    });
+      }
+      
 }
 
 function retakeQuiz() {
