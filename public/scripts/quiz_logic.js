@@ -664,6 +664,8 @@ function displayResults(rankedPlatforms) {
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
 
+
+
     // BAR GRAPH
     var barPlatforms = [];
     dict = {}
@@ -686,33 +688,80 @@ function displayResults(rankedPlatforms) {
         datasets: [{
           label: '',
           data: [(first/first)*100,Math.round((second/first)*100),Math.round((third/first)*100),Math.round((fourth/first)*100),Math.round((fifth/first)*100)],
-          barThickness: 20,
+          barThickness: 30,
           borderWidth: 0.5,
           borderRadius: Number.MAX_VALUE,
           borderSkipped: false,
+          image: [
+         document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[0]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[1]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[2]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[3]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[4]] + '.png'
+],
           backgroundColor: [
             "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"
           ],
+          datalabels: {
+            color: 'white',
+            anchor: 'end',
+            align: 'left',
+            font: 'Montserrat',
+            fontSize: '30px',
+          }
         }]
-      };  
+      };
+      const imageItems = {
+        id: 'imageItems' ,
+        beforeDatasetsDraw(chart, args, pluginOptions){
+            const {ctx, data, options, scales: {x,y}} = chart;
+            ctx.save();
+            const imageSize = options.layout.padding.left;
+            data.datasets[0].image.forEach((imageLink, index) =>{
+                const logo = new Image();
+                logo.src = imageLink;
+                ctx.drawImage(logo, 0, y.getPixelForValue(index)-imageSize/2, imageSize, imageSize)
+
+            })
+           
+        }
+      }  
+    //   const firstLabel = {
+    //     id: 'firstLabel',
+    //     afterDatasetDraw(chart, args, plugins){
+    //         console.log(chart)
+    //         const {ctx, chartArea: {top}, scales: {x,y}} = 
+    //         chart;
+    //         for(let i=0;i<5; i++){
+    //             const xPosition = 100;
+    //             const yPosition = top + 35 + 69*i;
+    //             ctx.save();
+    //             ctx.fillStyle = 'white';
+    //             ctx.font = 'bolder 12px Montserrat';
+    //             ctx.fillText(data.labels[i], xPosition, yPosition)
+    //         }
+    //     }
+    //   }
       // config 
       const config = {
         type: 'bar',
         data,
+        plugins: [ChartDataLabels, imageItems],
         options: {
+            layout:{
+                padding: {
+                    left: 60
+                }
+            },
         plugins: {
             tooltip: {
+                titleFont: 'Montserrat',
+                displayColors: false,
                 callbacks: {
-                    beforeTitle: function(context) {
-                        return 'before the title';
-                    },
                     title: function(context) {
-                        console.log(context[0].Appypie);
-                        return context[0].Appypie;
+                        console.log();
+                        return ;
                     },
-                    afterTitle: function(context) {
-                        return 'after the title';
-                    }
                 }
             },
             legend: {
@@ -740,6 +789,7 @@ function displayResults(rankedPlatforms) {
                 display: false
                 },
                 ticks: {
+                    display: true,
                     font: {
                         family: 'Montserrat',
                         size: 20,
@@ -764,7 +814,7 @@ function displayResults(rankedPlatforms) {
             chart.update();
         }
       }
-      
+
 }
 
 function retakeQuiz() {
