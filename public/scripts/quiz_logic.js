@@ -976,7 +976,12 @@ function displayResults(rankedPlatforms) {
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
 
-
+    if (recAppsheets == true){
+        document.querySelector('.additional-rec').innerHTML = "We also recommend AppSheet for Google Drive integration!"     
+    }
+    else if (recPowerApps == true){
+        document.querySelector('.additional-rec').innerHTML = "We also recommend PowerApps for Microsoft integration!"     
+    }
 
     // BAR GRAPH
     var barPlatforms = [];
