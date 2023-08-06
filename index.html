@@ -19,268 +19,444 @@
     <!-- bar chart ref-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <body>
-</head>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!--
+
+
+
+
+        <link rel="stylesheet" id="wphb-1-css" href="https://devonmcguinness.com/wp-content/uploads/hummingbird-assets/f3365d230651c47ec66b1ab8b7e4f4ec.css" type="text/css" media="all">
+
+        <style id="wphb-1-inline-css" type="text/css">
+            .has-text-align-justify{text-align:justify;}
+            </style>
+
+
+
+
+<link rel="stylesheet" id="jetpack-videopress-video-block-view-css" href="https://devonmcguinness.com/wp-content/uploads/hummingbird-assets/26524115c50c03ed39d7e70cf3456fc3.css" type="text/css" media="all">
+
+<link rel="stylesheet" id="wphb-2-css" href="https://devonmcguinness.com/wp-content/uploads/hummingbird-assets/b37e15fa471126f45169ff02b1ca5a96.css" type="text/css" media="all">
+
+
+<link rel="stylesheet" id="classic-theme-styles-css" href="https://devonmcguinness.com/wp-includes/css/classic-themes.min.css?ver=6.2.2" type="text/css" media="all">
+
+<style id="global-styles-inline-css" type="text/css">
+    body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+    .wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+    :where(.wp-block-columns.is-layout-flex){gap: 2em;}
+    .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+    </style>
+
+<link rel="stylesheet" id="gutenix-parent-style-css" href="https://devonmcguinness.com/wp-content/uploads/hummingbird-assets/ac1ed46e732a9e7b2f3f9062325792a0.css" type="text/css" media="all">
+
+
+<link rel="stylesheet" id="wphb-3-css" href="https://devonmcguinness.com/wp-content/uploads/hummingbird-assets/d834b6dcce46876f79f35ec1510c3425.css" type="text/css" media="all">
+
+<style id="wphb-3-inline-css" type="text/css">
+    /* #Typography */html {font-size: 125%;}body {text-transform: none;font-style: normal;font-weight: 400;line-height: 1.6;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: left;color: #414756;}h1,.h1-style {text-transform: none;font-style: normal;font-weight: 700;line-height: 1.2;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: inherit;color: #414756;}h2,.h2-style {text-transform: none;font-style: normal;font-weight: 700;line-height: 1.2;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: inherit;color: #414756;}h3,.h3-style {text-transform: none;font-style: normal;font-weight: 700;line-height: 1.3;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: inherit;color: #414756;}h4,.h4-style {text-transform: none;font-style: normal;font-weight: 700;line-height: 1.5;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: inherit;color: #414756;}h5,.h5-style {text-transform: none;font-style: normal;font-weight: 700;line-height: 1.6;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: inherit;color: #414756;}h6,.h6-style {text-transform: none;font-style: normal;font-weight: 700;line-height: 1.6;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;text-align: inherit;color: #414756;}a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {color: #3260B1;}a:hover { color: #414756; }blockquote {border-color: #3260B1;}blockquote, mark, ins {color: #3260B1;}blockquote cite, abbr, acronym, .wp-caption-text, .breadcrumbs {color: #a0a3aa;}/* #Forms */input,select,optgroup,textarea {font-style: normal;text-transform: none;font-weight: 400;line-height: 1.6;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;color: #414756;}select{ color: #a0a3aa; }::-webkit-input-placeholder { color: #a0a3aa; }::-moz-placeholder{ color: #a0a3aa; }:-ms-input-placeholder{ color: #a0a3aa; }:-moz-placeholder{ color: #a0a3aa; }.search-form__submit {color: rgb(206,209,216);}.search-form__submit:hover {color: #3260B1;}/* #Layout */@media (min-width: 1200px) {#page .gutenix-container {max-width: 1200px;}}/* #ToTop Button */#toTop {padding: 10px 10px;border-radius: 4px;background-color: #3260b1;color: #ffffff;}#toTop:hover {background-color: #414756;color: #ffffff;}/* #Page preloader */.page-preloader-cover .bar:before{background-color: #3260B1;}/* Buttons */.wp-block-button__link {background-color: #3260B1;}.wp-block-button__link:hover {color: #ffffff;background-color: #414756;}.is-style-outline .wp-block-button__link {color: #3260B1;border-color: #3260B1;}.is-style-outline .wp-block-button__link:hover {color: #ffffff;border-color: #414756;background-color: #414756;}/* Text meant only for screen readers. */.screen-reader-shortcut,.screen-reader-text:focus {color: #ffffff !important;background-color: #3260B1 !important;}.primary_color {color: #3260B1;}.primary_bg_color {background-color: #3260B1;}/* Dynamic CSS */@media (min-width: 1200px) {.woocommerce .content-area.gutenix-col-md-8{flex: 0 0 100%;max-width: 100%;}}body{font-size:13px;}h1, .h1-style{font-size:64px;}h2, .h2-style{font-size:48px;}h3, .h3-style{font-size:34px;}h4, .h4-style{font-size:24px;}h5, .h5-style, .nav-post-title{font-size:20px;}h6, .h6-style{font-size:16px;}.btn, button, #page input[type="button"], #page input[type="reset"], #page input[type="submit"], .woocommerce .button, .elementor-widget-wp-widget-woocommerce_widget_cart .button, .product .added_to_cart{font-size:16px;}#page input, #page select, #page optgroup, #page textarea{font-size:16px;}.header-btn{font-size:16px;}.site-logo--text{font-size:26px;}.site-description{font-size:14px;}.main-navigation--vertical .menu > .menu-item > a, .main-navigation--vertical .menu .menu-parent-item > a{font-size:34px;}.main-navigation--vertical .menu .sub-menu .menu-item > a{font-size:30px;}.footer-area-wrapper .widget-title{margin-bottom:15px;}.footer-area-wrapper .widget-title{font-size:13px;}.footer-area-wrapper .widget{font-size:12px;}body:not(.page-layout-full-width) .site-content__container{padding-top:40px;padding-bottom:70px;}.page-layout-full-width .site-main > .comments-area{padding-bottom:70px;}.footer-area-wrapper{padding-top:70px;padding-bottom:10px;}.footer-bar .gutenix-container, .footer-bar .gutenix-container-fluid{padding-top:25px;padding-bottom:25px;}.site-logo.site-logo--image a{width:120px;}.header-btn.header-btn-1{padding-top:6px;padding-right:20px;padding-bottom:6px;padding-left:20px;}.header-btn.header-btn-2{padding-top:6px;padding-right:20px;padding-bottom:6px;padding-left:20px;}.entry-header, .posts-list--default .post .entry-header, .posts-list--default-2 .post .entry-header, .posts-list--grid .post .entry-header, .posts-list--masonry .post .entry-header, .posts-list--justify .post .entry-header, .wp-block-latest-posts__list.is-grid li > a{margin-top:px;margin-bottom:px;}@media (max-width:800px){.entry-header, .posts-list--default .post .entry-header, .posts-list--default-2 .post .entry-header, .posts-list--grid .post .entry-header, .posts-list--masonry .post .entry-header, .posts-list--justify .post .entry-header, .wp-block-latest-posts__list.is-grid li > a{margin-top:px;margin-bottom:px;}}@media (max-width:544px){.entry-header, .posts-list--default .post .entry-header, .posts-list--default-2 .post .entry-header, .posts-list--grid .post .entry-header, .posts-list--masonry .post .entry-header, .posts-list--justify .post .entry-header, .wp-block-latest-posts__list.is-grid li > a{margin-top:px;margin-bottom:px;}}.posts-list .post .entry-header h2, .posts-list .post .entry-title, .related-post .entry-title, .wp-block-latest-posts__list.is-grid li > a{font-size:px;}@media (max-width:800px){.posts-list .post .entry-header h2, .posts-list .post .entry-title, .related-post .entry-title, .wp-block-latest-posts__list.is-grid li > a{font-size:px;}}@media (max-width:544px){.posts-list .post .entry-header h2, .posts-list .post .entry-title, .related-post .entry-title, .wp-block-latest-posts__list.is-grid li > a{font-size:px;}}.entry-meta, .posts-list--default .post .entry-meta, .posts-list--default-2 .post .entry-meta, .posts-list--grid .post .entry-meta, .posts-list--masonry .post .entry-meta, .posts-list--justify .post .entry-meta{margin-top:px;margin-bottom:px;}@media (max-width:800px){.entry-meta, .posts-list--default .post .entry-meta, .posts-list--default-2 .post .entry-meta, .posts-list--grid .post .entry-meta, .posts-list--masonry .post .entry-meta, .posts-list--justify .post .entry-meta{margin-top:px;margin-bottom:px;}}@media (max-width:544px){.entry-meta, .posts-list--default .post .entry-meta, .posts-list--default-2 .post .entry-meta, .posts-list--grid .post .entry-meta, .posts-list--masonry .post .entry-meta, .posts-list--justify .post .entry-meta{margin-top:px;margin-bottom:px;}}.entry-meta, .entry-footer, .wp-block-latest-posts .wp-block-latest-posts__post-date{font-size:px;}@media (max-width:800px){.entry-meta, .entry-footer, .wp-block-latest-posts .wp-block-latest-posts__post-date{font-size:px;}}@media (max-width:544px){.entry-meta, .entry-footer, .wp-block-latest-posts .wp-block-latest-posts__post-date{font-size:px;}}.posts-list--default .post .entry-content, .posts-list--default-2 .post .entry-content, .posts-list--grid .post .entry-content, .posts-list--masonry .post .entry-content, .posts-list--justify .post .entry-content, .wp-block-latest-posts__post-excerpt{margin-top:px;margin-bottom:px;}@media (max-width:800px){.posts-list--default .post .entry-content, .posts-list--default-2 .post .entry-content, .posts-list--grid .post .entry-content, .posts-list--masonry .post .entry-content, .posts-list--justify .post .entry-content, .wp-block-latest-posts__post-excerpt{margin-top:px;margin-bottom:px;}}@media (max-width:544px){.posts-list--default .post .entry-content, .posts-list--default-2 .post .entry-content, .posts-list--grid .post .entry-content, .posts-list--masonry .post .entry-content, .posts-list--justify .post .entry-content, .wp-block-latest-posts__post-excerpt{margin-top:px;margin-bottom:px;}}.post .entry-content, .posts-list--default .entry-content, .posts-list--default-2 .entry-content, .posts-list--grid .entry-content, .posts-list--masonry .entry-content, .posts-list--justify .entry-content, .wp-block-latest-posts__post-excerpt{font-size:px;}@media (max-width:800px){.post .entry-content, .posts-list--default .entry-content, .posts-list--default-2 .entry-content, .posts-list--grid .entry-content, .posts-list--masonry .entry-content, .posts-list--justify .entry-content, .wp-block-latest-posts__post-excerpt{font-size:px;}}@media (max-width:544px){.post .entry-content, .posts-list--default .entry-content, .posts-list--default-2 .entry-content, .posts-list--grid .entry-content, .posts-list--masonry .entry-content, .posts-list--justify .entry-content, .wp-block-latest-posts__post-excerpt{font-size:px;}}.post-button.btn.btn-default{padding-top:px;padding-right:px;padding-bottom:px;padding-left:px;}@media (max-width:800px){.post-button.btn.btn-default{padding-top:px;padding-right:px;padding-bottom:px;padding-left:px;}}@media (max-width:544px){.post-button.btn.btn-default{padding-top:px;padding-right:px;padding-bottom:px;padding-left:px;}}.post-button.btn.btn-default{font-size:px;}@media (max-width:800px){.post-button.btn.btn-default{font-size:px;}}@media (max-width:544px){.post-button.btn.btn-default{font-size:px;}}.footer-area-wrapper .gutenix-col-xs-12.gutenix-col-md-6{padding-top:px;padding-right:px;padding-bottom:px;padding-left:px;}@media (max-width:800px){.footer-area-wrapper .gutenix-col-xs-12.gutenix-col-md-6{padding-top:px;padding-right:px;padding-bottom:px;padding-left:px;}}@media (max-width:544px){.footer-area-wrapper .gutenix-col-xs-12.gutenix-col-md-6{padding-top:px;padding-right:px;padding-bottom:px;padding-left:px;}}/* #Post */.sticky-label {color: #ffffff;background-color: #3260B1;}.entry-meta,.comment-meta,.entry-footer {color: #a0a3aa;}.cat-links {color: #3260B1;}.cat-links--primary a {background-color: #3260B1;color: #ffffff;}.cat-links--primary a:hover,.cat-links--primary a:focus {background-color: #414756;}.tags-links--primary a {color: #a0a3aa;}.tags-links--primary a:hover {color: #3260B1;}.tags-links__prefix {color: #414756;}/* #Post Navigation */.navigation .nav-icon {color: rgb(206,209,216);}.pagination .page-numbers:not(.prev):not(.next) {color: #a0a3aa;}.navigation a:hover .nav-icon,.pagination a.page-numbers:not(.prev):not(.next):hover,.pagination .current.page-numbers:not(.prev):not(.next),.post-navigation a:hover .nav-post-title{color: #3260B1;}.post-navigation .nav-post-title {font-style: normal;font-weight: 700;font-size: $h5_font_size{px};line-height: 1.6;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;color: #414756;}/* #Single Post */.post-author-bio__title a,#cancel-comment-reply-link {color: #3260B1;}.post-author-bio__title a:hover,#cancel-comment-reply-link:hover {color: #414756;}.comment-respond .comment-notes,.comment-respond .logged-in-as,.comment-respond .must-log-in {color: #a0a3aa;}/* #Customize Partial Placeholder */.customize-partial-placeholder {color: #ffffff;background-color: rgba(50,96,177,0.8);}/* #Buttons */.btn,button,input[type='button'],input[type='reset'],input[type='submit'] {font-style: normal;font-weight: 800;text-transform: none;line-height: 1.5;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;border-radius: 4px;}.btn-primary,button,input[type='button'],input[type='reset'],input[type='submit'] {color: #ffffff;background-color: #3260b1;}.btn-primary:hover,button:hover,input[type='button']:hover,input[type='reset']:hover,input[type='submit']:hover {color: #3260b1;background-color: #414756;}.btn-primary:focus,button:focus,input[type='button']:focus,input[type='reset']:focus,input[type='submit']:focus {color: #3260b1;background-color: #414756;}.is-style-outline .wp-block-button__link {border-width: 2px;border-color: #3260b1;}/* #Widgets */.widget_categories a,.widget_archive a,.widget_pages a,.widget_meta a,.widget_nav_menu a,.widget_calendar,.widget_recent_comments .recentcomments,.widget_rss .rss-date,.widget_rss cite,.widget_recent_entries .post-date,.widget_tag_cloud a,.wp-block-archives-list a,.wp-block-categories-list a,.wp-block-latest-posts__post-date{color: #a0a3aa;}.widget_categories li,.widget_categories a:hover,.widget_archive li,.widget_archive a:hover,.widget_pages a:hover,.widget_meta a:hover,.widget_nav_menu a:hover,.widget_tag_cloud a:hover,.wp-block-archives-list li,.wp-block-categories-list li,.wp-block-archives-list a:hover,.wp-block-categories-list a:hover{color: #3260B1;}.widget_recent_comments .comment-author-link a:hover {color: #414756;}.widget_calendar caption,.widget_calendar thead,.widget_calendar tbody a:hover {color: #ffffff;border-color: #3260B1;background-color: #3260B1;}.widget_calendar #today {color: #3260B1;}.widget_calendar tfoot a {color: rgba(255,255,255,0.5);}.widget_calendar tfoot a:hover {color: #ffffff;}/* #Top-panel */.top-panel {background-color: #414756;color: #a0a3aa;font-size: 14px;}.top-panel .gutenix-container,.top-panel .gutenix-container-fluid {padding-top: 10px;padding-bottom: 10px;}.top-panel a {color: #a0a3aa;}.top-panel a:hover {color: #ffffff;}#top_panel-navigation.top-panel-menu li a {color: #a0a3aa;}#top_panel-navigation.top-panel-menu li a:hover,#top_panel-navigation.top-panel-menu li.current-menu-item a {color: #ffffff;}/* #Header-bar */.header-bar .gutenix-container,.header-bar .gutenix-container-fluid {padding-top: 30px;padding-bottom: 30px;}.header-bar,.header-search-popup {background-color: #ffffff;}.header-bar {}.header-search-toggle,.header-search-close,.header-search-form__label,.header-search-form__field-icon,.header-cart__link,.social-list--header a,.gutenix-header-login-toggle {color: #414756;}.menu-toggle:hover,.menu-toggle-close:hover,.header-search-toggle:hover,.header-search-close:hover,.header-cart__link:hover,.social-list--header a:hover,.gutenix-header-login-toggle:hover {color: #3260b1;}/* #Logo */.site-logo--text {text-transform: none;font-style: normal;font-weight: 900;font-size: $logo_font_size{px};line-height: 1.2;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;}.site-logo__link,.site-logo__link:hover {color: #009ef9;}.site-description {text-transform: none;font-style: normal;font-weight: 400;font-size: $tagline_font_size{px};line-height: 1.3;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;color: #005e01;}/* #Header Buttons */.header-btn {font-style: normal;font-weight: 800;text-transform: none;line-height: 1.5;font-family: 'Libre Franklin', sans-serif;letter-spacing: 0px;}.header-btn.header-btn-1 {border: 0px solid ;border-radius: 4px;background-color: #3260b1;color: #ffffff;}.header-btn.header-btn-1:hover {background-color: #414756;;;}.header-btn.header-btn-2 {border: 0px solid ;border-radius: 4px;background-color: #414756;color: #ffffff;}.header-btn.header-btn-2:hover {background-color: #3260b1;;;}/* #Header Search */.header-search-form__field {;}.header-search-toggle path,.header-search-close path {fill: #414756;}.header-search-toggle:hover path,.header-search-close:hover path {fill: #3260b1;}/* Modile Menu */.menu-toggle-inner,.menu-toggle-inner:before,.menu-toggle-inner:after {background-color: #414756;}.header-bar__sidebar {background-color: #ffffff;}.menu-toggle-close path {fill: #414756;}@media (max-width: 1024px) {.social-list--header a {color: #414756;}}/* #Footer */.footer-area-wrapper {background-color: #f6f6f7;;}.footer-area-wrapper .widget-title {font-style: normal;text-transform: capitalize;font-weight: 700;letter-spacing: 0px;color: #000000;}.footer-area-wrapper .widget {letter-spacing: 0px;color: #000000;}.footer-area-wrapper .widget a {font-weight: 700;color: #3260b1;}.footer-area-wrapper .widget a:hover {color: #8224e3;}.footer-bar {color: #000000;font-size: 14px;background-color: #f6f6f7;;}.footer-bar.border-top-wide {border-top: 0px solid #e8e9eb;}.footer-bar.border-top-boxed .gutenix-container:before{height: 0px;background-color: #e8e9eb;}.footer-bar a {color: #343579;}.footer-bar a:hover {color: #3260b1;}/* #Menu */.main-navigation--default .menu > .menu-item > a {font-family: 'Libre Franklin', sans-serif;text-transform: none;font-style: normal;font-weight: 500;line-height: 1.8;font-size: 16px;letter-spacing: 0px;color: #414756;}.main-navigation--default .menu > .menu-item:hover > a,.main-navigation--default .menu > .menu-item.focus > a,.main-navigation--default .menu > .current_page_item > a,.main-navigation--default .menu > .current-menu-item > a,.main-navigation--default .menu > .current_page_ancestor > a,.main-navigation--default .menu > .current-menu-ancestor > a {color: #3260b1;}.main-navigation--default .menu:not(.menu--hover-framed) > .menu-item:before,.main-navigation--default .menu:not(.menu--hover-framed) > .menu-item:after {background-color: #3260b1;}.main-navigation--default .menu--hover-framed > .menu-item:before,.main-navigation--default .menu--hover-framed > .menu-item:after {border-color: #3260b1;}#site-navigation.main-navigation--default .menu .sub-menu {background-color: #ffffff;}.main-navigation--default .menu .sub-menu a {text-transform: none;font-style: normal;font-weight: 500;line-height: 1.6;font-size: 16px;letter-spacing: 0px;color: #a0a3aa;;}.main-navigation--default .menu .sub-menu .menu-item:hover > a,.main-navigation--default .menu .sub-menu .menu-item.focus > a,.main-navigation--default .menu .sub-menu .current_page_item > a,.main-navigation--default .menu .sub-menu .current-menu-item > a,.main-navigation--default .menu .sub-menu .current_page_ancestor > a,.main-navigation--default .menu .sub-menu .current-menu-ancestor > a {color: #3260B1;background-color: #f6f6f7;}/* #Vertical Menu */.header-bar--style-8 .menu-toggle-inner,.header-bar--style-8 .menu-toggle-inner:before,.header-bar--style-8 .menu-toggle-inner:after {background-color: #414756;}.main-navigation.main-navigation--vertical .menu a {font-family: 'Libre Franklin', sans-serif;text-transform: none;font-style: normal;font-weight: 500;line-height: 1.8;letter-spacing: 0px;}.main-navigation.main-navigation--vertical .menu a,.main-navigation.main-navigation--vertical .menu-back-btn {color: #414756;}.main-navigation.main-navigation--vertical .menu-back-btn:hover,.main-navigation.main-navigation--vertical .menu a:hover,.main-navigation.main-navigation--vertical .menu > .menu-item.focus > a,.main-navigation.main-navigation--vertical .menu > .current_page_item > a,.main-navigation.main-navigation--vertical .menu > .current-menu-item > a,.main-navigation.main-navigation--vertical .menu > .current_page_ancestor > a,.main-navigation.main-navigation--vertical .menu > .current-menu-ancestor > a,.main-navigation.main-navigation--vertical .menu .sub-menu .menu-item.focus > a,.main-navigation.main-navigation--vertical .menu .sub-menu .current_page_item > a,.main-navigation.main-navigation--vertical .menu .sub-menu .current-menu-item > a,.main-navigation.main-navigation--vertical .menu .sub-menu .current_page_ancestor > a,.main-navigation.main-navigation--vertical .menu .sub-menu .current-menu-ancestor > a {color: #3260b1;}.header-bar--style-8 .header-bar__sidebar--full-screen:after {opacity: 0.99;background-color: #ffffff;}.header-bar--style-8 .menu-toggle-close path {fill: #414756;}.header-bar--style-8 .social-list--header a {color: #414756;}.header-bar--style-8 .social-list--header a:hover {color: #3260b1;}
+    :root { --admin-bar-top : 37px; }
+    </style>
+
+
+<link rel="preload" as="style" href="//fonts.googleapis.com/css?family=Libre+Franklin%3A900%2C400%2C700%2C800%2C500%2C900italic%2C400italic%2C700italic%2C800italic%2C500italic&amp;subset=latin&amp;ver=6.2.2">
+
+<link rel="stylesheet" id="cx-google-fonts-gutenix-css" href="//fonts.googleapis.com/css?family=Libre+Franklin%3A900%2C400%2C700%2C800%2C500%2C900italic%2C400italic%2C700italic%2C800italic%2C500italic&amp;subset=latin&amp;ver=6.2.2" type="text/css" media="all" onload="this.media=&quot;all&quot;">
+
+-->
+
+
+
 
 <body>
     </head>
 
     <body>
-        <div class="background">
-            <img class="img_container" src="assets/Backgroud/sebastian-svenson-LpbyDENbQQg-unsplash.jpg" />
-        </div>
+        </head>
 
-        <div class="quiz_container">
-            <h1>Find a No-Code App Builder!</h1>
-            <div class="quiz_dynamic">
-                <div id="questionsPage">
-                    <div class="yes_no">
-                        <h3>Yes or No Questions</h2>
-                            <ol class="yes_no_list">
-                                <li class="yes_no_question"> 1. Do you intend for your project to handle high traffic?
-                                    (high ex: Uber, Instagram, Airbnb)
-                                    <p> (low ex: Local Restaurant, Local Bowling Alley,
-                                        small
-                                        niche
-                                        hobbies/interests)</p>
-                                    <br>
-                                    <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
-                                    <br>
-                                    <button id="questionOneNo" onclick="rankPlatforms()" value="2">NO</button>
-                                </li>
-                                <li class="yes_no_questions"> 2. Do you plan on adding new features to your app after
-                                    publication?
-                                    <p>(Ex. Instagram stories, snapchat updates)
-                                        (low ex: order notifs, entry updates, updating a menu, change/update notifs)</p>
-                                    <br>
-                                    <button id="questionTwoYes" onclick="rankPlatforms()" value="1">YES</button>
-                                    <br>
-                                    <button id="questionTwoNo" onclick="rankPlatforms()" value="2">NO</button>
-                                </li>
-                                <li class="yes_no_questions">
-                                    3. Must your app contain large-scale features?
-                                    <p>(Ex. Search algorithms, large number of files, hosts wide variety of data/
-                                        distinct
-                                        customizations/
-                                        features)</p>
-                                    <br>
-                                    <button id="questionThreeYes" onclick="rankPlatforms()" value="1">YES</button>
-                                    <br>
-                                    <button id="questionThreeNo" onclick="rankPlatforms()" value="2">NO</button>
-                                </li>
-                                <li class="yes_no_questions">
-                                    4. Do you need your app to be in any language other than english?
-                                    <br>
-                                    <button id="questionFourYes" onclick="rankPlatforms()" value="1">YES</button>
-                                    <br>
-                                    <button id="questionFourNo" onclick="rankPlatforms()" value="2">NO</button>
-                                </li>
-                            </ol>
-                    </div>
-                    <div class="select_qs">
-                        <h3>Select One Questions</h2>
-                            <ol class="select_one_list">
-                                <li class="select_one_question"> 5. How would you like to manage data for your app?
-                                    <br>
-                                    <button id="data-one" onclick="rankPlatforms()">SELECT</button>With the platform to
-                                    build the app (i.e. AWS,
-                                    Azure, etc.)
-                                    <br>
-                                    <button id="data-two" onclick="rankPlatforms()">SELECT</button>Using Google
-                                    Workspace (i.e. Google Sheets)
-                                    <br>
-                                    <button id="data-three" onclick="rankPlatforms()">SELECT</button> Using Office 365
-                                    (i.e. Microsoft Excel)
-                                    <br>
-                                    <button id="data-four" onclick="rankPlatforms()">SELECT</button> My app does not
-                                    have any data requirements
-                                    <br>
-                                </li>
+        <body>
+            <!-- 
 
-                                <li class="select_one_question"> 6. What type of application would you like to build?
-                                    <br>
-                                    <button id="website" onclick="rankPlatforms()">SELECT!</button>
-                                    Website
-                                    <br>
-                                    <button id="mobile-app" onclick="rankPlatforms()">SELECT!</button>
-                                    Mobile App (e.g. iOS and/or Android mobile device)
-                                    <br>
+            <div class="gutenix-container">
+                <div class="header-bar__inner">
+                    <div class="header-bar__row">
+                        <div class="site-branding ">
+                            <div class="site-logo site-logo--image "><a href="https://devonmcguinness.com/"
+                                    class="custom-logo-link" rel="home"><img width="738" height="232"
+                                        src="https://i0.wp.com/devonmcguinness.com/wp-content/uploads/2021/06/cropped-Screen-Shot-2021-06-17-at-2.06.58-PM.png?fit=738%2C232&amp;ssl=1"
+                                        class="custom-logo" alt="Data Storytelling Inspires Action"></a></div>
+                            <div class="site-description"><span class="site-description__text">Build community &amp;
+                                    resilience with powerful data stories</span></div>
+                        </div>
+                        <nav id="site-navigation" class="main-navigation main-navigation--default" role="navigation">
+                            <ul id="main-menu" class="menu menu--hover- nav-menu" aria-expanded="false">
+                                <li id="menu-item-4070"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-4070">
+                                    <a title="Where" href="https://devonmcguinness.com/">Home</a></li>
+                                <li id="menu-item-128"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128"><a
+                                        title="Who"
+                                        href="https://devonmcguinness.com/about-data-storytelling-llc/">About</a></li>
+                                <li id="menu-item-552"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-552"><a
+                                        title="Who"
+                                        href="https://devonmcguinness.com/case-studies-for-maximizing-impact-with-data-treasure/">Case
+                                        Studies</a></li>
+                                <li id="menu-item-3443"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3443">
+                                    <a href="https://devonmcguinness.com/services/">Services</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-3444"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3444">
+                                            <a href="https://devonmcguinness.com/services/">Data Services</a></li>
+                                        <li id="menu-item-3233"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3233">
+                                            <a title="Book a data storyteller"
+                                                href="https://devonmcguinness.com/services/book-a-speaker/">Speaking</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                <li id="menu-item-107"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a
+                                        title="How to connect" href="https://devonmcguinness.com/contact-me/">Contact
+                                        Me</a></li>
+                                <li id="menu-item-1244"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1244"><a
+                                        title="Data Vignette" href="https://devonmcguinness.com/blog/">Blog</a></li>
+                            </ul>
+                            
+                        </nav>
+                        -->
+                        <!-- #site-navigation -->
+                        
 
-                                <li class="select_one_question"> 7. What amount are you willing to spend per month?
-                                    <p>(Including technical support)</p>
-                                    <button id="money-one" onclick="rankPlatforms()">SELECT!</button>
-                                    $0
-                                    <br>
-                                    <button id="money-two" onclick="rankPlatforms()">SELECT!</button>
-                                    $0 - $50 ($0-$600 per year)
-                                    <br>
-                                    <button id="money-three" onclick="rankPlatforms()">SELECT!</button>
-                                    $50 - $100 ($600-$1200 per year)
-                                    <br>
-                                    <button id="money-four" onclick="rankPlatforms()">SELECT!</button>
-                                    $101 - $200 ($1200-$2400 per year)
-                                    <br>
-                                    <button id="money-five" onclick="rankPlatforms()">SELECT!</button>
-                                    $200+ ($2,400+ per year)
-                                    <br>
-                                </li>
-                            </ol>
-                    </div>
+                        <!--
+                        <div class="header-toggles">
 
-                    <div class="Ranking Questions ">
-                        <h3>Ranking Questions</h2>
-                            <ol class="select_one_list">
-                                <li class="select_one_question"> 8. Select the the category that is your HIGHEST
-                                    priority for
-                                    your platform:
-                                    <br>
-                                    <button id="one-customization" onClick="rankPlatforms()">1.
-                                        CUSTOMIZATION</button></a>
-                                    <br>
-                                    <button id="one-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
-                                    <br>
-                                    <button id="one-cost" onClick="rankPlatforms()">3. COST</button></a>
-                                    <br>
-                                    <button id="one-ux" onClick="rankPlatforms()">4. USER
-                                        FRIENDLINESS</button></a>
-                                </li>
-
-                                <li class="select_one_question"> 9. Select the the category that is your SECOND HIGHEST
-                                    priority for your platform:
-                                    <br>
-                                    <button id="two-customization" onClick="rankPlatforms()">1.
-                                        CUSTOMIZATION</button></a>
-                                    <br>
-                                    <button id="two-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
-                                    <br>
-                                    <button id="two-cost" onClick="rankPlatforms()">3. COST</button></a>
-                                    <br>
-                                    <button id="two-ux" onClick="rankPlatforms()">4. USER
-                                        FRIENDLINESS</button></a>
-                                </li>
-                                <li class="select_one_question"> 10. Select the the category that is your THIRD HIGHEST
-                                    priority
-                                    for your platform:
-                                    <br>
-                                    <button id="three-customization" onClick="rankPlatforms()">1.
-                                        CUSTOMIZATION</button></a>
-                                    <br>
-                                    <button id="three-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
-                                    <br>
-                                    <button id="three-cost" onClick="rankPlatforms()">3. COST</button></a>
-                                    <br>
-                                    <button id="three-ux" onClick="rankPlatforms()">4. USER
-                                        FRIENDLINESS</button></a>
-                                </li>
-                    </div>
-                    <div class="center">
-                        <button id="submit" onclick="submitQuiz()">
-                            <h2>Submit Quiz</h2>
-                        </button>
-                    </div>
-                </div>
-                <div id="resultsPage">
-                    <div class="results">
-                        <h2>RESULTS</h2>
-                        <h4 class="platform-name"></h4>
-                        <img class="large-image" src="" alt="image">
-
-                        <h4>You are a</h3>
-                            <h3 class="dnd-name"></h3>
-                            <p class="dnd-description"></p>
-
-                            <h3>What's <p class="green-text">your</p> story?</h3>
-                            <div class="results-match">
-                                <h4>Your Character Match:</h4>
-                                <h2 class="results-rating"> </h2>
-                                <h3 class="dnd-name">
-                                    </h2>
-                                    <div class="results-bars">
-                                        <canvas id="myChart" style="width:100%;"></canvas>
+                            <button class="header-search-toggle btn-initial"><svg class="svg-icon" aria-hidden="true"
+                                    role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.7188 11.3125C13.1667 10.7188 13.5156 10.0625 13.7656 9.34375C14.0156 8.625 14.1406 7.86979 14.1406 7.07812C14.1406 6.09896 13.9531 5.18229 13.5781 4.32812C13.2135 3.46354 12.7083 2.71354 12.0625 2.07812C11.4271 1.43229 10.6771 0.927083 9.8125 0.5625C8.95833 0.1875 8.04688 0 7.07812 0C6.09896 0 5.17708 0.1875 4.3125 0.5625C3.45833 0.927083 2.70833 1.43229 2.0625 2.07812C1.42708 2.71354 0.921875 3.46354 0.546875 4.32812C0.182292 5.18229 0 6.09896 0 7.07812C0 8.04688 0.182292 8.96354 0.546875 9.82812C0.921875 10.6823 1.42708 11.4323 2.0625 12.0781C2.70833 12.7135 3.45833 13.2188 4.3125 13.5938C5.17708 13.9583 6.09896 14.1406 7.07812 14.1406C7.86979 14.1406 8.625 14.0156 9.34375 13.7656C10.0625 13.5156 10.7188 13.1667 11.3125 12.7188L14.2969 15.7031C14.3906 15.8073 14.5 15.8802 14.625 15.9219C14.75 15.974 14.875 16 15 16C15.125 16 15.25 15.974 15.375 15.9219C15.5 15.8802 15.6094 15.8073 15.7031 15.7031C15.901 15.5052 16 15.2708 16 15C16 14.7292 15.901 14.4948 15.7031 14.2969L12.7188 11.3125ZM7.07812 12.1406C6.36979 12.1406 5.70833 12.0104 5.09375 11.75C4.47917 11.4792 3.94271 11.1146 3.48438 10.6562C3.02604 10.1979 2.66146 9.66146 2.39062 9.04688C2.13021 8.43229 2 7.77604 2 7.07812C2 6.36979 2.13021 5.70833 2.39062 5.09375C2.66146 4.47917 3.02604 3.94271 3.48438 3.48438C3.94271 3.02604 4.47917 2.66667 5.09375 2.40625C5.70833 2.13542 6.36979 2 7.07812 2C7.77604 2 8.43229 2.13542 9.04688 2.40625C9.66146 2.66667 10.1979 3.02604 10.6562 3.48438C11.1146 3.94271 11.474 4.47917 11.7344 5.09375C12.0052 5.70833 12.1406 6.36979 12.1406 7.07812C12.1406 7.77604 12.0052 8.43229 11.7344 9.04688C11.474 9.66146 11.1146 10.1979 10.6562 10.6562C10.1979 11.1146 9.66146 11.4792 9.04688 11.75C8.43229 12.0104 7.77604 12.1406 7.07812 12.1406Z">
+                                    </path>
+                                </svg></button>
+                            <div class="header-search-popup">
+                                <div class="header-search-popup__container gutenix-container">
+                                    <div class="header-search-popup__inner">
+                                        <form role="search" method="get" class="header-search-form"
+                                            action="https://devonmcguinness.com/">
+                                            <label class="header-search-form__label" for="header-search-form-id">What
+                                                are you looking for?</label>
+                                            <div class="header-search-form__field-wrapper">
+                                                <i class="header-search-form__field-icon"><svg class="svg-icon"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12.7188 11.3125C13.1667 10.7188 13.5156 10.0625 13.7656 9.34375C14.0156 8.625 14.1406 7.86979 14.1406 7.07812C14.1406 6.09896 13.9531 5.18229 13.5781 4.32812C13.2135 3.46354 12.7083 2.71354 12.0625 2.07812C11.4271 1.43229 10.6771 0.927083 9.8125 0.5625C8.95833 0.1875 8.04688 0 7.07812 0C6.09896 0 5.17708 0.1875 4.3125 0.5625C3.45833 0.927083 2.70833 1.43229 2.0625 2.07812C1.42708 2.71354 0.921875 3.46354 0.546875 4.32812C0.182292 5.18229 0 6.09896 0 7.07812C0 8.04688 0.182292 8.96354 0.546875 9.82812C0.921875 10.6823 1.42708 11.4323 2.0625 12.0781C2.70833 12.7135 3.45833 13.2188 4.3125 13.5938C5.17708 13.9583 6.09896 14.1406 7.07812 14.1406C7.86979 14.1406 8.625 14.0156 9.34375 13.7656C10.0625 13.5156 10.7188 13.1667 11.3125 12.7188L14.2969 15.7031C14.3906 15.8073 14.5 15.8802 14.625 15.9219C14.75 15.974 14.875 16 15 16C15.125 16 15.25 15.974 15.375 15.9219C15.5 15.8802 15.6094 15.8073 15.7031 15.7031C15.901 15.5052 16 15.2708 16 15C16 14.7292 15.901 14.4948 15.7031 14.2969L12.7188 11.3125ZM7.07812 12.1406C6.36979 12.1406 5.70833 12.0104 5.09375 11.75C4.47917 11.4792 3.94271 11.1146 3.48438 10.6562C3.02604 10.1979 2.66146 9.66146 2.39062 9.04688C2.13021 8.43229 2 7.77604 2 7.07812C2 6.36979 2.13021 5.70833 2.39062 5.09375C2.66146 4.47917 3.02604 3.94271 3.48438 3.48438C3.94271 3.02604 4.47917 2.66667 5.09375 2.40625C5.70833 2.13542 6.36979 2 7.07812 2C7.77604 2 8.43229 2.13542 9.04688 2.40625C9.66146 2.66667 10.1979 3.02604 10.6562 3.48438C11.1146 3.94271 11.474 4.47917 11.7344 5.09375C12.0052 5.70833 12.1406 6.36979 12.1406 7.07812C12.1406 7.77604 12.0052 8.43229 11.7344 9.04688C11.474 9.66146 11.1146 10.1979 10.6562 10.6562C10.1979 11.1146 9.66146 11.4792 9.04688 11.75C8.43229 12.0104 7.77604 12.1406 7.07812 12.1406Z">
+                                                        </path>
+                                                    </svg></i>
+                                                <input type="search" id="header-search-form-id"
+                                                    class="header-search-form__field" placeholder="Search..." value=""
+                                                    name="s">
+                                            </div>
+                                        </form>
+                                        <button class="header-search-close btn-initial"><svg class="svg-icon"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15.6607 0.339286C15.4345 0.113095 15.1667 0 14.8571 0C14.5476 0 14.2798 0.113095 14.0536 0.339286L8 6.39286L1.94643 0.339286C1.72024 0.113095 1.45238 0 1.14286 0C0.833333 0 0.565476 0.113095 0.339286 0.339286C0.113095 0.565476 0 0.833333 0 1.14286C0 1.45238 0.113095 1.72024 0.339286 1.94643L6.39286 8L0.339286 14.0536C0.113095 14.2798 0 14.5476 0 14.8571C0 15.1667 0.113095 15.4345 0.339286 15.6607C0.446429 15.7798 0.571429 15.869 0.714286 15.9286C0.857143 15.9762 1 16 1.14286 16C1.28571 16 1.42857 15.9762 1.57143 15.9286C1.71429 15.869 1.83929 15.7798 1.94643 15.6607L8 9.60714L14.0536 15.6607C14.1607 15.7798 14.2857 15.869 14.4286 15.9286C14.5714 15.9762 14.7143 16 14.8571 16C15 16 15.1429 15.9762 15.2857 15.9286C15.4286 15.869 15.5536 15.7798 15.6607 15.6607C15.8869 15.4345 16 15.1667 16 14.8571C16 14.5476 15.8869 14.2798 15.6607 14.0536L9.60714 8L15.6607 1.94643C15.8869 1.72024 16 1.45238 16 1.14286C16 0.833333 15.8869 0.565476 15.6607 0.339286Z">
+                                                </path>
+                                            </svg></button>
                                     </div>
+                                </div>
                             </div>
 
-                            <br>
 
-                            <div class="results-details">
-                                <h4>Detailed Analysis:</h4>
-                                <img class="platform-icon" src="" alt="">
-                                <p class="platform-description"></p>
-                            </div>
-                    </div>
-
-                    <button id="retakeButton" onclick="retakeQuiz()">Retake Quiz</button>
-
-                    <div class="email-results">
-                        <!-- @Ji -->
-                        <h2>SHARE YOUR RESULTS!</h2>
-                        <label for="recipient">Recipient:</label>
-                        <input type="email" id="recipient" required>
-                        <button id="sendEmailButton">Send Quiz Results</button>
-                    </div>
-
-                    <div class="twitter-results">
-                        <p>&nbsp;</p>
-                        <p><br>
-                        </p>
-                        <p><br>
-                        </p>
-
-                        <div class="icon-container"> <img src="assets/nav icons/twitterXicon (1).png"
-                                alt="(twitter) icon" onclick="tweet()" class="twitter-icon" height="48" width="48">
-                            <div class="icon-overlay" onclick="tweet()">
-                                <div class="tooltip">Tweet your results</div>
-                            </div>
                         </div>
 
-                        <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png" alt="Facebook icon"
-                                onclick="shareOnFacebook()" height="48" width="48">
-                            <div class="icon-overlay" onclick="shareOnFacebook()">
-                                <div class="tooltip">Share on Facebook</div>
-                            </div>
-                          
-                        <h3>What's <p class="green-text">your</p> story?</h3>
-                        <div class="results-match">
-                            <center><h4>Your Character Match:</h4></center>
-                            <center><h2 class="results-rating"> </h2></center>
-                            <h3 class="dnd-name">
-                                </h2>
-                                <div class="results-bars">
-                                    <canvas id="myChart" style="width:20%;"></canvas>
+
+
+
+                        <div class="menu-toggle-wrapper"><button class="menu-toggle btn-initial"><span
+                                    class="menu-toggle-box"><span class="menu-toggle-inner"></span></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <div class="background">
+                <img class="img_container" src="assets/Backgroud/sebastian-svenson-LpbyDENbQQg-unsplash.jpg" />
+            </div>
+
+            <div class="quiz_container">
+                <h1>Find a No-Code App Builder!</h1>
+                <div class="quiz_dynamic">
+                    <div id="questionsPage">
+                        <div class="yes_no">
+                            <h3>Yes or No Questions</h2>
+                                <ol class="yes_no_list">
+                                    <li class="yes_no_question"> 1. Do you intend for your project to handle high
+                                        traffic?
+                                        <p>
+                                        (High Traffic Company Example: Uber, Instagram, Airbnb)
+                                        </p>
+                                        <p> (Low Traffic Company Example: Local Restaurant, Local Bowling Alley,
+                                            small
+                                            niche
+                                            hobbies/interests)</p>
+                                        <br>
+                                        <button id="questionOneYes" onclick="rankPlatforms()" value="1">YES</button>
+                                        <br>
+                                        <button id="questionOneNo" onclick="rankPlatforms()" value="2">NO</button>
+                                    </li>
+                                    <li class="yes_no_questions"> 2. Do you plan on adding new features to your app
+                                        after
+                                        publication?
+                                        <p>(Ex. Instagram stories, snapchat updates)
+                                            (low ex: order notifs, entry updates, updating a menu, change/update notifs)
+                                        </p>
+                                        <br>
+                                        <button id="questionTwoYes" onclick="rankPlatforms()" value="1">YES</button>
+                                        <br>
+                                        <button id="questionTwoNo" onclick="rankPlatforms()" value="2">NO</button>
+                                    </li>
+                                    <li class="yes_no_questions">
+                                        3. Must your app contain large-scale features?
+                                        <p>(Example: search algorithms, large number of files, hosts wide variety of data/
+                                            distinct
+                                            customizations/
+                                            features)</p>
+                                        <br>
+                                        <button id="questionThreeYes" onclick="rankPlatforms()" value="1">YES</button>
+                                        <br>
+                                        <button id="questionThreeNo" onclick="rankPlatforms()" value="2">NO</button>
+                                    </li>
+                                    <li class="yes_no_questions">
+                                        4. Do you need your app to be in any language other than english?
+                                        <br>
+                                        <button id="questionFourYes" onclick="rankPlatforms()" value="1">YES</button>
+                                        <br>
+                                        <button id="questionFourNo" onclick="rankPlatforms()" value="2">NO</button>
+                                    </li>
+                                </ol>
+                        </div>
+                        <div class="select_qs">
+                            <h3>Select One Questions</h2>
+                                <ol class="select_one_list">
+                                    <li class="select_one_question"> 5. How would you like to manage data for your app?
+                                        <br>
+                                        <button id="data-one" onclick="rankPlatforms()">SELECT</button>With the platform
+                                        to
+                                        build the app (i.e. AWS,
+                                        Azure, etc.)
+                                        <br>
+                                        <button id="data-two" onclick="rankPlatforms()">SELECT</button>Using Google
+                                        Workspace (i.e. Google Sheets)
+                                        <br>
+                                        <button id="data-three" onclick="rankPlatforms()">SELECT</button> Using Office
+                                        365
+                                        (i.e. Microsoft Excel)
+                                        <br>
+                                        <button id="data-four" onclick="rankPlatforms()">SELECT</button> My app does not
+                                        have any data requirements
+                                        <br>
+                                    </li>
+
+                                    <li class="select_one_question"> 6. What type of application would you like to
+                                        build?
+                                        <br>
+                                        <button id="website" onclick="rankPlatforms()">SELECT</button>
+                                        Website
+                                        <br>
+                                        <button id="mobile-app" onclick="rankPlatforms()">SELECT</button>
+                                        Mobile App (e.g. iOS and/or Android mobile device)
+                                        <br>
+                                    </li>
+
+                                    <li class="select_one_question"> 7. What amount are you willing to spend per month?
+                                        <p>(Including technical support)</p>
+                                        <button id="money-one" onclick="rankPlatforms()">SELECT</button>
+                                        $0
+                                        <br>
+                                        <button id="money-two" onclick="rankPlatforms()">SELECT</button>
+                                        $0 - $50 ($0-$600 per year)
+                                        <br>
+                                        <button id="money-three" onclick="rankPlatforms()">SELECT</button>
+                                        $50 - $100 ($600-$1200 per year)
+                                        <br>
+                                        <button id="money-four" onclick="rankPlatforms()">SELECT</button>
+                                        $101 - $200 ($1200-$2400 per year)
+                                        <br>
+                                        <button id="money-five" onclick="rankPlatforms()">SELECT</button>
+                                        $200+ ($2,400+ per year)
+                                        <br>
+                                    </li>
+                                </ol>
+                        </div>
+
+                        <div class="Ranking Questions ">
+                            <h3>Ranking Questions</h2>
+                                <ol class="select_one_list">
+                                    <li class="select_one_question"> 8. Select the the category that is your HIGHEST
+                                        priority for
+                                        your platform:
+                                        <br>
+                                        <button id="one-customization" onClick="rankPlatforms()">1.
+                                            CUSTOMIZATION</button></a>
+                                        <br>
+                                        <button id="one-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
+                                        <br>
+                                        <button id="one-cost" onClick="rankPlatforms()">3. COST</button></a>
+                                        <br>
+                                        <button id="one-ux" onClick="rankPlatforms()">4. USER
+                                            FRIENDLINESS</button></a>
+                                    </li>
+
+                                    <li class="select_one_question"> 9. Select the the category that is your SECOND
+                                        HIGHEST
+                                        priority for your platform:
+                                        <br>
+                                        <button id="two-customization" onClick="rankPlatforms()">1.
+                                            CUSTOMIZATION</button></a>
+                                        <br>
+                                        <button id="two-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
+                                        <br>
+                                        <button id="two-cost" onClick="rankPlatforms()">3. COST</button></a>
+                                        <br>
+                                        <button id="two-ux" onClick="rankPlatforms()">4. USER
+                                            FRIENDLINESS</button></a>
+                                    </li>
+                                    <li class="select_one_question"> 10. Select the the category that is your THIRD
+                                        HIGHEST
+                                        priority
+                                        for your platform:
+                                        <br>
+                                        <button id="three-customization" onClick="rankPlatforms()">1.
+                                            CUSTOMIZATION</button></a>
+                                        <br>
+                                        <button id="three-time" onClick="rankPlatforms()">2. BUILD TIME</button></a>
+                                        <br>
+                                        <button id="three-cost" onClick="rankPlatforms()">3. COST</button></a>
+                                        <br>
+                                        <button id="three-ux" onClick="rankPlatforms()">4. USER
+                                            FRIENDLINESS</button></a>
+                                    </li>
+                        </div>
+                        <div class="center">
+                            <button id="submit" onclick="submitQuiz()">
+                                <h2>Submit Quiz</h2>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="resultsPage">
+                        <div class="results">
+                            <h2>RESULTS</h2>
+                            <h4 class="platform-name"></h4>
+                            <img class="large-image" src="" alt="image">
+
+                            <h4>You are a</h3>
+                                <h3 class="dnd-name"></h3>
+                                <p class="dnd-description"></p>
+
+                                <h3>What's <p class="green-text">your</p> story?</h3>
+                                <div class="results-match">
+                                    <h4>Your Character Match:</h4>
+                                    <h2 class="results-rating"> </h2>
+                                    <h3 class="dnd-name">
+                                        </h2>
+                                        <div class="results-bars">
+                                            <canvas id="myChart" style="width:100%;"></canvas>
+                                        </div>
+                                </div>
+
+                                <br>
+
+                                <div class="results-details">
+                                    <h4>Detailed Analysis:</h4>
+                                    <img class="platform-icon" src="" alt="">
+                                    <p class="platform-description"></p>
                                 </div>
                         </div>
 
-                        <div class="results-details">
-                            <center><h4>Detailed Analysis:</h4></center>
-                            <center><img class="platform-icon" src="" alt=""></center>
-                            <p class="platform-description"></p>
+                        <button id="retakeButton" onclick="retakeQuiz()">Retake Quiz</button>
+
+                        <div class="email-results">
+                            <!-- @Ji -->
+                            <h2>SHARE YOUR RESULTS!</h2>
+                            <label for="recipient">Recipient:</label>
+                            <input type="email" id="recipient" required>
+                            <button id="sendEmailButton">Send Quiz Results</button>
                         </div>
 
-                    </div>
+                        <div class="twitter-results">
+                            <p>&nbsp;</p>
+                            <p><br>
+                            </p>
+                            <p><br>
+                            </p>
 
-                    <div class="quiz-feedback">
-                        <!-- @Ji -->
-                        <h2>Survey</h2>
-                        <p>Enter your email here:</p>
-                        <a target="_blank"
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSdx-BbI6OlRJg6yS_I24R_U9P8RoK5N0rM6H7c0KM5UHYLomw/viewform?usp=sf_link">
-                            <button>Survey</button>
-                        </a>
+                            <div class="icon-container"> <img src="assets/nav icons/twitterXicon (1).png"
+                                    alt="(twitter) icon" onclick="tweet()" class="twitter-icon" height="48" width="48">
+                                <div class="icon-overlay" onclick="tweet()">
+                                    <div class="tooltip">Tweet your results</div>
+                                </div>
+                            </div>
+
+                            <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png" alt="Facebook icon"
+                                    onclick="shareOnFacebook()" height="48" width="48">
+                                <div class="icon-overlay" onclick="shareOnFacebook()">
+                                    <div class="tooltip">Share on Facebook</div>
+                                </div>
+
+                                <h3>What's <p class="green-text">your</p> story?</h3>
+                                <div class="results-match">
+                                    <center>
+                                        <h4>Your Character Match:</h4>
+                                    </center>
+                                    <center>
+                                        <h2 class="results-rating"> </h2>
+                                    </center>
+                                    <h3 class="dnd-name">
+                                        </h2>
+                                        <div class="results-bars">
+                                            <canvas id="myChart" style="width:20%;"></canvas>
+                                        </div>
+                                </div>
+
+                                <div class="results-details">
+                                    <center>
+                                        <h4>Detailed Analysis:</h4>
+                                    </center>
+                                    <center><img class="platform-icon" src="" alt=""></center>
+                                    <p class="platform-description"></p>
+                                </div>
+
+                            </div>
+
+                            <div class="quiz-feedback">
+                                <!-- @Ji -->
+                                <h2>Survey</h2>
+                                <p>Enter your email here:</p>
+                                <a target="_blank"
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSdx-BbI6OlRJg6yS_I24R_U9P8RoK5N0rM6H7c0KM5UHYLomw/viewform?usp=sf_link">
+                                    <button>Survey</button>
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
-            </div>
 
-        </div>
+                <!-- JAVASCRIPT -->
+                <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+                <script src="public/scripts/quiz_logic.js"></script>
+                <script src="public/scripts/email_results.js"></script>
+                <script src="public/scripts/sendemail.js"></script>
 
-        <!-- JAVASCRIPT -->
-        <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
-        <script src="public/scripts/quiz_logic.js"></script>
-        <script src="public/scripts/email_results.js"></script>
-        <script src="public/scripts/sendemail.js"></script>
-
-    </body>
+        </body>
 
 </html>
