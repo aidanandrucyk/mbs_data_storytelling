@@ -12,6 +12,7 @@ html {
   --textcolor: hsl(40, 2%, 35%);
   --accentcolor: #d61e5c;
   --nblack: #2e2d28;
+  --accentcolorv2: #B43287;
 
   /* PRIMARY */
   --teal: #00857D;
@@ -187,8 +188,12 @@ button:hover {
 #resultsPage{
   display: none;
   text-align: center;
+
+  max-height: 512px; /* creates scrollable box with sticky survey */
+  overflow: auto;
 }
 
+/* FRAME HERE */
 .results-match{
   background-color: var(--accentcolor);
   color: white;
@@ -205,9 +210,6 @@ button:hover {
   display: block;
   margin: 50px;
   align-items: center;
-
-
-
 }
 
 .results-bar-score{
@@ -277,4 +279,232 @@ button:hover {
 /* CSS for the rounded Twitter icon */
 .twitter-icon {
   border-radius: 10px; /* Adjust the value to control the amount of rounding */
+}
+
+/* SURVEY */
+
+.quiz-feedback{
+  text-align: center;
+  align-items: center;
+}
+
+
+.result-images img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.email-container h2 {
+  color: var(--accentcolorv2);
+  margin: 10px 0;
+}
+
+.email-container img {
+  width: 48px;
+  height: 48px;
+}
+
+.email-container label {
+  margin-top: 10px;
+  color: var(--accentcolorv2);
+}
+
+.email-container input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-container button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--accentcolorv2);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.twitter-icon-container,
+.facebook-icon-container {
+  margin: 10px;
+}
+
+.icon-container img {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon-overlay .tooltip {
+  color: #fff;
+  font-size: 14px;
+}
+
+.icon-container img:hover + .icon-overlay,
+.icon-overlay:hover {
+  opacity: 1;
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed to create spacing between icons */
+}
+
+
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.icon-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed to create spacing between icons */
+}
+
+.icon-x::before {
+  content: "X";
+  /* Add the styles for the X icon here */
+}
+
+.icon-facebook::before {
+  content: "f"; /* You may use the appropriate font awesome class or unicode */
+  /* Add the styles for the Facebook icon here */
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.icon-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Additional styles to display the tooltips */
+.icon-container:hover::after {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust as needed to position the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333; /* Match the tooltip background color */
+}
+.email-results {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.email-results h2 {
+  color: var(--accentcolorv2);
+  margin: 10px 0;
+}
+
+.email-results img {
+  width: 48px;
+  height: 48px;
+}
+
+.email-results label {
+  margin-top: 10px;
+  color: var(--accentcolorv2);
+}
+
+.email-results input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-results button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--accentcolorv2);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+
+/* If you want the icons to be larger, you can adjust the width and height here */
+.icon-item img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ... rest of your CSS code ... */
+.email-results img {
+  width: 24px;
+  height: 20px; /* Adjust the height to the desired size */
 }

@@ -966,22 +966,7 @@ function retakeQuiz() {
 }
 
 function displayResults(rankedPlatforms) {
-    // Aidan
     topPlatform = Object.keys(rankedPlatforms[0])[0];
-    document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
-    document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
-    document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
-    document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
-    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
-    document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
-
-    if (recAppsheets == true){
-        document.querySelector('.additional-rec').innerHTML = "We also recommend AppSheet for Google Drive integration!"     
-    }
-    else if (recPowerApps == true){
-        document.querySelector('.additional-rec').innerHTML = "We also recommend PowerApps for Microsoft integration!"     
-    }
 
     // BAR GRAPH
     var barPlatforms = [];
@@ -1003,46 +988,46 @@ function displayResults(rankedPlatforms) {
     const data = {
         labels: [firstName, secondName, thirdName, fourthName, fifthName],
         datasets: [{
-          label: '',
-          data: [(first/first)*100,Math.round((second/first)*100),Math.round((third/first)*100),Math.round((fourth/first)*100),Math.round((fifth/first)*100)],
-          barThickness: 30,
-          borderWidth: 0.5,
-          borderRadius: Number.MAX_VALUE,
-          borderSkipped: false,
-          image: [
-         document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[0]] + '.png'
-        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[1]] + '.png'
-        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[2]] + '.png'
-        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[3]] + '.png'
-        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[4]] + '.png'
-],
-          backgroundColor: [
-            "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"
-          ],
-          datalabels: {
-            color: 'white',
-            anchor: 'end',
-            align: 'left',
-            font: 'Montserrat',
-            fontSize: '30px',
-          }
+            label: '',
+            data: [(first / first) * 100, Math.round((second / first) * 100), Math.round((third / first) * 100), Math.round((fourth / first) * 100), Math.round((fifth / first) * 100)],
+            barThickness: 30,
+            borderWidth: 0.5,
+            borderRadius: Number.MAX_VALUE,
+            borderSkipped: false,
+            image: [
+                document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[0]] + '.png'
+                , document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[1]] + '.png'
+                , document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[2]] + '.png'
+                , document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[3]] + '.png'
+                , document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[4]] + '.png'
+            ],
+            backgroundColor: [
+                "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"
+            ],
+            datalabels: {
+                color: 'white',
+                anchor: 'end',
+                align: 'left',
+                font: 'Montserrat',
+                fontSize: '30px',
+            }
         }]
-      };
-      const imageItems = {
-        id: 'imageItems' ,
-        beforeDatasetsDraw(chart, args, pluginOptions){
-            const {ctx, data, options, scales: {x,y}} = chart;
+    };
+    const imageItems = {
+        id: 'imageItems',
+        beforeDatasetsDraw(chart, args, pluginOptions) {
+            const { ctx, data, options, scales: { x, y } } = chart;
             ctx.save();
             const imageSize = options.layout.padding.left;
-            data.datasets[0].image.forEach((imageLink, index) =>{
+            data.datasets[0].image.forEach((imageLink, index) => {
                 const logo = new Image();
                 logo.src = imageLink;
-                ctx.drawImage(logo, 0, y.getPixelForValue(index)-imageSize/2, imageSize, imageSize)
+                ctx.drawImage(logo, 0, y.getPixelForValue(index) - imageSize / 2, imageSize, imageSize)
 
             })
-           
+
         }
-      }  
+    }
     //   const firstLabel = {
     //     id: 'firstLabel',
     //     afterDatasetDraw(chart, args, plugins){
@@ -1059,78 +1044,100 @@ function displayResults(rankedPlatforms) {
     //         }
     //     }
     //   }
-      // config 
-      const config = {
+    // config 
+    const config = {
         type: 'bar',
         data,
         plugins: [ChartDataLabels, imageItems],
         options: {
-            layout:{
+            layout: {
                 padding: {
                     left: 60
                 }
             },
-        plugins: {
-            tooltip: {
-                titleFont: 'Montserrat',
-                displayColors: false,
-                callbacks: {
-                    title: function(context) {
-                        console.log();
-                        return ;
-                    },
+            plugins: {
+                tooltip: {
+                    titleFont: 'Montserrat',
+                    displayColors: false,
+                    callbacks: {
+                        title: function (context) {
+                            console.log();
+                            return;
+                        },
+                    }
+                },
+                legend: {
+                    display: false
                 }
             },
-            legend: {
-                display: false
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    grace: 10,
+                    grid: {
+                        drawOnChartArea: false,
+                        drawTicks: false,
+                        display: false
+
+                    },
+                    ticks: {
+                        display: false
+                    }
+                },
+                y: {
+                    grid: {
+                        drawOnChartArea: false,
+                        drawTicks: false,
+                        display: false
+                    },
+                    ticks: {
+                        display: true,
+                        font: {
+                            family: 'Montserrat',
+                            size: 20,
+                        }
+                    }
+                },
             }
         },
-        indexAxis: 'y',
-        scales: {
-            x: {
-                grace: 10,
-                grid: {
-                    drawOnChartArea: false,
-                    drawTicks: false,
-                    display: false
+    };
 
-                },
-                ticks: {
-                    display: false
-                }
-            },
-            y: {
-                grid: {
-                drawOnChartArea: false,
-                drawTicks: false,
-                display: false
-                },
-                ticks: {
-                    display: true,
-                    font: {
-                        family: 'Montserrat',
-                        size: 20,
-                    }
-                }
-            },
-          }
-        },
-      };
-  
-      // render init block
-      const myChart = new Chart(
+    // render init block
+    const myChart = new Chart(
         document.getElementById('myChart'),
         config
-      );
+    );
 
-      maxScale(myChart)
-      function maxScale(chart){
+    maxScale(myChart)
+    function maxScale(chart) {
         console.log(chart.scales.x.end);
-        if(chart.scales.x.end >= first){
+        if (chart.scales.x.end >= first) {
             chart.config.options.scales.x.grace = 0;
             chart.update();
         }
-      }
+    }
+
+    // text
+    document.querySelector('.platform-name').innerHTML = topPlatform;
+    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
+    document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
+    document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
+    // document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
+    const topLogoURL = 'assets/platform_logo/' + String(topPlatform) + '.png';
+    console.log(topPlatform);
+    console.log(rankedPlatforms);
+    console.log(topLogoURL)
+    document.querySelector('.platform-icon').src = 'assets/platform_logo/' + String(topPlatform) + '.png';
+    document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
+
+    // add-ons
+    if (recAppsheets == true) {
+        document.querySelector('.additional-rec').innerHTML = "We also recommend AppSheet for Google Drive integration!"
+
+    }
+    else if (recPowerApps == true) {
+        document.querySelector('.additional-rec').innerHTML = "We also recommend PowerApps for Microsoft integration!"
+    }
 
 }
 

@@ -132,10 +132,10 @@
                             
                         </nav>
                         -->
-                        <!-- #site-navigation -->
-                        
+            <!-- #site-navigation -->
 
-                        <!--
+
+            <!--
                         <div class="header-toggles">
 
                             <button class="header-search-toggle btn-initial"><svg class="svg-icon" aria-hidden="true"
@@ -187,6 +187,10 @@
             </div>
             -->
 
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous"
+                src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="aGfRKRD0"></script>
+
             <div class="background">
                 <img class="img_container" src="assets/Backgroud/sebastian-svenson-LpbyDENbQQg-unsplash.jpg" />
             </div>
@@ -201,7 +205,7 @@
                                     <li class="yes_no_question"> 1. Do you intend for your project to handle high
                                         traffic?
                                         <p>
-                                        (High Traffic Company Example: Uber, Instagram, Airbnb)
+                                            (High Traffic Company Example: Uber, Instagram, Airbnb)
                                         </p>
                                         <p> (Low Traffic Company Example: Local Restaurant, Local Bowling Alley,
                                             small
@@ -215,7 +219,7 @@
                                     <li class="yes_no_questions"> 2. Do you plan on adding new features to your app
                                         after
                                         publication?
-                                        <p>(Ex. Instagram stories, snapchat updates)
+                                        <p>(Example: Instagram stories, snapchat updates)
                                             (low ex: order notifs, entry updates, updating a menu, change/update notifs)
                                         </p>
                                         <br>
@@ -225,7 +229,8 @@
                                     </li>
                                     <li class="yes_no_questions">
                                         3. Must your app contain large-scale features?
-                                        <p>(Example: search algorithms, large number of files, hosts wide variety of data/
+                                        <p>(Example: search algorithms, large number of files, hosts wide variety of
+                                            data/
                                             distinct
                                             customizations/
                                             features)</p>
@@ -363,10 +368,12 @@
 
                                 <h3>What's <p class="green-text">your</p> story?</h3>
                                 <div class="results-match">
+                                    <!--
                                     <h4>Your Character Match:</h4>
                                     <h2 class="results-rating"> </h2>
                                     <h3 class="dnd-name">
                                         </h2>
+                                        -->
                                         <div class="results-bars">
                                             <canvas id="myChart" style="width:100%;"></canvas>
                                         </div>
@@ -405,62 +412,89 @@
                                 <div class="icon-overlay" onclick="tweet()">
                                     <div class="tooltip">Tweet your results</div>
                                 </div>
+                                <div>
+                                </div>
+
+                                <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png"
+                                        alt="Facebook icon" onclick="shareOnFacebook()" height="48" width="48">
+                                    <div class="icon-overlay" onclick="shareOnFacebook()">
+                                        <div class="tooltip">Share on Facebook</div>
+                                        <button onclick="shareOnFacebook()">Share on Facebook</button>
+                                        <div class="fb-share-button" data-href="https://www.google.com" data-layout=""
+                                            data-size=""><a target="_blank"
+                                                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse"
+                                                class="fb-xfbml-parse-ignore">Share</a></div>
+
+                                    </div>
+                                    <div class="fb-share-button" data-href="https://www.google.com" data-layout=""
+                                        data-size=""><a target="_blank"
+                                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse"
+                                            class="fb-xfbml-parse-ignore">Share</a></div>
+
+                                </div>
+                                <a class="twitter-share-button"
+                                    href="https://twitter.com/intent/tweet?text=Check out my results!"
+                                    data-size="large">
+                                    Tweet</a>
                             </div>
+                        </div>
+                        <!--
 
-                            <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png" alt="Facebook icon"
-                                    onclick="shareOnFacebook()" height="48" width="48">
-                                <div class="icon-overlay" onclick="shareOnFacebook()">
-                                    <div class="tooltip">Share on Facebook</div>
+                        <div class="twitter-results">
+                            <p>&nbsp;</p>
+                            <p><br>
+                            </p>
+                            <p><br>
+                            </p>
+
+                            <div class="icon-container"> <img src="assets/nav icons/twitterXicon (1).png"
+                                    alt="(twitter) icon" onclick="tweet()" class="twitter-icon" height="48" width="48">
+                                <div class="icon-overlay" onclick="tweet()">
+                                    <div class="tooltip">Tweet your results</div>
                                 </div>
+                            </div>
+                        </div>
 
-                                <!--
-                                <h3>What's <p class="green-text">your</p> story?</h3>
-                                <div class="results-match">
-                                    <center>
-                                        <h4>Your Character Match:</h4>
-                                    </center>
-                                    <center>
-                                        <h2 class="results-rating"> </h2>
-                                    </center>
-                                    <h3 class="dnd-name">
-                                        </h2>
-                                        <div class="results-bars">
-                                            <canvas id="myChart" style="width:20%;"></canvas>
-                                        </div>
-                                </div>
-
-                                <div class="results-details">
-                                    <center>
-                                        <h4>Detailed Analysis:</h4>
-                                    </center>
-                                    <center><img class="platform-icon" src="" alt=""></center>
-                                    <p class="platform-description"></p>
-                                </div>
-
+                        <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png" alt="Facebook icon"
+                                onclick="shareOnFacebook()" height="48" width="48">
+                            <div class="icon-overlay" onclick="shareOnFacebook()">
+                                <div class="tooltip">Share on Facebook</div>
+                                <button onclick="shareOnFacebook()">Share on Facebook</button>
+                                <div class="fb-share-button" data-href="https://www.google.com" data-layout=""
+                                    data-size=""><a target="_blank"
+                                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse"
+                                        class="fb-xfbml-parse-ignore">Share</a></div>
+                            </div>
+                            <div class="fb-share-button" data-href="https://www.google.com" data-layout="" data-size="">
+                                <a target="_blank"
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse"
+                                    class="fb-xfbml-parse-ignore">Share</a>
                             </div>
                             -->
-                            <br>
 
-                            <div class="quiz-feedback">
-                                <!-- @Ji -->
-                                <h2>Survey</h2>
-                                <p>Enter your email here:</p>
-                                <a target="_blank"
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLSdx-BbI6OlRJg6yS_I24R_U9P8RoK5N0rM6H7c0KM5UHYLomw/viewform?usp=sf_link">
-                                    <button>Survey</button>
-                                </a>
-                            </div>
+                        <br>
 
-                        </div>
+
+
                     </div>
-
+                    <div class="quiz-feedback">
+                        <h2>Survey</h2>
+                        <p>Enter your email here:</p>
+                        <a target="_blank"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdx-BbI6OlRJg6yS_I24R_U9P8RoK5N0rM6H7c0KM5UHYLomw/viewform?usp=sf_link">
+                            <button>Survey</button>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- JAVASCRIPT -->
-                <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
-                <script src="public/scripts/quiz_logic.js"></script>
-                <script src="public/scripts/email_results.js"></script>
-                <script src="public/scripts/sendemail.js"></script>
+
+            </div>
+
+            <!-- JAVASCRIPT -->
+            <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+            <script src="public/scripts/quiz_logic.js"></script>
+            <script src="public/scripts/email_results.js"></script>
+            <script src="public/scripts/sendemail.js"></script>
 
         </body>
 
