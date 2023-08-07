@@ -1,0 +1,504 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+
+/* VARIABLE COLORS */
+:root {
+  /* Greyscale */
+  --nwhite: hsl(60, 31%, 94%);
+  --nwhiteaccent: hsl(40, 18%, 97%);
+  --textcolor: hsl(40, 2%, 35%);
+  --accentcolor: #d61e5c;
+  --nblack: #2e2d28;
+
+  /* PRIMARY */
+  --teal: #00857D;
+
+  /* SECONDARY */
+  --babyblue: #92cdea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: none;
+}
+
+h2{
+
+}
+
+div{
+  border-radius: 2rem;
+}
+
+.background,
+.background * {
+  box-sizing:border-box;
+}
+.background {
+  padding: 0px 0px 0px 0px;
+  display:flex;
+  background-size: cover;
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position:fixed;
+}
+.img_container {
+  background-size: cover;
+  width:100%;
+  height:100%;
+  position:fixed;
+  filter: blur(30px);
+}
+
+.quiz_container {
+  display:flex;
+  flex-direction: column;
+  gap: 2%;
+  align-items: center;
+  justify-content: flex-start;
+  position:relative;
+}
+
+.quiz_dynamic{
+  margin: 0% 5%;
+  padding-top: 0%;
+}
+
+.quiz_container div {
+  padding: 1% 0% 0% 0%;
+}
+
+h1{
+  color: var(--accentcolor);
+  margin-top: 2rem;
+  font-weight: 900;
+}
+
+h3{
+  color: var(--nblack);
+  text-align: center;
+}
+
+p {
+  color: var(--textcolor);
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+li {
+  background: rgba(248, 237, 242, 0.7);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  margin:2rem;
+  display:inline-flexbox;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+li button{
+  margin: 7.5px 2.5px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--textcolor);
+}
+
+a:hover {
+  color: var(--accentcolor);
+  -webkit-filter: brightness(105%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+a:visited {
+  color: var(--textcolor);
+}
+
+::selection {
+  color: var(--nblack);
+  background: var(--accentcolor);
+}
+
+button {
+  padding: .5%;
+  border: var(--accentcolor) 2px solid;
+  background-color: white;
+  filter: grayscale(100%);
+  border-radius: 1rem;
+  padding: .5rem;
+  margin: 1rem 0.5rem;
+}
+
+button:hover {
+  background-color: var(--accentcolor);
+  filter: brightness(110%);
+  -webkit-transition: all .45s ease;
+  -moz-transition: all .45s ease;
+  -o-transition: all .45s ease;
+  -ms-transition: all .45s ease;
+  transition: all .45s ease;
+}
+
+.green-text{
+  color: var(--teal);
+  display: inline;
+}
+
+.quiz_container {
+  padding: 1rem;
+}
+
+#questions{
+  display: block;
+}
+
+.center{
+  text-align: center;
+}
+
+#submit{
+  padding: 2%;
+}
+
+/* RESULTS */
+
+
+#resultsPage{
+  height: 600px; /* Adjust the value as needed */
+   
+  overflow: auto; /* or overflow: scroll; */
+  text-align: center;
+}
+
+.results-match{
+  background-color: var(--accentcolor);
+  color: white;
+}
+
+.large-image{
+  border-radius: 50%;
+
+}
+
+.results-bars {
+  background-color: white;
+  color: var(--nblack);
+  display: block;
+  margin: 50px;
+  align-items: center;
+
+
+
+}
+
+.results-bar-score{
+  display: inline;
+}
+
+.sm-icon{
+  width: 5rem;
+  height: auto;
+}
+
+
+
+.results-details{
+  border: var(--nblack) 2px solid;
+  background-color: white;
+  border-radius: 20px;
+}
+
+/* TWITTER ICON */
+.icon-container {
+  display: inline-block;
+  position: relative;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.icon-container:hover .icon-overlay {
+  display: flex;
+}
+
+/* CSS for the tooltip text */
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.icon-container:hover .tooltip {
+  opacity: 1;
+}
+
+.icon-container:hover img {
+  filter: brightness(110%);
+}
+
+/* CSS for the rounded Twitter icon */
+.twitter-icon {
+  border-radius: 10px; /* Adjust the value to control the amount of rounding */
+}
+
+.result-images img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.email-container h2 {
+  color: #B43287;
+  margin: 10px 0;
+}
+
+.email-container img {
+  width: 48px;
+  height: 48px;
+}
+
+.email-container label {
+  margin-top: 10px;
+  color: #B43287;
+}
+
+.email-container input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-container button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #B43287;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.twitter-icon-container,
+.facebook-icon-container {
+  margin: 10px;
+}
+
+.icon-container img {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon-overlay .tooltip {
+  color: #fff;
+  font-size: 14px;
+}
+
+.icon-container img:hover + .icon-overlay,
+.icon-overlay:hover {
+  opacity: 1;
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed to create spacing between icons */
+}
+
+
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.icon-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed to create spacing between icons */
+}
+
+.icon-x::before {
+  content: "X";
+  /* Add the styles for the X icon here */
+}
+
+.icon-facebook::before {
+  content: "f"; /* You may use the appropriate font awesome class or unicode */
+  /* Add the styles for the Facebook icon here */
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.icon-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Additional styles to display the tooltips */
+.icon-container:hover::after {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust as needed to position the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333; /* Match the tooltip background color */
+}
+.email-results {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.email-results h2 {
+  color: #B43287;
+  margin: 10px 0;
+}
+
+.email-results img {
+  width: 48px;
+  height: 48px;
+}
+
+.email-results label {
+  margin-top: 10px;
+  color: #B43287;
+}
+
+.email-results input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-results button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #B43287;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+./* ... your existing CSS code ... */
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+
+/* If you want the icons to be larger, you can adjust the width and height here */
+.icon-item img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ... rest of your CSS code ... */
+.email-results img {
+  width: 24px;
+  height: 20px; /* Adjust the height to the desired size */
+  /* You can also set a specific width if needed, or the width will adjust proportionally */
+}
