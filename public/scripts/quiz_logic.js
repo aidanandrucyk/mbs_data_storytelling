@@ -353,7 +353,6 @@ function rankPlatforms() {
     });
 
     // selection questions
-
     // Q6
     document.getElementById("data-one").addEventListener("click", function () {
         if (document.getElementById("data-one").style.backgroundColor === plain) {
@@ -606,9 +605,7 @@ function rankPlatforms() {
         }
     });
 
-
     // preference questions
-
     // top priority
     document.getElementById("one-customization").addEventListener("click", function () {
         if (document.getElementById("one-customization").style.backgroundColor === plain) {
@@ -978,6 +975,15 @@ function displayResults(rankedPlatforms) {
     document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + topPlatform + '.png'
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
+
+    if (recAppsheets == true){
+        document.querySelector('.additional-rec').innerHTML = "We also recommend AppSheet for Google Drive integration!"     
+    }
+    else if (recPowerApps == true){
+        document.querySelector('.additional-rec').innerHTML = "We also recommend PowerApps for Microsoft integration!"     
+    }
+
+    // BAR GRAPH
     var barPlatforms = [];
     dict = {}
     for (const [key, value] of Object.entries(platforms)) {
@@ -994,30 +1000,138 @@ function displayResults(rankedPlatforms) {
     let thirdName = Object.keys(barPlatforms)[2];
     let fourthName = Object.keys(barPlatforms)[3];
     let fifthName = Object.keys(barPlatforms)[4];
-    var xValues = [firstName, secondName, thirdName, fourthName, fifthName];
-    var yValues = [first, second, third, fourth, fifth];
-    var barColors = ["rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"];
-    new Chart("myChart", {
-        type: "bar",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                borderWidth: 0.5,
-                borderRadius: Number.MAX_VALUE,
-                borderSkipped: false,
-                data: yValues
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            legend: { display: false },
-            title: {
-                display: true,
-                text: ""
-            }
+    const data = {
+        labels: [firstName, secondName, thirdName, fourthName, fifthName],
+        datasets: [{
+          label: '',
+          data: [(first/first)*100,Math.round((second/first)*100),Math.round((third/first)*100),Math.round((fourth/first)*100),Math.round((fifth/first)*100)],
+          barThickness: 30,
+          borderWidth: 0.5,
+          borderRadius: Number.MAX_VALUE,
+          borderSkipped: false,
+          image: [
+         document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[0]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[1]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[2]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[3]] + '.png'
+        ,document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[4]] + '.png'
+],
+          backgroundColor: [
+            "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)", "rgba(214,30,92)"
+          ],
+          datalabels: {
+            color: 'white',
+            anchor: 'end',
+            align: 'left',
+            font: 'Montserrat',
+            fontSize: '30px',
+          }
+        }]
+      };
+      const imageItems = {
+        id: 'imageItems' ,
+        beforeDatasetsDraw(chart, args, pluginOptions){
+            const {ctx, data, options, scales: {x,y}} = chart;
+            ctx.save();
+            const imageSize = options.layout.padding.left;
+            data.datasets[0].image.forEach((imageLink, index) =>{
+                const logo = new Image();
+                logo.src = imageLink;
+                ctx.drawImage(logo, 0, y.getPixelForValue(index)-imageSize/2, imageSize, imageSize)
+
+            })
+           
         }
-    });
+      }  
+    //   const firstLabel = {
+    //     id: 'firstLabel',
+    //     afterDatasetDraw(chart, args, plugins){
+    //         console.log(chart)
+    //         const {ctx, chartArea: {top}, scales: {x,y}} = 
+    //         chart;
+    //         for(let i=0;i<5; i++){
+    //             const xPosition = 100;
+    //             const yPosition = top + 35 + 69*i;
+    //             ctx.save();
+    //             ctx.fillStyle = 'white';
+    //             ctx.font = 'bolder 12px Montserrat';
+    //             ctx.fillText(data.labels[i], xPosition, yPosition)
+    //         }
+    //     }
+    //   }
+      // config 
+      const config = {
+        type: 'bar',
+        data,
+        plugins: [ChartDataLabels, imageItems],
+        options: {
+            layout:{
+                padding: {
+                    left: 60
+                }
+            },
+        plugins: {
+            tooltip: {
+                titleFont: 'Montserrat',
+                displayColors: false,
+                callbacks: {
+                    title: function(context) {
+                        console.log();
+                        return ;
+                    },
+                }
+            },
+            legend: {
+                display: false
+            }
+        },
+        indexAxis: 'y',
+        scales: {
+            x: {
+                grace: 10,
+                grid: {
+                    drawOnChartArea: false,
+                    drawTicks: false,
+                    display: false
+
+                },
+                ticks: {
+                    display: false
+                }
+            },
+            y: {
+                grid: {
+                drawOnChartArea: false,
+                drawTicks: false,
+                display: false
+                },
+                ticks: {
+                    display: true,
+                    font: {
+                        family: 'Montserrat',
+                        size: 20,
+                    }
+                }
+            },
+          }
+        },
+      };
+  
+      // render init block
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+
+      maxScale(myChart)
+      function maxScale(chart){
+        console.log(chart.scales.x.end);
+        if(chart.scales.x.end >= first){
+            chart.config.options.scales.x.grace = 0;
+            chart.update();
+        }
+      }
+
 }
 
 function retakeQuiz() {
