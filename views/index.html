@@ -27,6 +27,8 @@ NOTES:
 <body>
     <!-- CODE HERE -->
     <!-- CODE HERE -->
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="aGfRKRD0"></script>
     <div class="background">
         <img class="img_container" src="assets/Backgroud/sebastian-svenson-LpbyDENbQQg-unsplash.jpg" />
     </div>
@@ -232,15 +234,24 @@ NOTES:
                         <div class="icon-overlay" onclick="tweet()">
                             <div class="tooltip">Tweet your results</div>
                         </div>
+                        <div>
                     </div>
 
                     <div class="icon-container"> <img src="assets/nav icons/FB_Vector.png" alt="Facebook icon"
                             onclick="shareOnFacebook()" height="48" width="48">
                         <div class="icon-overlay" onclick="shareOnFacebook()">
                             <div class="tooltip">Share on Facebook</div>
-                        </div>
-                    </div>
+                            <button onclick="shareOnFacebook()">Share on Facebook</button>
+                            <div class="fb-share-button" data-href="https://www.google.com" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
+                        </div>
+                        <div class="fb-share-button" data-href="https://www.google.com" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+                    </div>
+                    <a class="twitter-share-button"
+                    href="https://twitter.com/intent/tweet?text=Check out my results!"
+                    data-size="large">
+                  Tweet</a>
                 </div>
 
                 <div class="quiz-feedback">
