@@ -86,7 +86,7 @@ div{
 
 h1{
   color: var(--accentcolor);
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-weight: 900;
 }
 
@@ -520,4 +520,10 @@ button:hover {
 .email-results img {
   width: 24px;
   height: 20px; /* Adjust the height to the desired size */
+}
+
+.survey-btn{
+  size: 1.5rem;
+  padding: 1% 1.25%;
+  margin: 1%;
 }
