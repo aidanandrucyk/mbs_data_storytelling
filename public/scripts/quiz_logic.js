@@ -12,7 +12,7 @@ var platforms = {
         dndCharacterTraits: '"• Natural-born storytellers • Someone who is artistic and cares about the visuals',
         finalDescription: 'You are Bard! As a Bard, you are a natural storyteller. Use your gifts to create a customizable application that is useful for your brand.',
         levelCode: 'User friendly and customizable',
-        platformDescription: 'Shoutem is perfect for you because you Shoutem balances the factors of user friendliness, cost, and customization.',
+        platformDescription: 'Shoutem is perfect for you because you Shoutem balances the factors of user friendliness, cost, and customization. There is no coding requirement. There is an option for an HTML plugin, so if one has some coding experience, the option is there for further customization. Shoutem and Goodbarber both offer contact lines with highly rated customer service teams to walk you through building the app. With both platforms, infrastructure for the app is already in place, which means you do not need to be an IT wiz to run your app. This infrastructure also allows your application to be created fairly quickly and easily, though for someone less tech-savvy things could move a bit slower.',
     },
     "Goodbarber": {
         rating: 0,
@@ -26,7 +26,7 @@ var platforms = {
         dndCharacterTraits: 'Loves nature • Gains their power and resources from Nature • Resourceful magic based solutions',
         finalDescription: 'You are a Druid! You enjoy resourceful, magic-based solutions to complicated questions. Take your project to the next level by using Goodbarber to complete your next big project.',
         levelCode: 'More User friendly, a little less customizable',
-        platformDescription: 'GoodBarber is perfect for your company because your company desires a platform that is very user friendly. You’re fine with spending a moderate amount of time and money on the platform.',
+        platformDescription: 'GoodBarber is perfect for your company because your company desires a platform that is very user friendly. You’re fine with spending a moderate amount of time and money on the platform. Shoutem and Goodbarber both offer contact lines with highly rated customer service teams to walk you through building the app. With both platforms, infrastructure for the app is already in place, which means you do not need to be an IT wiz to run your app. This infrastructure also allows your application to be created fairly quickly and easily, though for someone less tech-savvy things could move a bit slower.',
     },
     "Appypie": {
         rating: 0,
