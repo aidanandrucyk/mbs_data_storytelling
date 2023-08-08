@@ -32,8 +32,11 @@ body {
   background-color: none;
 }
 
-h2{
 
+.ex-text{
+  color: #2b2b29;
+  font-size: .9rem;
+  margin-left: 2px;
 }
 
 div{
@@ -189,7 +192,7 @@ button:hover {
   display: none;
   text-align: center;
 
-  /* max-height: 512px; creates scrollable box with sticky survey */
+  max-height: 512px; /* creates scrollable box with sticky survey */
   overflow: auto;
 }
 
@@ -198,6 +201,9 @@ button:hover {
   background-color: var(--accentcolor);
   color: white;
   max-width: 700px;
+  align-items: center;
+  text-align: center;
+
 }
 
 .large-image{
@@ -210,11 +216,14 @@ button:hover {
   color: var(--nblack);
   display: block;
   margin: 10px;
-  align-items: center;
 }
 
 .results-bar-score{
   display: inline;
+}
+
+#myChart{
+  padding: 1rem .5rem 2rem .5rem;
 }
 
 .sm-icon{
@@ -225,9 +234,12 @@ button:hover {
 
 
 .results-details{
+  display: block;
   border: var(--nblack) 2px solid;
   background-color: white;
   border-radius: 20px;
+  text-align: center;
+  align-items: center;
 }
 
 /* TWITTER ICON */
