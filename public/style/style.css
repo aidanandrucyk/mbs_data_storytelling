@@ -189,7 +189,7 @@ button:hover {
   display: none;
   text-align: center;
 
-  max-height: 512px; /* creates scrollable box with sticky survey */
+  /* max-height: 512px; creates scrollable box with sticky survey */
   overflow: auto;
 }
 
@@ -197,6 +197,7 @@ button:hover {
 .results-match{
   background-color: var(--accentcolor);
   color: white;
+  max-width: 700px;
 }
 
 .large-image{
@@ -208,7 +209,7 @@ button:hover {
   background-color: white;
   color: var(--nblack);
   display: block;
-  margin: 50px;
+  margin: 10px;
   align-items: center;
 }
 

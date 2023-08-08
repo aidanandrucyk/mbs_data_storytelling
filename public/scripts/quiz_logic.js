@@ -1022,37 +1022,40 @@ function displayResults(rankedPlatforms) {
             data.datasets[0].image.forEach((imageLink, index) => {
                 const logo = new Image();
                 logo.src = imageLink;
-                ctx.drawImage(logo, 0, y.getPixelForValue(index) - imageSize / 2, imageSize, imageSize)
+                ctx.drawImage(logo, 10, y.getPixelForValue(index) - imageSize / 2, imageSize*(2/3), imageSize*(2/3))
 
             })
 
         }
     }
-    //   const firstLabel = {
-    //     id: 'firstLabel',
-    //     afterDatasetDraw(chart, args, plugins){
-    //         console.log(chart)
-    //         const {ctx, chartArea: {top}, scales: {x,y}} = 
-    //         chart;
-    //         for(let i=0;i<5; i++){
-    //             const xPosition = 100;
-    //             const yPosition = top + 35 + 69*i;
-    //             ctx.save();
-    //             ctx.fillStyle = 'white';
-    //             ctx.font = 'bolder 12px Montserrat';
-    //             ctx.fillText(data.labels[i], xPosition, yPosition)
-    //         }
-    //     }
-    //   }
+      const firstLabel = {
+        id: 'firstLabel',
+        afterDatasetDraw(chart, args, plugins){
+            console.log(chart)
+            const {ctx, chartArea: {top}, scales: {x,y}} = 
+            chart;
+            for(let i=0;i<5; i++){
+                const xPosition = 75;
+                const yPosition = y.getPixelForValue(i)-20;
+                ctx.save();
+                ctx.fillStyle = 'black';
+                ctx.font = 'bolder 12px Montserrat';
+                ctx.fillText(data.labels[i], xPosition, yPosition)
+            }
+        }
+      }
     // config 
     const config = {
         type: 'bar',
         data,
-        plugins: [ChartDataLabels, imageItems],
+        plugins: [ChartDataLabels, imageItems, firstLabel],
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             layout: {
                 padding: {
-                    left: 60
+                    left: 60,
+                    right: 10
                 }
             },
             plugins: {
@@ -1073,34 +1076,27 @@ function displayResults(rankedPlatforms) {
             indexAxis: 'y',
             scales: {
                 x: {
-                    grace: 10,
-                    grid: {
-                        drawOnChartArea: false,
-                        drawTicks: false,
-                        display: false
-
-                    },
-                    ticks: {
-                        display: false
-                    }
+                    display: false,
                 },
                 y: {
-                    grid: {
-                        drawOnChartArea: false,
-                        drawTicks: false,
-                        display: false
-                    },
-                    ticks: {
-                        display: true,
-                        font: {
-                            family: 'Montserrat',
-                            size: 20,
+                    display:false,
+                    // original y-axis labbels
+                    // grid: {
+                    //     drawOnChartArea: false,
+                    //     drawTicks: false,
+                    //     display: false
+                    // },
+                    // ticks: {
+                    //     display: true,
+                    //     font: {
+                    //         family: 'Montserrat',
+                    //         size: 20,
                         }
                     }
                 },
             }
-        },
-    };
+    //     },
+    // };
 
     // render init block
     const myChart = new Chart(
