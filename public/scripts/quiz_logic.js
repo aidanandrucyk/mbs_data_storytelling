@@ -994,6 +994,7 @@ function displayResults(rankedPlatforms) {
             borderWidth: 0.5,
             borderRadius: Number.MAX_VALUE,
             borderSkipped: false,
+            minBarLength: 120,
             image: [
                 document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[0]] + '.png'
                 , document.querySelector('.platform-icon').src = 'assets/platform_logo/' + [Object.keys(barPlatforms)[1]] + '.png'
@@ -1022,7 +1023,7 @@ function displayResults(rankedPlatforms) {
             data.datasets[0].image.forEach((imageLink, index) => {
                 const logo = new Image();
                 logo.src = imageLink;
-                ctx.drawImage(logo, 10, y.getPixelForValue(index) - imageSize / 2, imageSize*(2/3), imageSize*(2/3))
+                ctx.drawImage(logo, 20, y.getPixelForValue(index)+20 - imageSize / 2, imageSize*(1/2), imageSize*(1/2))
 
             })
 
@@ -1035,11 +1036,11 @@ function displayResults(rankedPlatforms) {
             const {ctx, chartArea: {top}, scales: {x,y}} = 
             chart;
             for(let i=0;i<5; i++){
-                const xPosition = 75;
-                const yPosition = y.getPixelForValue(i)-20;
+                const xPosition = 120;
+                const yPosition = y.getPixelForValue(i)+3;
                 ctx.save();
-                ctx.fillStyle = 'black';
-                ctx.font = 'bolder 12px Montserrat';
+                ctx.fillStyle = 'white';
+                ctx.font = 'bolder 14px Montserrat';
                 ctx.fillText(data.labels[i], xPosition, yPosition)
             }
         }
@@ -1054,7 +1055,7 @@ function displayResults(rankedPlatforms) {
             maintainAspectRatio: false,
             layout: {
                 padding: {
-                    left: 60,
+                    left: 100,
                     right: 10
                 }
             },
