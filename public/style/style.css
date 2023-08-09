@@ -192,23 +192,23 @@ button:hover {
   display: none;
   text-align: center;
 
-  max-height: 512px; /* creates scrollable box with sticky survey */
+  /* max-height: 512px; creates scrollable box with sticky survey */
   overflow: auto;
 }
 
 /* FRAME HERE */
 .results-match{
-  background-color: var(--accentcolor);
-  color: white;
+  /* background-color: var(--accentcolor);
+  color: white; */
   max-width: 700px;
-  align-items: center;
-  text-align: center;
-
+  border: 3px solid var(--accentcolor);
+  background: var(--accentcolor);
+  margin: auto;
+  padding: 5px 10px;
 }
 
 .large-image{
   border-radius: 50%;
-
 }
 
 .results-bars {
@@ -219,7 +219,7 @@ button:hover {
 }
 
 .results-bar-score{
-  display: inline;
+  display: block;
 }
 
 #myChart{
