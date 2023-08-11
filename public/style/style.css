@@ -32,6 +32,74 @@ body {
   background-color: none;
 }
 
+/* HEADER */
+header {
+  z-index: 9999;
+  text-transform: uppercase;
+  transform: scale(1, 1.025);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  transition: .35s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+header.top .logo a {
+  color: white;
+}
+
+header.sticky {
+  padding: 5px 5%;
+  background: whitesmoke;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+}
+
+header.sticky li a {
+  color: var(--nblack);
+  text-shadow: none;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+}
+
+header.sticky .logo a {
+  color: var(--textcolor);
+  text-shadow: none;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+}
+
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: var(--nwhite);
+
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase bold;
+  transition: 0.3s;
+}
+
+header .logo:hover a{
+  color: var(--accentcolor);
+}
+
+.arrow {
+  border: solid ;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+header .logo:hover .arrow{
+  scale: (1.4, 1.2);
+}
+
+
 
 .ex-text{
   color: #2b2b29;
@@ -86,7 +154,7 @@ div{
 
 h1{
   color: var(--accentcolor);
-  margin-top: 1rem;
+  margin-top: 2.25rem;
   font-weight: 900;
 }
 
@@ -174,7 +242,7 @@ button:hover {
 }
 
 .quiz_container {
-  padding: 1rem;
+  padding: 1rem 15%;
 }
 
 #questions{
@@ -186,7 +254,8 @@ button:hover {
 }
 
 #submit{
-  padding: 2%;
+  padding: 2.5%;
+  margin: 5%;
 }
 
 /* RESULTS */
@@ -244,7 +313,7 @@ button:hover {
   border-radius: 20px;
   text-align: center;
   align-items: center;
-  margin: 1rem 20%;
+  margin: 1rem 15%;
 }
 
 /* TWITTER ICON */
@@ -455,6 +524,11 @@ button:hover {
   visibility: visible;
 }
 
+.platform-name{
+  padding: 1rem;
+  size: 5rem;
+}
+
 .dnd-name{
   font-size: 4rem;
 }
@@ -497,7 +571,7 @@ button:hover {
 
 .email-results h2 {
   color: var(--accentcolorv2);
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 
 .email-results img {
@@ -556,7 +630,10 @@ button:hover {
   margin: 1%;
 }
 
-
+.quiz-feedback hr{
+  border: lightgray solid 1px;
+  margin: 2% 7%;
+}
 
 
 /* FOOTER */
