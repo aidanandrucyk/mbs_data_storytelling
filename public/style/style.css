@@ -271,11 +271,10 @@ button:hover {
 
 /* FRAME HERE */
 .results-match{
-  /* background-color: var(--accentcolor);
-  color: white; */
-  max-width: 700px;
-  border: 3px solid var(--accentcolor);
-  background: var(--accentcolor);
+  max-width: 900px;
+  background-color: rgba(248, 237, 242, .75);
+  border: 5px solid var(--accentcolor);
+  color: var(--nblack);
   margin: auto;
   padding: 5px 10px;
 }
@@ -284,12 +283,12 @@ button:hover {
   border-radius: 50%;
 }
 
-.results-bars {
+/* .results-bars {
   background-color: white;
   color: var(--nblack);
   display: block;
   margin: 10px;
-}
+} */
 
 .results-bar-score{
   display: block;
@@ -308,12 +307,16 @@ button:hover {
 
 .results-details{
   display: block;
-  border: var(--nblack) 2px solid;
-  background-color: white;
+  /* border: var(--nblack) 2px solid; */
+  background-color: rgba(248, 237, 242, .75);
   border-radius: 20px;
   text-align: center;
   align-items: center;
-  margin: 1rem 15%;
+  margin: 1rem 7%;
+}
+
+.platform-description{
+  color: black;
 }
 
 /* TWITTER ICON */
