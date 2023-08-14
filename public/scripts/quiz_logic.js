@@ -1,4 +1,4 @@
-// PLATFORMS DATA
+// PLATFORMS DATA -> ideally would like to put this into a DB
 var platforms = {
     "Shoutem": {
         rating: 0,
@@ -153,6 +153,7 @@ let plain = 'white';
 let active = 'rgb(214, 30, 92)';
 let nblack = '#2e2d28';
 
+// Add-ons
 var recAppsheets = false;
 var recPowerApps = false;
 
@@ -1114,7 +1115,7 @@ function displayResults(rankedPlatforms) {
         }
     }
 
-    // text
+    // populating HTML elements
     document.querySelector('.platform-name').innerHTML = topPlatform;
     document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'].toLowerCase() + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
