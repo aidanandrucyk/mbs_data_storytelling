@@ -9,6 +9,8 @@ A quiz made to be implemented into Devon McGuinness' wesbite. Users can take the
 </tr>
 </table>
 
+![](https://github.com/aidanandrucyk/mbs_data_storytelling/blob/main/assets/ezgif.com-crop.gif)
+
 ## Aidan 
 
 ## Quiz Logic Explanation
