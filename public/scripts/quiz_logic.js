@@ -1116,14 +1116,11 @@ function displayResults(rankedPlatforms) {
 
     // text
     document.querySelector('.platform-name').innerHTML = topPlatform;
-    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'] + '.png'
+    document.querySelector('.large-image').src = 'assets/avatars/' + rankedPlatforms[1][topPlatform]['dndCharacter'].toLowerCase() + '.png'
     document.querySelector('.dnd-name').innerHTML = rankedPlatforms[1][topPlatform]['dndCharacter'];
     document.querySelector('.dnd-description').innerHTML = rankedPlatforms[1][topPlatform]['finalDescription'];
     // document.querySelector('.results-rating').innerHTML = rankedPlatforms[1][topPlatform]['rating'];
     const topLogoURL = 'assets/platform_logo/' + String(topPlatform) + '.png';
-    console.log(topPlatform);
-    console.log(rankedPlatforms);
-    console.log(topLogoURL)
     document.querySelector('.platform-icon').src = 'assets/platform_logo/' + String(topPlatform) + '.png';
     document.querySelector('.platform-description').innerHTML = rankedPlatforms[1][topPlatform]['platformDescription'];
 
