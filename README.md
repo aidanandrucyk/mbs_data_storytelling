@@ -1,4 +1,13 @@
+
 # mbs_data_storytelling
+
+<table>
+<tr>
+<td>
+A quiz made to be implemented into Devon McGuinness' wesbite. Users can take the quiz by answering yes or no questions and have their results displayed in the end. The quiz is used to find out what no-code platform is best suited for them.
+</td>
+</tr>
+</table>
 
 ## Aidan 
 
@@ -14,6 +23,8 @@ original_java_code is the Java code handed over to us by a previous extern team.
 
 assets/ contain all images used to populate the website.
 
+quiz_logic.js is our JavaScript code to make the quiz functional, display differing results, and send users their results.
+
 index.html is our primary markup document to fill and structure our website.
 
 public/style.css is our primary design document that was based on Figma Prototypes provided by Elo, Gemma, & and Tonai.
@@ -22,6 +33,10 @@ public/style.css is our primary design document that was based on Figma Prototyp
 
 ADD ON.......................
 
+## Built with:
+- [chart.js](https://www.chartjs.org/docs/4.3.3/) - Library with multiple, customizable, built-in charts.
+- [chartjs-plugin](https://chartjs-plugin-datalabels.netlify.app/) - Plugin with features to make charts more customizable.
+
 ## Recommendations
 - Add more app builders (especially web app builders) in data set
 - Draw data set from a database or reading from updatable source 
@@ -29,6 +44,15 @@ ADD ON.......................
 - Better tie-breaking mechanism
 - Flesh out “add-on” platform recommendations 
 - Better integration of quiz within website
+
+
+## Team
+ - Aidan Andrucyk
+ - Elo Hernandez
+ - Ge (Gemma) Gao
+ - Tonai Crockett
+ - Ji Wu
+ - Uthara Das
 
 
 
