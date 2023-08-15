@@ -15,6 +15,9 @@ A quiz made to be implemented into Devon McGuinness' wesbite. Users can take the
 
 Explanations for the quiz logic can be found on our [Quiz Logic Documentation](https://docs.google.com/document/d/1Vg9u90q4_qkNhzvl3R_821J7QjYMaAssX50YsxEbuxs/edit?usp=sharing) and [2022 Research](https://docs.google.com/document/d/1SP6esbi5cwugqKMzAqEd4ydZVKJx2WZv/edit?usp=sharing&ouid=106331700266022311408&rtpof=true&sd=true).
 
+## Node 
+Code is currently run using Node.js. In order to run the code locally, go to the terminal and type node server.js. This will run the server. Then, go to chrome/safari and type localhost:2525 and it will show you how the platform currently looks. More detailed info in handoff presentation slide 30.
+
 ## File Structure: 
 
 data/appDevToolRatings.csv is our dataset handed over to us by a previous extern team.
@@ -24,6 +27,8 @@ original_java_code is the Java code handed over to us by a previous extern team.
 assets/ contain all images used to populate the website.
 
 quiz_logic.js is our JavaScript code to make the quiz functional, display differing results, and send users their results.
+
+server.js is our Javascript code for the server-side setup of code that sends the client an email of their results. More information can be found in hand-off slides 28+29
 
 index.html is our primary markup document to fill and structure our website.
 
@@ -66,6 +71,3 @@ data/appDevToolRatings.csv reasoning derived from the research performed by the 
 
 
 ## Uthara - quiz logic implementation + bar graphs + anything else?
-
-## Ji - email + node + sharing + more file structure?
-
